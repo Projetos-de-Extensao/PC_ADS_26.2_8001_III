@@ -1,7 +1,7 @@
 ---
-repo_url: https://github.com/jonh-carvalho/PBE_26.2_8001
+repo_url: https://github.com/jonh-carvalho/PC_ADS_26.2_8001
 site_author: Jonh Carvalho
-site_name: PBE_26.2_8001
+site_name: PC_ADS_26.2_8001
 copyright: Copyright ©️ 2026, Jonh Carvalho
 
 nav: 
@@ -9,22 +9,12 @@ nav:
   - Iniciação: 
       - Index: Iniciacao/index.md
       - Pesquisa: Iniciacao/pesquisa.md
-      - 5w2h: Iniciacao/5w2h.md
-      - Design Thinking: Iniciacao/design_thinking.md
-      - Brainstorming: Iniciacao/Brainstorm.md
-      - Mapa Mental: Iniciacao/mapa_mental.md
-      - Prototipagem Baixa Fidelidade: Iniciacao/prototipo_baixa_fidelidade.md
+      - 5W2H: Iniciacao/5w2h.md
+      - Documento de Visão: Iniciacao/documento_de_visao.md
   - Elaboração:
       - Index: Elaboracao/index.md
-      - Requisitos: Elaboracao/levreq.md
-      - Casos de Uso: Elaboracao/casos_de_uso.md
-      - Diagrama de Classes: Elaboracao/diagrama_de_classes.md
-      - Diagrama de Sequência: Elaboracao/diagrama_de_sequencia.md
   - Construção:
       - Index: Construcao/index.md
-      - Github Workflows: Construcao/github_workflows.md
-      - GitHub Projects: Construcao/github_projects.md
-      - CodeSpace: Construcao/codespace.md
   - Transição:
       - Index: Transicao/index.md
 
