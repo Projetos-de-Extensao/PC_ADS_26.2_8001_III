@@ -1,195 +1,366 @@
----
-id: diagrama_de_casos de uso
-title: Diagrama de Casos de Uso
----
+**Casos de Uso Arquiteturais**
 
-## Casos de Uso
+**Projeto Apollo**
 
-<p align = "justify">
-Os casos de uso do projeto Apollo derivam dos requisitos funcionais consolidados em <a href="levreq.md">levreq.md</a>. O escopo desta versão é restrito: não há cadastro, autenticação, recuperação de senha nem perfis de usuário — a análise do gabarito é anônima e imediata.
-</p>
+|  |  |
+| --- | --- |
+| **Projeto** | Apollo — Plataforma de Análise de Desempenho no ENEM |
+| **Documento** | Modelo de Casos de Uso Arquiteturais |
+| **Versão** | 1.0 |
+| **Data** | 21/09/2026 |
+| **Status** | Em Desenvolvimento |
+| **Responsável** | Equipe do Projeto Apollo |
+| **Disciplina** | Projeto de Cloud |
 
-### Descrição
+# 1. Introdução
 
-- Análise de gabarito (candidato)
-	- Selecionar área de conhecimento
-	- Preencher respostas
-	- Salvar rascunho da sessão
-	- Submeter respostas para análise
-	- Visualizar resultado
+## 1.1. Propósito
 
-- Administração (equipe de desenvolvimento)
-	- Carregar gabarito e parâmetros de item
-	- Consultar gabaritos cadastrados
-	- Consultar histórico de submissões
+Este documento descreve os Casos de Uso Arquiteturais para a infraestrutura em nuvem AWS da plataforma Apollo. Os casos de uso arquiteturais focam em requisitos de infraestrutura, segurança, operações e governança, diferentemente dos casos de uso funcionais que descrevem a interação do aluno com o sistema (envio de respostas, visualização do dashboard e das sugestões de estudo).
 
-### Diagrama de Casos de Uso
+## 1.2. Escopo
 
-```plantuml
-@startuml Apollo_CasosDeUso
+Os casos de uso arquiteturais abrangem a configuração, operação e manutenção da infraestrutura AWS do Apollo, incluindo:
 
-left to right direction
-skinparam actorStyle awesome
+* Rede (VPC, sub-redes, rotas)
+* Segurança (Security Groups, IAM)
+* Conectividade entre camadas (EC2, RDS, API Gateway, Lambda)
+* Integração com serviços gerenciados (DynamoDB, S3, Secrets Manager)
+* Automação e deploy (CI/CD)
 
-actor Candidato
-actor "Equipe de Desenvolvimento" as Equipe
+O escopo aqui é deliberadamente mais enxuto que uma arquitetura de produção corporativa: o Apollo é um projeto acadêmico com equipe de quatro pessoas e orçamento de até US$ 100/mês, priorizando o AWS Free Tier. Por isso, não há redundância Multi-AZ obrigatória nem Auto Scaling Group como pré-requisito — esses itens aparecem como evolução possível, não como requisito de entrega.
 
-rectangle "Apollo — Análise de Gabarito do ENEM" {
-  usecase "UC01: Analisar Gabarito" as UC01
-  usecase "Selecionar Área de Conhecimento" as UC01_1
-  usecase "Preencher Respostas" as UC01_2
-  usecase "Salvar Rascunho da Sessão" as UC01_3
-  usecase "Calcular Nota Estimada (Engine TRI)" as UC01_4
-  usecase "Registrar Submissão no Histórico" as UC01_5
+## 1.3. Referências
 
-  usecase "UC02: Visualizar Resultado" as UC02
-  usecase "UC03: Carregar Gabarito e Parâmetros de Item" as UC03
-  usecase "UC04: Consultar Histórico de Submissões" as UC04
+* Documento de Visão — Projeto Apollo (v1.0)
+* Documento de Requisitos Suplementares — Projeto Apollo (v1.0)
+* AWS Well-Architected Framework
+* Amazon VPC Documentation
 
-  usecase "Respostas Inválidas" as FA1
-  usecase "Gabarito Ausente para a Área" as FA2
-}
+# 2. Visão Geral dos Casos de Uso
 
-Candidato --> UC01
-Candidato --> UC02
-Equipe --> UC03
-Equipe --> UC04
+## 2.1. Atores
 
-UC01 ..> UC01_1 : <<include>>
-UC01 ..> UC01_2 : <<include>>
-UC01 ..> UC01_4 : <<include>>
-UC01 ..> UC01_5 : <<include>>
-UC01_3 ..> UC01_2 : <<extend>>
-UC01 ..> UC02 : <<include>>
+| **Ator** | **Descrição** | **Responsabilidades** |
+| --- | --- | --- |
+| Administrador de Infraestrutura | Estudante do grupo responsável por configurar e gerenciar a infraestrutura AWS. | Criar VPC, sub-redes, security groups, banco de dados. |
+| Desenvolvedor Backend | Estudante responsável pela API Django e pelo motor de correção/TRI. | Implementar endpoints, integrar com RDS e DynamoDB, publicar releases. |
+| Sistema AWS | Serviços gerenciados da AWS (RDS, DynamoDB, S3, Lambda, API Gateway). | Prover serviços, endpoints, logs. |
+| Professor/Avaliador | Responsável por validar a arquitetura entregue ao final da disciplina. | Revisar aderência aos requisitos e à documentação. |
 
-FA1 ..> UC01 : <<extend>>
-FA2 ..> UC01_4 : <<extend>>
+## 2.2. Diagrama de Casos de Uso
 
-note right of UC01
-  **Pré-condição**: gabarito e parâmetros
-  de item carregados no banco.
-  **Pós-condição**: resultado exibido e
-  submissão registrada.
-end note
+(Inserir aqui o diagrama de casos de uso arquiteturais do Apollo — atores e UC-ARQ-001 a UC-ARQ-006 conforme especificação da Seção 3.)
 
-note right of UC03
-  Executado por script de seed,
-  fora da interface web.
-end note
+# 3. Especificação dos Casos de Uso
 
-@enduml
-```
+**UC-ARQ-001: Configurar VPC e Rede do Apollo**
 
-### UC01 — Analisar gabarito
+|  |  |
+| --- | --- |
+| **Identificador** | UC-ARQ-001 |
+| **Nome** | Configurar VPC e Rede do Apollo |
+| **Versão** | 1.0 |
+| **Data** | 21/09/2026 |
+| **Status** | Aprovado |
+| **Ator Principal** | Administrador de Infraestrutura |
+| **Ator Secundário** | Sistema AWS |
+| **Pré-condição** | 1. Conta AWS ativa (Free Tier). 2. Permissões IAM para criar VPC, sub-redes, Internet Gateway e Route Tables. |
+| **Pós-condição** | 1. VPC criada com CIDR 10.0.0.0/16. 2. 2 sub-redes criadas (1 pública, 1 privada) em uma única AZ. 3. Internet Gateway anexado. 4. Route Tables configuradas. |
 
-* Atores:
+**Fluxo Principal**
 
-	- Candidato
-	- Sistema Apollo
+**1.** Administrador acessa o Console AWS.
 
-- Pré-Condições:
-	- O gabarito e os parâmetros de item da área selecionada estão carregados no banco relacional (UC03 executado).
+**2.** Navega até o serviço VPC.
 
-* Fluxo Básico:
-    1. Candidato acessa o formulário web distribuído pelo CloudFront
-    2. Candidato seleciona a área de conhecimento (LC, CH, CN ou MT)
-    3. Sistema apresenta os campos das 45 questões da área selecionada
-    4. Candidato preenche as respostas, marcando alternativas de A a E ou deixando questões em branco
-    5. Sistema registra o rascunho como sessão temporária, com expiração automática em 30 minutos
-    6. Candidato submete as respostas
-    7. Sistema valida a área informada e a quantidade de respostas recebidas
-    8. Sistema recupera o gabarito e os parâmetros de item da área no banco relacional
-    9. Sistema executa a engine TRI e obtém a nota estimada
-    10. Sistema apura acertos, erros e questões em branco e identifica as questões erradas
-    11. Sistema registra a submissão no histórico
-    12. Sistema retorna o resultado ao formulário
+**3.** Cria VPC com CIDR 10.0.0.0/16 e habilita DNS hostnames.
 
-- Fluxos Alternativos:
-	- 7a. Área não informada ou quantidade de respostas diferente de 45
-		- 7a1. Sistema retorna erro com código HTTP 400 e mensagem descritiva, sem expor detalhes internos
-	- 8a. Gabarito ou parâmetros de item ausentes para a área solicitada
-		- 8a1. Sistema não executa a análise e informa a indisponibilidade ao candidato
-		- 8a2. Equipe executa o script de seed para regularizar os dados (UC03)
-	- 8b. Falha de comunicação com o banco de dados
-		- 8b1. Sistema retorna erro com código HTTP 500 e mensagem genérica
-		- 8b2. Evento é registrado no CloudWatch Logs e contabilizado no alarme de taxa de erro
-	- 5a. Sessão temporária expira antes da submissão
-		- 5a1. Rascunho é removido automaticamente pelo TTL e o candidato preenche novamente o formulário
+**4.** Cria 1 sub-rede pública com CIDR 10.0.1.0/24 (hospeda a EC2 da API Django).
 
-- Pós-Condições:
-	- Resultado exibido ao candidato
-	- Submissão registrada no histórico
+**5.** Cria 1 sub-rede privada com CIDR 10.0.2.0/24 (hospeda o RDS).
 
-### UC02 — Visualizar resultado
+**6.** Cria e anexa Internet Gateway à VPC.
 
-- Atores:
-	- Candidato
-	- Sistema Apollo
+**7.** Configura Route Table pública: 10.0.0.0/16 → local, 0.0.0.0/0 → IGW.
 
-- Pré-Condições:
-	- Análise executada com sucesso pela função de análise (passos 7 a 11 do UC01)
+**8.** Configura Route Table privada: 10.0.0.0/16 → local (sem rota direta à Internet).
 
-- Fluxo Básico:
-	- 1. Sistema apresenta a nota estimada da área analisada
-	- 2. Sistema apresenta as contagens de acertos, erros e questões em branco
-	- 3. Sistema lista as questões erradas com a alternativa marcada e a resposta correta
+**9.** Associa cada sub-rede à sua Route Table.
 
-- Fluxos Alternativos:
-	- 1a. Análise não concluída por erro
-		- 1a1. Sistema exibe mensagem de erro compreensível, sem jargão técnico e sem detalhes de infraestrutura
+**10.** Valida conectividade: EC2 pública acessa a Internet; RDS privado só é alcançado pela EC2.
 
-- Pós-Condições:
-	- Candidato tem acesso à estimativa e ao detalhamento das questões erradas
+**Fluxos Alternativos**
 
-### UC03 — Carregar gabarito e parâmetros de item
+| **Alt.** | **Descrição** |
+| --- | --- |
+| Alt 1 | CIDR da VPC conflita com outra VPC existente na conta (erro de criação). |
+| Alt 2 | Permissões IAM insuficientes (erro de autorização). |
 
-- Atores:
-	- Equipe de desenvolvimento
-	- Sistema Apollo
+**Requisitos Não-Funcionais**
 
-- Pré-Condições:
-	- Infraestrutura provisionada por `cdk deploy`
-	- Gabarito oficial e parâmetros de item obtidos junto ao INEP
+| **Requisito** | **Métrica** |
+| --- | --- |
+| Desempenho | VPC criada e configurada em menos de 15 minutos. |
+| Disponibilidade | Uma única AZ é suficiente para o escopo acadêmico; Multi-AZ fica registrado como evolução futura. |
+| Segurança | Sub-rede privada do RDS sem rota direta para a Internet. |
+| Custo | Sem NAT Gateway (custo evitado); RDS acessa a Internet apenas indiretamente via EC2, quando necessário. |
 
-- Fluxo Básico:
-	- 1. Equipe executa o script de seed
-	- 2. Sistema recupera a credencial do banco no AWS Secrets Manager
-	- 3. Sistema insere as questões das quatro áreas, com a resposta correta e os parâmetros de item de cada questão
-	- 4. Equipe verifica a carga consultando os gabaritos pela API administrativa
+**Riscos**
 
-- Fluxos Alternativos:
-	- 2a. Credencial indisponível ou sem permissão de leitura
-		- 2a1. Script encerra com erro e a equipe corrige a política IAM ou o segredo
-	- 3a. Registro já existente para a mesma área e questão
-		- 3a1. Sistema mantém a consistência do gabarito sem duplicar questões
+| **Risco** | **Mitigação** |
+| --- | --- |
+| Endereçamento conflitante | Planejar CIDR único por ambiente (dev/teste). |
+| Ausência de NAT limitar atualizações do RDS | Usar Security Group + bastion via EC2 pública quando necessário, sem custo adicional de NAT Gateway. |
 
-- Pós-Condições:
-	- Gabarito e parâmetros de item disponíveis para a análise (UC01)
+**UC-ARQ-002: Configurar Segurança de Rede do Apollo**
 
-### UC04 — Consultar histórico de submissões
+|  |  |
+| --- | --- |
+| **Identificador** | UC-ARQ-002 |
+| **Nome** | Configurar Segurança de Rede do Apollo |
+| **Versão** | 1.0 |
+| **Data** | 21/09/2026 |
+| **Status** | Aprovado |
+| **Ator Principal** | Administrador de Infraestrutura |
+| **Ator Secundário** | Sistema AWS |
+| **Pré-condição** | 1. VPC e sub-redes criadas (UC-ARQ-001). 2. IAM configurado. |
+| **Pós-condição** | 1. Security Groups configurados para cada camada. 2. IAM roles definidas para EC2 e Lambda. |
 
-- Atores:
-	- Equipe de desenvolvimento
-	- Sistema Apollo
+**Fluxo Principal**
 
-- Pré-Condições:
-	- API administrativa Django em execução na instância EC2
-	- Ao menos uma submissão registrada
+**1.** Administrador acessa o Console AWS.
 
-- Fluxo Básico:
-	- 1. Equipe requisita o histórico à API administrativa
-	- 2. Sistema consulta as submissões registradas no banco relacional
-	- 3. Sistema retorna a relação de submissões com área, data e resultado apurado
+**2.** Navega até Security Groups.
 
-- Fluxos Alternativos:
-	- 2a. Falha de comunicação com o banco
-		- 2a1. Sistema retorna erro com código HTTP 500 e registra o evento no CloudWatch Logs
+**3.** Cria SG-EC2-API com regras de entrada: portas 80/443 (0.0.0.0/0) para o portal e a API Django.
 
-- Pós-Condições:
-	- Equipe dispõe dos dados de acompanhamento do uso do sistema
+**4.** Cria SG-RDS com regra de entrada: porta 5432, origem restrita ao SG-EC2-API.
 
-## Versionamento
+**5.** Cria SG-Lambda com regras de saída liberadas para DynamoDB e S3.
 
-| Data | Versão | Descrição | Autor(es) |
-| -- | -- | -- | -- |
-| 2026 | 1.0 | Casos de uso derivados dos requisitos funcionais do projeto Apollo. | Equipe Apollo (`<a definir>`) |
+**6.** Define IAM roles específicas para a EC2 (acesso a Secrets Manager) e para a Lambda (acesso a DynamoDB e RDS).
+
+**Fluxos Alternativos**
+
+| **Alt.** | **Descrição** |
+| --- | --- |
+| Alt 1 | Porta do banco (5432) exposta acidentalmente à Internet → revisão imediata das regras. |
+| Alt 2 | IAM role com permissões excessivas → aplicar princípio de menor privilégio. |
+
+**Requisitos Não-Funcionais**
+
+| **Requisito** | **Métrica** |
+| --- | --- |
+| Segurança | Princípio de menor privilégio implementado em todas as roles. |
+| Segurança | Comunicação criptografada em trânsito (HTTPS/TLS). |
+| Compliance | Conformidade com a LGPD no tratamento de dados de desempenho do aluno. |
+
+**Riscos**
+
+| **Risco** | **Mitigação** |
+| --- | --- |
+| Security Groups permissivos | Revisão manual das regras antes de cada apresentação/entrega. |
+| Acesso não autorizado ao banco | Restringir origem do SG-RDS apenas ao SG-EC2-API. |
+
+**UC-ARQ-003: Configurar Acesso a Serviços Gerenciados (DynamoDB, S3, Secrets Manager)**
+
+|  |  |
+| --- | --- |
+| **Identificador** | UC-ARQ-003 |
+| **Nome** | Configurar Acesso a Serviços Gerenciados (DynamoDB, S3, Secrets Manager) |
+| **Versão** | 1.0 |
+| **Data** | 21/09/2026 |
+| **Status** | Aprovado |
+| **Ator Principal** | Administrador de Infraestrutura |
+| **Ator Secundário** | Sistema AWS (DynamoDB, S3, Secrets Manager) |
+| **Pré-condição** | 1. VPC e sub-redes criadas (UC-ARQ-001). 2. IAM configurado. |
+| **Pós-condição** | 1. Lambda e EC2 com acesso configurado a DynamoDB, S3 e Secrets Manager. 2. Políticas de acesso restritivas aplicadas. |
+
+**Fluxo Principal**
+
+**1.** Administrador acessa o Console AWS.
+
+**2.** Cria a tabela DynamoDB usada para cache de resultados de análise/sessão do aluno.
+
+**3.** Cria o bucket S3 para hospedar os arquivos estáticos do frontend.
+
+**4.** Configura o Secrets Manager com as credenciais do RDS.
+
+**5.** Concede à role da EC2 e da Lambda permissão de leitura/escrita apenas nos recursos necessários (tabela e bucket específicos).
+
+**6.** Valida o acesso: API Django lê/grava no DynamoDB e no RDS; Lambda processa submissões e grava resultado.
+
+**Fluxos Alternativos**
+
+| **Alt.** | **Descrição** |
+| --- | --- |
+| Alt 1 | Permissão configurada de forma ampla demais (acesso a todos os buckets/tabelas) → revisar e restringir à tabela/bucket específico. |
+
+**Requisitos Não-Funcionais**
+
+| **Requisito** | **Métrica** |
+| --- | --- |
+| Segurança | Acesso restrito a recursos nomeados (não wildcard). |
+| Custo | Uso do Free Tier do DynamoDB e do S3 sempre que possível. |
+| Desempenho | Leitura de resultados recentes via DynamoDB reduz carga sobre o RDS. |
+
+**Riscos**
+
+| **Risco** | **Mitigação** |
+| --- | --- |
+| Custo acima do Free Tier em picos de uso | Monitorar consumo via AWS Budgets (ver Documento de Requisitos Suplementares, RNF-CUS-02). |
+
+**UC-ARQ-004: Configurar Conectividade entre Camadas (API, Banco e Ingestão)**
+
+|  |  |
+| --- | --- |
+| **Identificador** | UC-ARQ-004 |
+| **Nome** | Configurar Conectividade entre Camadas (API, Banco e Ingestão) |
+| **Versão** | 1.0 |
+| **Data** | 21/09/2026 |
+| **Status** | Aprovado |
+| **Ator Principal** | Administrador de Infraestrutura |
+| **Ator Secundário** | Desenvolvedor Backend |
+| **Pré-condição** | 1. VPC e sub-redes criadas (UC-ARQ-001). 2. Security Groups configurados (UC-ARQ-002). 3. Acesso a serviços gerenciados configurado (UC-ARQ-003). |
+| **Pós-condição** | 1. EC2 rodando a API Django (Gunicorn + Nginx) acessível via HTTPS. 2. RDS acessível apenas pela EC2. 3. API Gateway + Lambda processando o envio de respostas do aluno. |
+
+**Fluxo Principal**
+
+**1.** Administrador acessa o Console AWS.
+
+**2.** Sobe a instância EC2 na sub-rede pública com Nginx + Gunicorn servindo a API Django.
+
+**3.** Configura o RDS PostgreSQL na sub-rede privada, com o Security Group SG-RDS.
+
+**4.** Configura o API Gateway com um endpoint HTTP para recebimento das respostas do aluno.
+
+**5.** Configura a função Lambda que valida o payload, chama o motor de correção/TRI e grava o resultado no RDS e no DynamoDB.
+
+**6.** Testa o fluxo completo: aluno envia respostas → API Gateway → Lambda → RDS/DynamoDB → dashboard consulta resultado via API Django.
+
+**Fluxos Alternativos**
+
+| **Alt.** | **Descrição** |
+| --- | --- |
+| Alt 1 | EC2 não alcança o RDS (erro de Security Group) → revisar regras do SG-RDS. |
+| Alt 2 | Lambda não consegue gravar no DynamoDB (erro de IAM) → revisar a role da função. |
+
+**Requisitos Não-Funcionais**
+
+| **Requisito** | **Métrica** |
+| --- | --- |
+| Disponibilidade | 99% de disponibilidade mensal (ver RNF-CON-01 do Documento de Requisitos Suplementares). |
+| Desempenho | p95 do processamento da submissão menor que 1,5 s (ver RNF-PER-01). |
+| Segurança | Comunicação entre camadas restrita à rede da VPC. |
+
+**Riscos**
+
+| **Risco** | **Mitigação** |
+| --- | --- |
+| EC2 como ponto único de falha | Aceitável no escopo acadêmico; documentar Auto Scaling/Multi-AZ como evolução futura. |
+| Payload malformado na ingestão | Validação de schema na Lambda antes de gravar no banco. |
+
+**UC-ARQ-005: Configurar Monitoramento Básico**
+
+|  |  |
+| --- | --- |
+| **Identificador** | UC-ARQ-005 |
+| **Nome** | Configurar Monitoramento Básico |
+| **Versão** | 1.0 |
+| **Data** | 21/09/2026 |
+| **Status** | Aprovado |
+| **Ator Principal** | Administrador de Infraestrutura |
+| **Ator Secundário** | Desenvolvedor Backend |
+| **Pré-condição** | 1. Recursos de rede e aplicação configurados (UC-ARQ-001 a UC-ARQ-004). |
+| **Pós-condição** | 1. Dashboard CloudWatch básico configurado. 2. Alarme de erro/indisponibilidade configurado. 3. Logs centralizados no CloudWatch Logs. |
+
+**Fluxo Principal**
+
+**1.** Administrador acessa o Console AWS.
+
+**2.** Navega até o CloudWatch.
+
+**3.** Cria um dashboard simples com métricas de CPU da EC2, erros da API e latência do endpoint de análise.
+
+**4.** Configura um alarme de erro/indisponibilidade que envia notificação por e-mail à equipe.
+
+**5.** Habilita o CloudWatch Logs para a EC2 e para a função Lambda.
+
+**Requisitos Não-Funcionais**
+
+| **Requisito** | **Métrica** |
+| --- | --- |
+| Observabilidade | Logs cobrindo 100% das requisições da API e execuções da Lambda. |
+| Resposta a incidentes | Alerta recebido pela equipe em até 15 minutos após a falha (ver RNF-OPS-02). |
+
+**UC-ARQ-006: Configurar Pipeline de Deploy (CI/CD)**
+
+|  |  |
+| --- | --- |
+| **Identificador** | UC-ARQ-006 |
+| **Nome** | Configurar Pipeline de Deploy (CI/CD) |
+| **Versão** | 1.0 |
+| **Data** | 21/09/2026 |
+| **Status** | Aprovado |
+| **Ator Principal** | Desenvolvedor Backend |
+| **Ator Secundário** | Sistema AWS (ou GitHub Actions) |
+| **Pré-condição** | 1. Código da API Django em repositório Git. 2. EC2 e RDS configurados. |
+| **Pós-condição** | 1. Pipeline de deploy funcionando (manual ou semi-automatizado). 2. Deploy de uma nova versão em até 15 minutos. 3. Rollback manual possível em até 30 minutos. |
+
+**Fluxo Principal**
+
+**1.** Desenvolvedor configura um pipeline simples (GitHub Actions ou AWS CodePipeline/CodeBuild) disparado por push na branch principal.
+
+**2.** O pipeline executa os testes automatizados do motor de correção/TRI.
+
+**3.** Em caso de sucesso, o pipeline publica a nova versão da API na instância EC2 (via script de deploy ou CodeDeploy).
+
+**4.** Em caso de falha nos testes, o pipeline interrompe o deploy e notifica a equipe.
+
+**5.** A equipe documenta o passo a passo de rollback manual (restaurar a versão anterior do código) para uso em caso de problema em produção.
+
+**Fluxos Alternativos**
+
+| **Alt.** | **Descrição** |
+| --- | --- |
+| Alt 1 | Testes falham no pipeline → deploy é bloqueado automaticamente. |
+| Alt 2 | Deploy falha na EC2 → equipe executa rollback manual documentado. |
+
+**Requisitos Não-Funcionais**
+
+| **Requisito** | **Métrica** |
+| --- | --- |
+| Desempenho | Deploy completo em até 15 minutos (ver RNF-MAN-01). |
+| Confiabilidade | Rollback manual documentado e executável em até 30 minutos (ver RNF-MAN-02). |
+
+**Riscos**
+
+| **Risco** | **Mitigação** |
+| --- | --- |
+| Deploy manual sujeito a erro humano | Documentar passo a passo em runbook e, se possível, automatizar via script único. |
+
+# 4. Matriz de Rastreamento
+
+| **Caso de Uso** | **Requisitos Suplementares** | **Documento de Visão** | **Serviços AWS** |
+| --- | --- | --- | --- |
+| UC-ARQ-001 | Disponibilidade, Custo (RNF-CON, RNF-CUS) | Arquitetura da solução | VPC, Sub-redes, Internet Gateway, Route Tables |
+| UC-ARQ-002 | Segurança (LGPD) (RNF-SEG) | Segurança e Privacidade | Security Groups, IAM |
+| UC-ARQ-003 | Segurança, Custo (RNF-SEG, RNF-CUS) | Arquitetura da solução | DynamoDB, S3, Secrets Manager |
+| UC-ARQ-004 | Desempenho, Disponibilidade (RNF-PER, RNF-CON) | API + Ingestão de respostas | EC2, RDS, API Gateway, Lambda |
+| UC-ARQ-005 | Operação e Observabilidade (RNF-OPS) | Monitoramento | CloudWatch, Logs, Alarms |
+| UC-ARQ-006 | Manutenibilidade (Deploy/Rollback) (RNF-MAN) | Automação de entrega | CI/CD (GitHub Actions ou CodePipeline) |
+
+# 5. Aprovações
+
+| **Função** | **Nome** | **Data** | **Assinatura** |
+| --- | --- | --- | --- |
+| Arquiteto de Soluções |  |  |  |
+| Professor Responsável |  |  |  |
+| Coordenador do Curso |  |  |  |
+
+# 6. Histórico de Versões
+
+| **Versão** | **Data** | **Autor** | **Descrição das Alterações** |
+| --- | --- | --- | --- |
+| 1.0 | 21/09/2026 | Equipe do Projeto Apollo | Criação do documento de Casos de Uso Arquiteturais, adaptado ao escopo acadêmico reduzido do Apollo. |

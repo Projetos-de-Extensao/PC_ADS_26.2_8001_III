@@ -13,7 +13,7 @@ hide:
             PBE_26.1_8001_I
         </div>
         <div class="card-content">
-            <p class="contributors">XXX, xxx, xxx, xxx, xxx e xxx</p>
+            <p class="contributors">Lucas Jesus, Bernardo Miller, Arthur Maurity, Bernardo Casanovas</p>
             <a href="https://github.com/Projetos-de-Extensao/PBE_26.1_8001_I" class="button primary-btn">
                 <span class="octicon-arrow-right-24:"></span> Ver Repositório
             </a>
