@@ -29,7 +29,7 @@ O escopo é intencionalmente reduzido para garantir entrega dentro do semestre a
 * 4. Interface HTML simples: página estática servida via S3 + CloudFront, sem framework de frontend.
 * 5. Todos os serviços AWS obrigatórios da ementa em funcionamento: EC2, RDS, Lambda, DynamoDB, S3, CloudFront, Secrets Manager e CodePipeline.
 
-Fora do escopo desta versão: seletor de ano e caderno, análise por competência e habilidade, autenticação de usuários, dashboard de professores e múltiplas edições do ENEM.
+
 
 ## 1.3. Definições, Acrônimos e Abreviações
 
