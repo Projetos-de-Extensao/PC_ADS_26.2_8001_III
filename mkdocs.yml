@@ -11,19 +11,25 @@ nav:
       - Documento de Visão: Iniciacao/documento_de_visao.md
       #- Pesquisa: Iniciacao/pesquisa.md
       #- 5W2H: Iniciacao/5w2h.md
+      #- Lista de Riscos Iniciais: Iniciacao/lista_de_riscos_iniciais.md
+      #- Caso de Negócio (Business Case): Iniciacao/caso_de_negocio.md
+
   - Elaboração:
       - Index: Elaboracao/index.md
       - casos de uso: Elaboracao/casos_de_uso.md
       - requisitos suplementares: Elaboracao/requisitos_suplementares.md
       - modelo de análise de segurança: Elaboracao/modelo_analise_seguranca.md
       - diagrama de classes: Elaboracao/diagrama_de_classes.md
+      - diagrama de sequência: Elaboracao/diagrama_de_sequencia.md
+      - levantamento de requisitos: Elaboracao/levreq.md
+      - protótipo de alta fidelidade: Elaboracao/prototipo_alta_fidelidade.md
 
-  - Construção:
-      - Index: Construcao/index.md
-  - Transição:
-      - Index: Transicao/index.md
+  #- Construção:
+      #- Index: Construcao/index.md
+  #- Transição:
+      #- Index: Transicao/index.md
 
-  - Bibliografia: Disciplina/Bibliografia.md
+  #- Bibliografia: Disciplina/Bibliografia.md
 
 extra_css:
   - css/extra.css
@@ -93,7 +99,7 @@ plugins:
 theme:
   favicon: assets/ibmec_icon.png
   name: material
-  logo: assets/ibmec_logo.png
+  logo: assets/Ibmec_logo.png
   palette:
     
     - media: "(prefers-color-scheme)"

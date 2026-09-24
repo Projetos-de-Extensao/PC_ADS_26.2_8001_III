@@ -8,13 +8,13 @@ hide:
 <div class="module-cards grid four-cols">
 
  <!-- Module I Card -->
-    <div class="card module-card" data-module-id="PBE_26.1_8001_I">
+    <div class="card module-card" data-module-id="PC_ADS_26.2_8001">
         <div class="card-header">
-            PBE_26.1_8001_I
+            PC_26.2_8001_III
         </div>
         <div class="card-content">
             <p class="contributors">Lucas Jesus, Bernardo Miller, Arthur Maurity, Bernardo Casanovas</p>
-            <a href="https://github.com/Projetos-de-Extensao/PBE_26.1_8001_I" class="button primary-btn">
+            <a href="https://github.com/Projetos-de-Extensao/PC_ADS_26.2_8001_III" class="button primary-btn">
                 <span class="octicon-arrow-right-24:"></span> Ver Repositório
             </a>
         </div>
