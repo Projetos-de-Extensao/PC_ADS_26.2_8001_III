@@ -30,7 +30,7 @@ hide:
             <a href="assets/apresentacao.pdf" class="button primary-btn">
                 <span class="octicon-arrow-right-24:"></span> Ver PDF
             </a>
-            <a href="assets/apresentacao.pdf" class="button primary-btn">
+            <a href="assets/apresentacao.pptx" class="button primary-btn">
                 <span class="octicon-arrow-right-24:"></span> Ver PPTX
             </a>
         </div>
