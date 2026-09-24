@@ -20,4 +20,17 @@ hide:
         </div>
     </div>
 
+ <!-- Apresentação Card -->
+    <div class="card module-card" data-module-id="apresentacao">
+        <div class="card-header">
+            Apresentação do Projeto
+        </div>
+        <div class="card-content">
+            <p class="contributors">Slides da apresentação para a banca</p>
+            <a href="assets/apresentacao.pdf" class="button primary-btn">
+                <span class="octicon-arrow-right-24:"></span> Ver PDF
+            </a>
+        </div>
+    </div>
+
 </div>
