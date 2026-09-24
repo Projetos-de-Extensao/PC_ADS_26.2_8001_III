@@ -26,7 +26,7 @@ hide:
             Apresentação do Projeto
         </div>
         <div class="card-content">
-            <p class="contributors">Slides da apresentação para a banca</p>
+            <p class="contributors">Slides da apresentação</p>
             <a href="assets/apresentacao.pdf" class="button primary-btn">
                 <span class="octicon-arrow-right-24:"></span> Ver PDF
             </a>
