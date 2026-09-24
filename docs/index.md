@@ -33,13 +33,13 @@ hide:
         </div>
     </div>
 
-    <div class="card module-card" data-module-id="apresentacao">
+    <div class="card module-card" data-module-id="apresentacaopptx">
         <div class="card-header">
             Apresentação do Projeto
         </div>
         <div class="card-content">
             <p class="contributors">Slides da apresentação</p>
-            <a> href="assets/apresentacao.pptx" class="button primary-btn">
+            <a href="assets/apresentacao.pdf" class="button primary-btn">
                 <span class="octicon-arrow-right-24:"></span> Ver PPTX
             </a>
         </div>
