@@ -21,6 +21,9 @@ nav:
       - modelo de análise de segurança: Elaboracao/modelo_analise_seguranca.md
       - diagrama de classes: Elaboracao/diagrama_de_classes.md
       - diagrama de sequência: Elaboracao/diagrama_de_sequencia.md
+      - modelo de análise de classes (RDS): Elaboracao/modelo_analise_classes_rds.md
+      - modelo de análise de classes (EC2): Elaboracao/modelo_analise_classes_ec2.md
+      - modelo de design (consolidação da arquitetura): Elaboracao/modelo_design_consolidacao_arquitetura.md
       - levantamento de requisitos: Elaboracao/levreq.md
       - protótipo de alta fidelidade: Elaboracao/prototipo_alta_fidelidade.md
 
