@@ -43,3 +43,18 @@ Etapas de implantação:
 2. executar o script de seed, que carrega o gabarito e os parâmetros de item no Amazon RDS — sem essa etapa a análise não pode ser realizada;
 3. publicar o frontend no bucket S3;
 4. verificar a implantação automática pelo AWS CodePipeline a partir de um push na branch principal.
+
+## Aplicação (appFinal)
+
+O código da aplicação está na pasta [`appFinal/`](appFinal/) (Django + Django REST Framework + PostgreSQL, com Docker Compose). O pacote completo também pode ser baixado em [`docs/assets/appFinal.zip`](docs/assets/appFinal.zip) e a documentação está em [docs/Construcao/aplicacao.md](docs/Construcao/aplicacao.md).
+
+Subir localmente com Docker:
+
+```bash
+cd appFinal
+./scripts/gerar_env.sh localhost   # cria o .env (não versionado) com segredos aleatórios
+docker compose up -d --build
+curl http://localhost:8000/health/
+```
+
+Os segredos ficam apenas no arquivo `.env`, que está no `.gitignore` e nunca é versionado.

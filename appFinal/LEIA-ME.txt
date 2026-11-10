@@ -1,0 +1,38 @@
+APOLLO - rodar em outra maquina (Windows, sem Docker)
+
+REQUISITOS (instalar uma vez)
+  1. Python 3.12+  (marcar "Add python.exe to PATH" no instalador)
+  2. PostgreSQL 16 (guarde a senha do usuario "postgres")
+
+PASSO A PASSO
+  1. Descompacte appFinal.zip e abra o PowerShell DENTRO da pasta appFinal.
+  2. Rode (so na primeira vez):
+       py -3 -m venv .venv
+       .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+  3. Defina as variaveis (troque SUA_SENHA pela senha do postgres):
+       $env:POSTGRES_HOST="localhost"; $env:POSTGRES_PORT="5432"; $env:POSTGRES_DB="apollo"
+       $env:POSTGRES_USER="postgres"; $env:POSTGRES_PASSWORD="SUA_SENHA"
+       $env:SECRET_KEY="chave-apenas-para-teste-local"; $env:DEBUG="True"
+  4. Crie o banco, as tabelas e carregue as provas (so na primeira vez; pode repetir sem problema):
+       .\.venv\Scripts\python.exe criar_banco.py
+       .\.venv\Scripts\python.exe manage.py migrate
+       .\.venv\Scripts\python.exe manage.py importar_inep data\itens_inep_2016_2025.csv
+  5. Suba o servidor:
+       .\.venv\Scripts\python.exe manage.py runserver 8000 --noreload
+  6. Abra http://localhost:8000/  -> "Entrar" -> Criar conta -> Enviar respostas
+     (na tela de envio, "Preencher aleatorio (demo)" gera respostas de teste) -> Dashboard.
+  Parar: Ctrl+C.
+
+OBSERVACOES
+  - As variaveis do passo 3 valem so na janela do PowerShell aberta; em outra janela, defina de novo
+    (passos 3 e 5). Os passos 2 e 4 nao precisam ser repetidos.
+  - Se mudar algum arquivo .html, pare o servidor (Ctrl+C) e rode o passo 5 de novo.
+  - Erro "nao consegui conectar no PostgreSQL": confira se o servico esta rodando e se a senha esta certa.
+  - Testes automaticos (com as variaveis do passo 3): .\.venv\Scripts\python.exe manage.py test
+  - Mac/Linux: troque "py -3" por "python3", ".\.venv\Scripts\python.exe" por ".venv/bin/python"
+    e defina as variaveis com "export NOME=valor".
+  - Com Docker (alternativa): copie .env.example para .env, edite as senhas e rode "docker compose up -d --build"
+    (detalhes no README.md).
+
+Paginas: / (inicio), /login/, /home/, /enviar/, /dashboard/. API em /api/.
+Nota TRI = estimativa, nao a nota oficial do INEP.

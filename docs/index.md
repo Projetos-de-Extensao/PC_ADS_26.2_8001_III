@@ -36,4 +36,20 @@ hide:
         </div>
     </div>
 
+ <!-- Aplicação Card -->
+    <div class="card module-card" data-module-id="aplicacao">
+        <div class="card-header">
+            Aplicação (appFinal)
+        </div>
+        <div class="card-content">
+            <p class="contributors">Código completo da aplicação Django + PostgreSQL</p>
+            <a href="Construcao/aplicacao/" class="button primary-btn">
+                <span class="octicon-arrow-right-24:"></span> Ver documentação
+            </a>
+            <a href="assets/appFinal.zip" class="button primary-btn">
+                <span class="octicon-arrow-right-24:"></span> Baixar ZIP
+            </a>
+        </div>
+    </div>
+
 </div>

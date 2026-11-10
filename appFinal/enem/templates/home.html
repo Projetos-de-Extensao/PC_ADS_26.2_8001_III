@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>try{var t=localStorage.getItem("apollo-tema");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<title>Início — Apollo</title>
+<link rel="icon" type="image/png" href="/static/enem/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3f2f2;--surface:#eae9e9;--text:#201e1d;--muted:#605d5d;
+  --rule:rgba(32,30,29,.4);--rule-soft:rgba(32,30,29,.16);--rule-strong:rgba(32,30,29,.62);
+  --accent:#175DE8;--accent-fill:#175DE8;--accent-fill-hover:#5817E8;--on-accent:#fff;--accent-text:#175DE8;--accent-tint:#dbe6fd;
+  --accent2:#5817E8;--accent2-text:#5817E8;
+  --amarelo:#E8C517;--verde:#1B8068;--verde-text:#166B55;--btn:#1B8068;--btn-hover:#166B55;--alta:#E57373;--alta-hover:#D95F5F;--on-alta:#201e1d;
+  --track:#d7d3d3;--hover:rgba(32,30,29,.07);
+  --font:"Archivo",system-ui,sans-serif;
+  --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;--s6:32px;--s7:48px;--s8:72px;
+  --radius:0px;--gutter:16px;--max:1120px;
+  --fs-xs:12px;--fs-sm:14px;--fs-md:16px;--fs-lg:20px;--fs-xl:28px;
+  --shadow:0 12px 32px rgba(45,43,43,.22);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#161514;--surface:#222020;--text:#f3f2f2;--muted:#bab6b6;
+  --rule:rgba(243,242,242,.42);--rule-soft:rgba(243,242,242,.16);--rule-strong:rgba(243,242,242,.62);
+  --accent:#5b8dff;--accent-fill:#175DE8;--accent-fill-hover:#3f7bf2;--on-accent:#fff;--accent-text:#8fb2ff;--accent-tint:#14264d;
+  --accent2:#7b4bf0;--accent2-text:#b9a0ff;
+  --amarelo:#F2D43D;--verde:#41D9A6;--verde-text:#41D9A6;--btn:#1B8068;--btn-hover:#166B55;--alta:#EE8B86;--alta-hover:#F6A8A3;--on-alta:#201e1d;
+  --track:#444141;--hover:rgba(243,242,242,.08);
+  --shadow:0 0 0 1px rgba(243,242,242,.2),0 16px 40px rgba(0,0,0,.6);
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#161514;--surface:#222020;--text:#f3f2f2;--muted:#bab6b6;
+  --rule:rgba(243,242,242,.42);--rule-soft:rgba(243,242,242,.16);--rule-strong:rgba(243,242,242,.62);
+  --accent:#5b8dff;--accent-fill:#175DE8;--accent-fill-hover:#3f7bf2;--on-accent:#fff;--accent-text:#8fb2ff;--accent-tint:#14264d;
+  --accent2:#7b4bf0;--accent2-text:#b9a0ff;
+  --amarelo:#F2D43D;--verde:#41D9A6;--verde-text:#41D9A6;--btn:#1B8068;--btn-hover:#166B55;--alta:#EE8B86;--alta-hover:#F6A8A3;--on-alta:#201e1d;
+  --track:#444141;--hover:rgba(243,242,242,.08);
+  --shadow:0 0 0 1px rgba(243,242,242,.2),0 16px 40px rgba(0,0,0,.6);
+  color-scheme:dark;
+}
+.logo-escuro{display:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .logo-claro{display:none}:root:not([data-theme="light"]) .logo-escuro{display:block}}
+:root[data-theme="dark"] .logo-claro{display:none}:root[data-theme="dark"] .logo-escuro{display:block}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);font-size:var(--fs-md);line-height:1.5;overflow-x:hidden}
+h1,h2,h3,h4{font-weight:800;line-height:1.08;letter-spacing:-.02em;margin:0 0 var(--s3);text-wrap:balance}
+h1,h2,h3{overflow-wrap:anywhere}
+h1{font-size:clamp(32px,7vw,48px)}h2{font-size:clamp(24px,5vw,32px)}h3{font-size:var(--fs-lg)}
+p{margin:0 0 var(--s3);text-wrap:pretty}
+a{color:var(--accent-text);text-underline-offset:3px}a:hover{color:var(--text)}
+:focus{outline:none}:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+::selection{background:var(--accent-tint);color:var(--text)}
+[hidden]{display:none!important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+.muted{color:var(--muted)}.small{font-size:var(--fs-sm)}
+.kicker{font-size:var(--fs-xs);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 var(--s2)}
+.skip{position:absolute;left:var(--gutter);top:-60px;background:var(--text);color:var(--bg);padding:var(--s2) var(--s3);z-index:50}
+.skip:focus{top:var(--s2);color:var(--bg)}
+
+.topo{border-bottom:2px solid var(--rule);background:var(--bg)}
+.topo-in{display:grid;grid-template-columns:1fr auto;align-items:center;gap:0 var(--s4)}
+.marca{font-weight:800;font-size:22px;letter-spacing:-.03em;color:var(--text);text-decoration:none;padding:var(--s3) 0;display:inline-flex;align-items:baseline;gap:5px;justify-self:start}
+.marca::after{content:"";width:9px;height:9px;background:var(--accent)}
+.menu{grid-column:1/-1;grid-row:2;display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:0 var(--s5);border-top:1px solid var(--rule-soft)}
+.menu a{color:var(--text);text-decoration:none;font-size:var(--fs-sm);font-weight:600;padding:var(--s3) 0;min-height:44px;display:flex;align-items:center;border-bottom:2px solid transparent;margin-bottom:-2px}
+.menu a:hover{color:var(--accent-text)}
+.menu a[aria-current="page"]{border-bottom-color:var(--accent)}
+@media (min-width:720px){.topo-in{grid-template-columns:auto 1fr auto;gap:0 var(--s6)}.menu{grid-column:auto;grid-row:auto;border-top:0}.menu a{padding:var(--s4) 0}}
+
+.btn{display:inline-flex;align-items:center;justify-content:flex-start;gap:var(--s2);min-height:44px;padding:var(--s2) var(--s4);font:800 var(--fs-sm)/1.2 var(--font);color:var(--text);background:transparent;border:1px solid transparent;border-radius:var(--radius);cursor:pointer;text-decoration:none;text-align:left}
+.btn:disabled,.btn[aria-disabled="true"]{opacity:.45;cursor:not-allowed}
+.btn-pri{background:var(--accent-fill);color:var(--on-accent)}
+.btn-pri:hover:not(:disabled){background:var(--accent-fill-hover);color:var(--on-accent)}
+.btn-sec{border-color:var(--rule-strong)}
+.btn-sec:hover:not(:disabled){background:var(--hover);color:var(--text)}
+.btn-txt{color:var(--accent-text);padding-inline:var(--s1);text-decoration:underline;text-underline-offset:3px}
+.btn-txt:hover:not(:disabled){background:var(--hover)}
+.btn-g{font-size:var(--fs-md);padding:var(--s3) var(--s5);min-height:52px;min-width:200px;justify-content:space-between}
+.btn svg{flex:none}
+
+.campo{display:flex;flex-direction:column;gap:6px;min-width:0}
+.campo>label,.rotulo{font-size:var(--fs-xs);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.input{width:100%;min-height:44px;padding:var(--s2) var(--s3);font:inherit;font-size:var(--fs-md);color:var(--text);background:var(--surface);border:1px solid var(--rule-strong);border-radius:var(--radius);caret-color:var(--accent)}
+.input:focus-visible{border-color:var(--accent);outline-offset:0}
+textarea.input{min-height:140px;resize:vertical;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:15px}
+.seg{display:flex;flex-wrap:wrap;border:1px solid var(--rule-strong);width:fit-content;max-width:100%}
+.seg label{position:relative;display:flex;align-items:center;min-height:44px;padding:0 var(--s4);font-size:var(--fs-sm);font-weight:600;cursor:pointer;border-right:1px solid var(--rule-soft);flex:1 0 auto}
+.seg label:last-child{border-right:0}
+.seg input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.seg label:hover{background:var(--hover)}
+.seg label:has(input:checked){background:var(--text);color:var(--bg)}
+.seg label:has(input:focus-visible){outline:2px solid var(--accent);outline-offset:2px;z-index:1}
+
+.tag{display:inline-flex;align-items:center;gap:4px;font-size:var(--fs-xs);font-weight:600;padding:2px var(--s2);border:1px solid var(--rule-strong);white-space:nowrap}
+.tag-alta{background:var(--alta);border-color:var(--alta);color:var(--on-alta)}
+.tag-media{background:var(--amarelo);border-color:var(--amarelo);color:#201e1d}
+.tag-baixa{border-color:var(--verde);color:var(--verde-text)}
+
+.sec{border-top:2px solid var(--rule);padding-block:var(--s5) var(--s7)}
+.sec-h{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:var(--s2) var(--s4);margin-bottom:var(--s4)}
+.sec-h h2{margin:0}
+
+.aviso{border-top:2px solid var(--rule);border-bottom:1px solid var(--rule-soft);padding:var(--s3) 0;font-size:var(--fs-sm);color:var(--muted);display:grid;grid-template-columns:auto 1fr;gap:var(--s3);align-items:start}
+.aviso b{color:var(--text);font-size:var(--fs-xs);letter-spacing:.08em;text-transform:uppercase;line-height:21px}
+.alerta{border:2px solid var(--accent2);padding:var(--s3) var(--s4);font-size:var(--fs-sm);font-weight:600}
+.alerta::before{content:"! ";font-weight:800;color:var(--accent2-text)}
+
+.kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:2px solid var(--rule);border-left:1px solid var(--rule-soft)}
+.kpi{padding:var(--s3) var(--s3) var(--s4);border-right:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft);min-width:0}
+.kpi dt{font-size:var(--fs-xs);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.kpi dd{margin:var(--s1) 0 0;font-size:clamp(26px,7vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1.05;font-variant-numeric:tabular-nums}
+.kpi small{display:block;font-size:var(--fs-xs);font-weight:400;letter-spacing:0;color:var(--muted);margin-top:var(--s1)}
+dl.kpis{margin:0}
+@media (min-width:720px){.kpis{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+.barras{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule-soft)}
+.barras li{padding:var(--s3) 0;border-bottom:1px solid var(--rule-soft);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--s1) var(--s3);align-items:baseline}
+.b-rot{font-weight:600;font-size:var(--fs-sm);min-width:0}
+.b-rot small{display:block;font-weight:400;color:var(--muted);font-size:var(--fs-xs)}
+.b-num{font-size:var(--fs-sm);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.b-num b{font-weight:800}
+.b-bar{grid-column:1/-1;height:8px;background:var(--track);display:block}
+.b-bar i{display:block;height:100%;background:var(--text)}
+.b-bar.alta i{background:var(--alta)}.b-bar.media i{background:var(--amarelo)}.b-bar.baixa i{background:var(--verde)}
+.b-ok{font-size:var(--fs-sm);color:var(--muted);margin:var(--s3) 0 0}
+
+.estado{border:1px solid var(--rule-soft);background:var(--surface);padding:var(--s5) var(--s4);display:flex;flex-direction:column;align-items:flex-start;gap:var(--s3)}
+.estado h3{margin:0}.estado p{margin:0;color:var(--muted)}
+.skel{background:var(--track);height:16px;margin-bottom:var(--s3);animation:pulso 1.2s ease-in-out infinite alternate}
+.skel.g{height:64px}.skel.c{width:60%}
+@keyframes pulso{from{opacity:.4}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.skel{animation:none}*{scroll-behavior:auto!important}}
+
+.rodape{border-top:2px solid var(--rule);padding:var(--s5) 0 var(--s7);font-size:var(--fs-sm);color:var(--muted)}
+.rodape-in{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);justify-content:space-between}
+.rodape b{color:var(--text);font-weight:800}
+.hero{padding-block:var(--s7)}
+.hero h1{font-size:clamp(44px,11.5vw,112px);line-height:.94;letter-spacing:-.045em;margin-bottom:var(--s5);max-width:11ch}
+.hero h1 em{font-style:normal;color:var(--accent-text)}
+.hero-b{display:grid;gap:var(--s5);border-top:2px solid var(--rule);padding-top:var(--s4)}
+.hero-b p{font-size:var(--fs-lg);line-height:1.35;max-width:34ch;margin:0}
+.hero-cta{display:flex;flex-direction:column;align-items:flex-start;gap:var(--s2)}
+@media (min-width:720px){.hero-b{grid-template-columns:1fr 1fr}.hero{padding-top:var(--s8)}}
+.grade3,.grade4{display:grid;border-left:1px solid var(--rule-soft);border-top:1px solid var(--rule-soft)}
+.cel{padding:var(--s4);border-right:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft)}
+.cel p{margin:0;color:var(--muted);font-size:var(--fs-sm)}
+.cel .n{font-size:56px;font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--accent-text);display:block;margin-bottom:var(--s4)}
+@media (min-width:720px){.grade3{grid-template-columns:repeat(3,1fr)}.grade4{grid-template-columns:repeat(4,1fr)}.cel{padding:var(--s5)}}
+@media (min-width:480px) and (max-width:719px){.grade4{grid-template-columns:repeat(2,1fr)}}
+.previa{display:grid;gap:var(--s5);background:var(--surface);padding:var(--s4);border:1px solid var(--rule-soft)}
+.previa-nota{font-size:clamp(64px,18vw,120px);font-weight:800;letter-spacing:-.05em;line-height:.9;font-variant-numeric:tabular-nums}
+.previa-tri{display:flex;gap:var(--s5);margin:var(--s4) 0 0;padding:0;list-style:none;font-size:var(--fs-sm)}
+.previa-tri b{display:block;font-size:var(--fs-xl);font-weight:800;line-height:1.1}
+@media (min-width:860px){.previa{grid-template-columns:5fr 7fr;padding:var(--s6);gap:var(--s7)}}
+.faq details{border-bottom:1px solid var(--rule-soft)}
+.faq details:first-of-type{border-top:1px solid var(--rule-soft)}
+.faq summary{cursor:pointer;font-weight:800;font-size:var(--fs-lg);padding:var(--s4) var(--s6) var(--s4) 0;list-style:none;position:relative;min-height:44px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:0;top:12px;font-size:28px;font-weight:400;line-height:1;color:var(--accent-text)}
+.faq details[open] summary::after{content:"–"}
+.faq summary:hover{color:var(--accent-text)}
+.faq details p{max-width:62ch;color:var(--muted);padding-bottom:var(--s4);margin:0}
+.fecho{background:var(--accent-fill);color:var(--on-accent);padding:var(--s7) 0}
+.fecho h2{font-size:clamp(36px,9vw,80px);letter-spacing:-.04em;line-height:.95;max-width:12ch;margin-bottom:var(--s5)}
+.fecho .btn{background:var(--on-accent);color:var(--accent-fill)}
+.fecho .btn:hover{background:var(--bg);color:var(--text)}
+.fecho .btn:focus-visible{outline-color:var(--on-accent)}
+dialog{border:0;padding:0;background:var(--surface);color:var(--text);width:min(440px,calc(100% - 32px));box-shadow:var(--shadow);border-radius:var(--radius)}
+dialog::backdrop{background:rgba(22,21,20,.6)}
+.dlg{padding:var(--s5) var(--s4);display:flex;flex-direction:column;gap:var(--s4)}
+.dlg-h{display:flex;justify-content:space-between;align-items:center;gap:var(--s3)}
+.dlg-h h2{font-size:var(--fs-xl);margin:0}
+.dlg .seg{width:100%}.dlg .seg label{flex:1}
+.dlg .input{background:var(--bg)}
+.dlg form{display:flex;flex-direction:column;gap:var(--s3)}
+.dlg .btn-pri{width:100%;margin-top:var(--s2)}
+
+.auth-pg{max-width:440px;margin:0 auto;padding:var(--s7) 0}
+.auth-pg form{display:flex;flex-direction:column;gap:var(--s3);margin-top:var(--s4)}
+.auth-pg .seg{width:100%}.auth-pg .seg label{flex:1}
+.auth-pg .btn-pri{width:100%;margin-top:var(--s2)}
+.auth-pg .troca{margin-top:var(--s4)}
+.hello{padding:var(--s7) 0 var(--s5)}
+.hello h1{font-size:clamp(36px,9vw,72px);letter-spacing:-.04em;line-height:.98}
+.acoes-g{display:grid;gap:0;border-top:2px solid var(--rule);border-left:1px solid var(--rule-soft)}
+.acao{display:block;padding:var(--s5) var(--s4);border-right:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft);color:var(--text);text-decoration:none}
+.acao:hover{background:var(--hover);color:var(--text)}
+.acao h3{margin:0 0 var(--s2)}.acao p{margin:0;color:var(--muted);font-size:var(--fs-sm)}
+.acao .n{font-size:var(--fs-xs);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-text);display:block;margin-bottom:var(--s3)}
+@media (min-width:720px){.acoes-g{grid-template-columns:repeat(2,1fr)}}
+.rec{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule-soft)}
+.rec li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--s3);padding:var(--s3) 0;border-bottom:1px solid var(--rule-soft);align-items:baseline}
+.rec b{font-weight:800;display:block}.rec small{color:var(--muted);font-size:var(--fs-xs)}
+.rec .nt{font-size:var(--fs-xl);font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+html{scrollbar-gutter:stable}
+body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}
+body>main{flex:1 0 auto;width:100%}
+.topo{position:sticky;top:0;z-index:30}
+.rodape{flex:none}
+
+html{min-height:100%}
+body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}
+main{flex:1 0 auto;width:100%}
+.rodape{margin-top:auto}
+.topo{position:sticky;top:0;z-index:20}
+.marca::after{display:none}.marca{padding:var(--s2) 0}.marca img{height:60px;width:auto}
+.topo-acoes{display:flex;gap:var(--s2);align-items:center;justify-self:end}
+.btn-tema{min-width:44px;padding:0;justify-content:center;font-size:18px;line-height:1}
+img,svg{max-width:100%}
+.topo-in{gap:0 var(--s3)}
+@media (max-width:480px){
+  :root{--gutter:14px}
+  .marca img{height:44px}
+  .btn-g{min-width:0;width:100%}
+  .topo-acoes .btn:not(.btn-tema){padding-inline:var(--s3)}
+  .menu{gap:0 var(--s4)}
+  .sec{padding-block:var(--s4) var(--s6)}
+  .hero{padding-block:var(--s6)}
+}
+@media (max-width:380px){.menu a{font-size:13px}}
+.res-ed{list-style:none;margin:var(--s4) 0 0;padding:0;border-top:1px solid var(--rule-soft)}
+.res-ed li{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s3);justify-content:space-between;align-items:baseline;padding:var(--s3) 0;border-bottom:1px solid var(--rule-soft);font-size:var(--fs-sm)}
+.res-ed b{font-weight:800}.res-ed .falta{color:var(--muted)}
+</style>
+</head>
+<body data-page="home">
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo">
+  <div class="wrap topo-in">
+    <a class="marca" href="/" data-rota="inicio" aria-label="Apollo — início"><img class="logo-claro" src="/static/enem/logo-claro.png" alt="Apollo" width="96" height="48"><img class="logo-escuro" src="/static/enem/logo-escuro.png" alt="" width="96" height="48"></a>
+    <nav class="menu" aria-label="Principal">
+      <a href="/" data-rota="inicio">Início</a>
+      <a href="/enviar/" data-rota="enviar">Enviar respostas</a>
+      <a href="/dashboard/" data-rota="dashboard">Dashboard</a>
+    </nav>
+    <div class="topo-acoes"><button class="btn btn-sec btn-tema" id="btnTema" type="button" title="Mudar tema">&#9790;&#xFE0E;</button><button class="btn btn-sec" id="btnSessao" type="button">Entrar</button></div>
+  </div>
+</header>
+<main id="conteudo" class="wrap">
+  <div class="hello">
+    <p class="kicker">Início</p>
+    <h1 id="ola">Olá</h1>
+  </div>
+  <section class="sec" aria-labelledby="hAc" style="padding-top:var(--s4)">
+    <h2 id="hAc" class="sr">Atalhos</h2>
+    <div class="acoes-g">
+      <a class="acao" href="/enviar/" data-rota="enviar"><span class="n">Passo 1</span><h3>Enviar respostas</h3><p>Escolha a prova e a cor do caderno, marque ou cole as 45 respostas.</p></a>
+      <a class="acao" href="/dashboard/" data-rota="dashboard"><span class="n">Passo 2</span><h3>Ver o dashboard</h3><p>Selecione provas e veja a nota TRI estimada e as áreas a melhorar.</p></a>
+    </div>
+  </section>
+  <section class="sec" aria-labelledby="hRes">
+    <div class="sec-h"><h2 id="hRes">Resumo de provas</h2><a href="/dashboard/" data-rota="dashboard" class="small">Ver resumo completo</a></div>
+    <div id="resumo" aria-live="polite"><div class="skel g"></div><span class="sr">Carregando…</span></div>
+  </section>
+  <section class="sec" aria-labelledby="hRec">
+    <div class="sec-h"><h2 id="hRec">Últimos resultados</h2><a href="/dashboard/" data-rota="dashboard" class="small">Ver todos</a></div>
+    <div id="rec" aria-live="polite"><div class="skel g"></div><div class="skel c"></div><span class="sr">Carregando…</span></div>
+  </section>
+  <p class="aviso" style="margin-bottom:var(--s7)"><b>Estimativa</b><span>A nota TRI não é a nota oficial do INEP. O erro médio fica entre 6 e 25 pontos, conforme a área.</span></p>
+</main>
+<footer class="rodape"><div class="wrap rodape-in"><span><b>Apollo</b> · diagnóstico de provas do ENEM</span><span>A nota TRI é uma estimativa, não a nota oficial do INEP.</span></div></footer>
+
+<script>
+const ROTAS = {inicio:"/", login:"/login/", home:"/home/", enviar:"/enviar/", dashboard:"/dashboard/"};
+
+const csrf = () => (document.cookie.match(/csrftoken=([^;]+)/) || [])[1] || "";
+async function api(path, method="GET", body){
+  const r = await fetch("/api/"+path, {method, credentials:"same-origin",
+    headers:{"Content-Type":"application/json","X-CSRFToken":csrf()}, body: body?JSON.stringify(body):undefined});
+  let data=null; try{ data=await r.json(); }catch(e){}
+  if(!r.ok){ const e=new Error((data&&data.detail)||"Erro "+r.status); e.status=r.status; e.data=data; throw e; }
+  return data;
+}
+
+const $ = (s, r=document) => r.querySelector(s);
+const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const AREAS = {LC:"Linguagens", CH:"Ciências Humanas", CN:"Ciências da Natureza", MT:"Matemática"};
+const ORDEM_AREAS = ["LC","CH","CN","MT"];
+const CAMPOS = {nome:"Nome", email:"E-mail", senha:"Senha", ano:"Ano", area:"Área", cor:"Cor", lingua:"Idioma", respostas:"Respostas"};
+const fmtNota = n => (n==null || isNaN(n)) ? "—" : Number(n).toLocaleString("pt-BR",{minimumFractionDigits:1,maximumFractionDigits:1});
+const fmtCor = c => c ? c[0] + c.slice(1).toLowerCase() : "";
+const fmtData = iso => { const d=new Date(iso); return isNaN(d) ? "" : d.toLocaleDateString("pt-BR",{day:"2-digit",month:"2-digit",year:"2-digit"}); };
+const pct = t => Math.round(t*100) + "%";
+const ordHab = k => parseInt(String(k).replace(/\D/g,""),10) || 0;
+
+/* Erros do backend: {detail:"..."} ou {campo:["msg"]} → texto legível */
+function msgErro(e){
+  if(e && e.data && typeof e.data==="object" && !e.data.detail){
+    const partes=[];
+    const plano = v => Array.isArray(v) ? v.map(plano).join(" ") : (v && typeof v==="object" ? Object.values(v).map(plano).join(" ") : String(v));
+    for(const [k,v] of Object.entries(e.data)){
+      const m = plano(v);
+      partes.push(k==="non_field_errors" ? m : (CAMPOS[k]||k)+": "+m);
+    }
+    if(partes.length) return partes.join(" · ");
+  }
+  if(e && e.status) return e.message;
+  return "Não foi possível conectar. Verifique sua internet e tente de novo.";
+}
+
+function faixa(taxa){
+  if(taxa>=.6) return {id:"alta", texto:"Prioridade alta", curto:"▲ Alta"};
+  if(taxa>=.4) return {id:"media", texto:"Prioridade média", curto:"■ Média"};
+  return {id:"baixa", texto:"Prioridade baixa", curto:"▽ Baixa"};
+}
+
+/* itens: [{rotulo, sub, erros, total}] já ordenados */
+function htmlBarras(itens, comFaixa){
+  if(!itens.length) return '<p class="b-ok">Nenhum erro aqui.</p>';
+  return '<ul class="barras">' + itens.map(it => {
+    const taxa = it.total ? it.erros/it.total : 0, f = faixa(taxa);
+    return `<li><span class="b-rot">${esc(it.rotulo)}${it.sub?`<small>${esc(it.sub)}</small>`:""}</span>
+      <span class="b-num"><b>${it.erros}</b> de ${it.total} · ${pct(taxa)}${comFaixa?` <span class="tag tag-${f.id}" title="${f.texto}">${f.curto}</span>`:""}</span>
+      <span class="b-bar ${f.id}" aria-hidden="true"><i style="width:${Math.max(taxa*100, it.erros?2:0)}%"></i></span></li>`;
+  }).join("") + "</ul>";
+}
+const ordenarErros = (a,b) => b.erros-a.erros || (b.erros/b.total)-(a.erros/a.total) || String(a.rotulo).localeCompare(String(b.rotulo),"pt-BR",{numeric:true});
+function tituloComp(matriz, area, c){
+  const m = matriz && matriz[area] && matriz[area].find(x => x.competencia===c);
+  return m ? m.titulo : "";
+}
+
+let sessao = null;
+function atualizarTopo(){
+  $$("[data-rota]").forEach(a => {
+    if(sessao && a.dataset.rota==="inicio"){ a.dataset.rota = "home"; if(a.matches(".menu a")) a.textContent = "Home"; }
+    a.setAttribute("href", ROTAS[a.dataset.rota]);
+  });
+  const pg = document.body.dataset.page;
+  $$(".menu a").forEach(a => a.dataset.rota===pg ? a.setAttribute("aria-current","page") : a.removeAttribute("aria-current"));
+  const b = $("#btnSessao"); if(b) b.textContent = sessao ? "Sair" : "Entrar";
+}
+async function verificarSessao(obrigatoria){
+  try{ sessao = await api("dashboard/"); }
+  catch(e){
+    sessao = null;
+    if(obrigatoria && e.status===403){ location.href = ROTAS.login; return new Promise(()=>{}); }
+    if(obrigatoria){ atualizarTopo(); throw e; }
+  }
+  atualizarTopo();
+  return sessao;
+}
+document.addEventListener("DOMContentLoaded", () => {
+  atualizarTopo();
+  const b = $("#btnSessao");
+  if(b) b.addEventListener("click", async () => {
+    if(sessao){
+      b.disabled = true;
+      try{ await api("logout/","POST"); }catch(e){}
+      location.href = ROTAS.inicio;
+    } else location.href = ROTAS.login;
+  });
+});
+
+async function iniciar(){
+  try{ await verificarSessao(true); }
+  catch(e){ return estado($("#rec"), msgErro(e)); }
+  if(sessao && sessao.aluno) $("#ola").textContent = "Olá, " + sessao.aluno;
+  const box = $("#rec"), res = $("#resumo");
+  try{
+    const todas = []; let pg = 1, r;
+    do{ r = await api("submissoes/?page="+pg); todas.push(...(r.results||[])); pg++; } while(r.next && pg<200);
+    const l = todas.slice().sort((a,b) => new Date(b.criada_em)-new Date(a.criada_em));
+    if(!l.length){
+      const vazio = '<div class="estado"><h3>Nenhuma prova enviada</h3><p>Envie sua primeira prova para ver a nota TRI estimada e as áreas a melhorar.</p><a class="btn btn-pri" href="'+ROTAS.enviar+'">Enviar respostas</a></div>';
+      box.innerHTML = vazio; res.innerHTML = '<p class="small muted">Nenhuma prova enviada ainda.</p>'; return;
+    }
+    /* Resumo: edições completas = as 4 áreas enviadas */
+    const eds = {}, cores = {};
+    l.forEach(s => { (eds[s.ano] = eds[s.ano] || new Set()).add(s.area); const c = cores[s.ano] = cores[s.ano] || {}; if(!c[s.area]) c[s.area] = s.cor; });
+    /* mesmo dia = mesmo caderno = mesma cor (2016: CH/CN e LC/MT) */
+    const incoerente = a => (+a===2016 ? [["CH","CN"],["LC","MT"]] : [["LC","CH"],["CN","MT"]]).some(([x,y]) => cores[a][x] && cores[a][y] && cores[a][x]!==cores[a][y]);
+    const anos = Object.keys(eds).sort((a,b) => b-a), completas = anos.filter(a => ORDEM_AREAS.every(x => eds[a].has(x)) && !incoerente(a)).length;
+    res.innerHTML = `<dl class="kpis">
+      <div class="kpi"><dt>Provas enviadas</dt><dd>${l.length}</dd></div>
+      <div class="kpi"><dt>Edições</dt><dd>${anos.length}</dd></div>
+      <div class="kpi"><dt>Completas</dt><dd>${completas}</dd></div>
+      <div class="kpi"><dt>Incompletas</dt><dd>${anos.length-completas}</dd></div></dl>
+      <ul class="res-ed">${anos.slice(0,4).map(a => { const falta = ORDEM_AREAS.filter(x => !eds[a].has(x));
+        return `<li><b>ENEM ${esc(a)}</b>${!falta.length && incoerente(a) ? '<span class="falta">Cores diferentes no mesmo caderno: exclua o envio errado e reenvie</span>' : falta.length ? `<span class="falta">${falta.map(x => "Falta área "+esc(AREAS[x])+"!").join(" · ")}</span>` : '<span class="tag tag-baixa">Completa</span>'}</li>`; }).join("")}</ul>`;
+    box.innerHTML = '<ul class="rec">' + l.slice(0,5).map(s => `<li><span><b>${esc(AREAS[s.area]||s.area)} · ENEM ${esc(s.ano)}</b><small>Caderno ${esc(fmtCor(s.cor).toLowerCase())} · ${fmtData(s.criada_em)} · ${s.resultado?s.resultado.acertos:"—"} acertos</small></span><span class="nt">${fmtNota(s.resultado&&s.resultado.nota_tri)}</span></li>`).join("") + '</ul>';
+  }catch(e){
+    if(e.status===403){ location.href = ROTAS.login; return; }
+    const msg = `<div class="estado"><h3>Não foi possível carregar</h3><p>${esc(msgErro(e))}</p></div>`;
+    box.innerHTML = msg; res.innerHTML = msg;
+  }
+}
+function estado(el, t){ el.innerHTML = `<div class="estado"><h3>${esc(t)}</h3></div>`; }
+document.addEventListener("DOMContentLoaded", iniciar);
+</script>
+<script>
+(function(){
+  var b=document.getElementById("btnTema"); if(!b) return;
+  var el=document.documentElement;
+  function atual(){ return el.getAttribute("data-theme") || (window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); }
+  function rotulo(){ var d=atual()==="dark"; b.textContent=d?"\u2600\uFE0E":"\u263E\uFE0E"; b.title=d?"Mudar para o tema claro":"Mudar para o tema escuro"; b.setAttribute("aria-label",d?"Mudar para o tema claro":"Mudar para o tema escuro"); }
+  b.addEventListener("click",function(){ var n=atual()==="dark"?"light":"dark"; el.setAttribute("data-theme",n); try{localStorage.setItem("apollo-tema",n)}catch(e){} rotulo(); });
+  rotulo();
+})();
+</script>
+</body>
+</html>

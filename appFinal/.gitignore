@@ -1,0 +1,16 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+staticfiles/
+db.sqlite3
+backups/
+.vscode/
+dados_inep/
+.env.*
+!.env.example
+*.pem
+*.key
+*.sql
+*.dump

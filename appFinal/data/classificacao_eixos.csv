@@ -1,0 +1,1821 @@
+ano;co_item;area;posicao;lingua;eixo;fonte
+2016;96431;CH;46;;Filosofia;leitura
+2016;86985;CH;47;;História;leitura
+2016;96455;CH;48;;Geografia;leitura
+2016;88207;CH;49;;Geografia;leitura
+2016;29404;CH;50;;História;leitura
+2016;83823;CH;51;;Filosofia;leitura
+2016;97414;CH;52;;Sociologia;leitura
+2016;27437;CH;53;;Sociologia;leitura
+2016;41083;CH;54;;História;leitura
+2016;98123;CH;55;;História;leitura
+2016;88329;CH;56;;Sociologia;leitura
+2016;86911;CH;57;;Geografia;leitura
+2016;97744;CH;58;;História;leitura
+2016;85884;CH;59;;Sociologia;leitura
+2016;97774;CH;60;;Sociologia;leitura
+2016;97290;CH;61;;Geografia;leitura
+2016;54683;CH;62;;Geografia;leitura
+2016;98025;CH;63;;Geografia;leitura
+2016;54217;CH;64;;Geografia;leitura
+2016;95568;CH;65;;Filosofia;leitura
+2016;24936;CH;66;;História;leitura
+2016;38717;CH;67;;História;leitura
+2016;86763;CH;68;;Filosofia;leitura
+2016;87834;CH;69;;Filosofia;leitura
+2016;62021;CH;71;;História;leitura
+2016;18415;CH;72;;História;leitura
+2016;66550;CH;73;;Filosofia;leitura
+2016;97055;CH;74;;Geografia;leitura
+2016;29210;CH;75;;Geografia;leitura
+2016;86787;CH;76;;Geografia;leitura
+2016;88274;CH;77;;Sociologia;leitura
+2016;63486;CH;78;;História;leitura
+2016;55998;CH;79;;História;leitura
+2016;84259;CH;80;;História;leitura
+2016;62417;CH;81;;Geografia;leitura
+2016;85304;CH;82;;Filosofia;leitura
+2016;11802;CH;83;;Sociologia;leitura
+2016;63738;CH;84;;Geografia;leitura
+2016;39993;CH;85;;Geografia;leitura
+2016;97360;CH;86;;Sociologia;leitura
+2016;43313;CH;87;;Sociologia;leitura
+2016;63607;CH;88;;História;leitura
+2016;97370;CH;89;;Sociologia;leitura
+2016;96572;CH;90;;Geografia;leitura
+2016;12091;CN;91;;Química;leitura
+2016;48829;CN;92;;Física;leitura
+2016;47464;CN;93;;Química;leitura
+2016;97711;CN;94;;Física;leitura
+2016;87728;CN;95;;Química;matriz
+2016;97755;CN;96;;Química;leitura
+2016;17509;CN;97;;Química;matriz
+2016;30321;CN;98;;Química;leitura
+2016;24399;CN;99;;Física;matriz
+2016;84210;CN;100;;Física;leitura
+2016;40320;CN;101;;Biologia;leitura
+2016;16366;CN;102;;Física;leitura
+2016;16901;CN;103;;Química;matriz
+2016;86572;CN;104;;Física;leitura
+2016;28297;CN;105;;Química;matriz
+2016;16924;CN;106;;Biologia;leitura
+2016;44548;CN;107;;Biologia;leitura
+2016;44432;CN;108;;Física;matriz
+2016;86725;CN;109;;Química;leitura
+2016;44365;CN;110;;Biologia;matriz
+2016;97445;CN;111;;Física;leitura
+2016;30497;CN;112;;Química;leitura
+2016;48366;CN;113;;Química;matriz
+2016;97740;CN;114;;Biologia;leitura
+2016;30419;CN;115;;Química;leitura
+2016;26114;CN;116;;Biologia;matriz
+2016;95618;CN;117;;Química;leitura
+2016;8493;CN;118;;Biologia;leitura
+2016;19553;CN;119;;Física;leitura
+2016;31940;CN;120;;Biologia;leitura
+2016;16893;CN;121;;Química;matriz
+2016;85599;CN;122;;Física;matriz
+2016;40112;CN;123;;Química;matriz
+2016;96212;CN;124;;Biologia;matriz
+2016;96446;CN;125;;Biologia;leitura
+2016;45050;CN;126;;Química;leitura
+2016;30968;CN;127;;Física;leitura
+2016;96483;CN;128;;Biologia;leitura
+2016;37399;CN;129;;Física;leitura
+2016;97497;CN;130;;Química;leitura
+2016;24455;CN;131;;Física;matriz
+2016;11898;CN;132;;Biologia;leitura
+2016;97272;CN;133;;Física;matriz
+2016;18346;CN;134;;Física;leitura
+2016;97811;CN;135;;Biologia;leitura
+2016;39570;LC;1;EN;Língua estrangeira;matriz
+2016;55307;LC;1;ES;Língua estrangeira;matriz
+2016;27055;LC;2;EN;Língua estrangeira;matriz
+2016;54904;LC;2;ES;Língua estrangeira;matriz
+2016;23559;LC;3;EN;Língua estrangeira;matriz
+2016;23733;LC;3;ES;Língua estrangeira;matriz
+2016;30170;LC;4;EN;Língua estrangeira;matriz
+2016;22565;LC;4;ES;Língua estrangeira;matriz
+2016;40290;LC;5;EN;Língua estrangeira;matriz
+2016;55970;LC;5;ES;Língua estrangeira;matriz
+2016;96818;LC;6;;Língua portuguesa e texto;leitura
+2016;68217;LC;7;;Tecnologias da informação e comunicação;leitura
+2016;45089;LC;8;;Artes;leitura
+2016;13547;LC;9;;Literatura;leitura
+2016;21776;LC;10;;Literatura;leitura
+2016;35682;LC;11;;Língua portuguesa e texto;leitura
+2016;97113;LC;12;;Língua portuguesa e texto;leitura
+2016;83851;LC;13;;Língua portuguesa e texto;leitura
+2016;85805;LC;14;;Literatura;leitura
+2016;67813;LC;15;;Língua portuguesa e texto;leitura
+2016;49264;LC;16;;Tecnologias da informação e comunicação;leitura
+2016;97334;LC;17;;Literatura;leitura
+2016;96667;LC;18;;Língua portuguesa e texto;leitura
+2016;82375;LC;19;;Língua portuguesa e texto;leitura
+2016;97945;LC;20;;Literatura;leitura
+2016;96509;LC;21;;Literatura;leitura
+2016;97420;LC;22;;Literatura;leitura
+2016;50236;LC;24;;Artes;leitura
+2016;39973;LC;25;;Língua portuguesa e texto;leitura
+2016;96749;LC;26;;Literatura;leitura
+2016;97467;LC;27;;Literatura;leitura
+2016;96670;LC;28;;Língua portuguesa e texto;leitura
+2016;38027;LC;29;;Literatura;leitura
+2016;97949;LC;30;;Literatura;leitura
+2016;17194;LC;31;;Literatura;leitura
+2016;86338;LC;32;;Língua portuguesa e texto;leitura
+2016;40014;LC;33;;Língua portuguesa e texto;leitura
+2016;98005;LC;34;;Língua portuguesa e texto;leitura
+2016;96640;LC;35;;Literatura;leitura
+2016;61388;LC;36;;Artes;leitura
+2016;61413;LC;37;;Língua portuguesa e texto;leitura
+2016;98083;LC;38;;Artes;leitura
+2016;98151;LC;40;;Práticas corporais;leitura
+2016;97379;LC;41;;Literatura;leitura
+2016;27677;LC;42;;Artes;leitura
+2016;28735;LC;43;;Literatura;leitura
+2016;55655;LC;44;;Artes;leitura
+2016;86586;LC;45;;Literatura;leitura
+2016;11472;MT;136;;Conhecimentos geométricos;leitura
+2016;18364;MT;137;;Conhecimentos geométricos;leitura
+2016;30865;MT;138;;Conhecimentos geométricos;leitura
+2016;32686;MT;139;;Conhecimentos numéricos;leitura
+2016;27005;MT;140;;Conhecimentos numéricos;leitura
+2016;85018;MT;141;;Conhecimentos numéricos;leitura
+2016;32808;MT;142;;Conhecimentos geométricos;leitura
+2016;29844;MT;143;;Conhecimentos geométricos;leitura
+2016;53219;MT;144;;Conhecimentos de estatística e probabilidade;leitura
+2016;83608;MT;145;;Conhecimentos numéricos;leitura
+2016;25285;MT;146;;Conhecimentos numéricos;leitura
+2016;40660;MT;147;;Conhecimentos numéricos;leitura
+2016;16644;MT;148;;Conhecimentos numéricos;leitura
+2016;42706;MT;149;;Conhecimentos algébricos;leitura
+2016;24747;MT;150;;Conhecimentos numéricos;leitura
+2016;96774;MT;151;;Conhecimentos de estatística e probabilidade;leitura
+2016;60291;MT;152;;Conhecimentos de estatística e probabilidade;leitura
+2016;45081;MT;153;;Conhecimentos numéricos;leitura
+2016;42955;MT;154;;Conhecimentos numéricos;leitura
+2016;32221;MT;155;;Conhecimentos geométricos;leitura
+2016;59795;MT;156;;Conhecimentos numéricos;leitura
+2016;37515;MT;157;;Conhecimentos de estatística e probabilidade;leitura
+2016;83234;MT;158;;Conhecimentos numéricos;leitura
+2016;83152;MT;159;;Conhecimentos de estatística e probabilidade;leitura
+2016;10052;MT;160;;Conhecimentos algébricos;leitura
+2016;32969;MT;161;;Conhecimentos geométricos;leitura
+2016;53278;MT;162;;Conhecimentos de estatística e probabilidade;leitura
+2016;38786;MT;163;;Conhecimentos numéricos;leitura
+2016;42692;MT;164;;Conhecimentos numéricos;leitura
+2016;8476;MT;165;;Conhecimentos numéricos;leitura
+2016;87262;MT;166;;Conhecimentos numéricos;leitura
+2016;25723;MT;167;;Conhecimentos algébricos;leitura
+2016;39762;MT;168;;Conhecimentos numéricos;leitura
+2016;95265;MT;169;;Conhecimentos numéricos;leitura
+2016;30029;MT;170;;Conhecimentos de estatística e probabilidade;leitura
+2016;53721;MT;171;;Conhecimentos de estatística e probabilidade;leitura
+2016;85050;MT;172;;Conhecimentos geométricos;leitura
+2016;83906;MT;173;;Conhecimentos de estatística e probabilidade;leitura
+2016;17264;MT;174;;Conhecimentos numéricos;leitura
+2016;44243;MT;175;;Conhecimentos geométricos;leitura
+2016;48223;MT;176;;Conhecimentos de estatística e probabilidade;leitura
+2016;96833;MT;177;;Conhecimentos numéricos;leitura
+2016;39198;MT;178;;Conhecimentos geométricos;leitura
+2016;88786;MT;179;;Conhecimentos numéricos;leitura
+2016;60315;MT;180;;Conhecimentos algébricos;leitura
+2017;44604;CH;1;;História;leitura
+2017;38250;CH;2;;Sociologia;leitura
+2017;43284;CH;3;;Filosofia;leitura
+2017;81598;CH;4;;História;leitura
+2017;8172;CH;5;;Sociologia;leitura
+2017;49683;CH;6;;História;leitura
+2017;82228;CH;7;;Geografia;leitura
+2017;45306;CH;8;;Geografia;leitura
+2017;84226;CH;9;;Geografia;leitura
+2017;83848;CH;10;;Geografia;leitura
+2017;84165;CH;11;;Geografia;leitura
+2017;84192;CH;12;;Geografia;leitura
+2017;20109;CH;13;;Geografia;leitura
+2017;81916;CH;14;;Geografia;leitura
+2017;82451;CH;15;;Sociologia;leitura
+2017;31360;CH;16;;História;leitura
+2017;78146;CH;17;;História;leitura
+2017;25316;CH;18;;História;leitura
+2017;67329;CH;19;;Filosofia;leitura
+2017;96575;CH;20;;Filosofia;leitura
+2017;66214;CH;21;;Filosofia;leitura
+2017;75940;CH;22;;Sociologia;leitura
+2017;84128;CH;23;;Geografia;leitura
+2017;6990;CH;24;;Geografia;leitura
+2017;43294;CH;25;;História;leitura
+2017;76970;CH;26;;Geografia;leitura
+2017;79027;CH;27;;Geografia;leitura
+2017;67012;CH;28;;Geografia;leitura
+2017;47012;CH;29;;Sociologia;leitura
+2017;37521;CH;30;;Geografia;leitura
+2017;29085;CH;31;;História;leitura
+2017;8456;CH;32;;Geografia;leitura
+2017;25281;CH;33;;História;leitura
+2017;83836;CH;34;;História;leitura
+2017;30150;CH;35;;História;leitura
+2017;82449;CH;36;;História;leitura
+2017;7962;CH;37;;História;leitura
+2017;24935;CH;38;;História;leitura
+2017;27214;CH;39;;Filosofia;leitura
+2017;47840;CH;40;;Filosofia;leitura
+2017;18647;CH;41;;Geografia;leitura
+2017;79005;CH;42;;Geografia;leitura
+2017;24918;CH;43;;Filosofia;leitura
+2017;23043;CH;44;;Sociologia;leitura
+2017;49661;CH;45;;Sociologia;leitura
+2017;29460;CN;1;;Química;leitura
+2017;59980;CN;2;;Biologia;leitura
+2017;81339;CN;3;;Química;leitura
+2017;81944;CN;4;;Biologia;leitura
+2017;43722;CN;5;;Química;leitura
+2017;89981;CN;6;;Biologia;leitura
+2017;40150;CN;7;;Química;leitura
+2017;47418;CN;8;;Biologia;leitura
+2017;83923;CN;9;;Física;leitura
+2017;42006;CN;10;;Biologia;matriz
+2017;81968;CN;11;;Física;matriz
+2017;56286;CN;12;;Química;matriz
+2017;84291;CN;13;;Física;leitura
+2017;62247;CN;14;;Química;leitura
+2017;76032;CN;15;;Física;matriz
+2017;87974;CN;16;;Química;leitura
+2017;81971;CN;17;;Física;matriz
+2017;59829;CN;18;;Física;leitura
+2017;49555;CN;19;;Biologia;leitura
+2017;64059;CN;20;;Física;leitura
+2017;26843;CN;21;;Biologia;leitura
+2017;78598;CN;22;;Física;leitura
+2017;60582;CN;23;;Química;matriz
+2017;11590;CN;24;;Química;matriz
+2017;23921;CN;25;;Física;leitura
+2017;66897;CN;26;;Biologia;leitura
+2017;88958;CN;27;;Biologia;leitura
+2017;84223;CN;28;;Química;leitura
+2017;68394;CN;29;;Química;leitura
+2017;18349;CN;30;;Física;matriz
+2017;82421;CN;31;;Física;matriz
+2017;30022;CN;32;;Química;matriz
+2017;42557;CN;33;;Biologia;matriz
+2017;88873;CN;34;;Química;matriz
+2017;61269;CN;35;;Biologia;leitura
+2017;81780;CN;36;;Química;leitura
+2017;43703;CN;37;;Física;leitura
+2017;18231;CN;38;;Biologia;leitura
+2017;11793;CN;39;;Física;leitura
+2017;60699;CN;40;;Química;leitura
+2017;43880;CN;41;;Física;matriz
+2017;8757;CN;42;;Química;leitura
+2017;48655;CN;43;;Física;matriz
+2017;17983;CN;44;;Química;matriz
+2017;48663;CN;45;;Biologia;matriz
+2017;48074;LC;1;EN;Língua estrangeira;matriz
+2017;37043;LC;2;EN;Língua estrangeira;matriz
+2017;7463;LC;3;EN;Língua estrangeira;matriz
+2017;54099;LC;4;EN;Língua estrangeira;matriz
+2017;18212;LC;5;EN;Língua estrangeira;matriz
+2017;23183;LC;6;ES;Língua estrangeira;matriz
+2017;33118;LC;7;ES;Língua estrangeira;matriz
+2017;88785;LC;8;ES;Língua estrangeira;matriz
+2017;60767;LC;9;ES;Língua estrangeira;matriz
+2017;47905;LC;10;ES;Língua estrangeira;matriz
+2017;62046;LC;11;;Tecnologias da informação e comunicação;leitura
+2017;88888;LC;12;;Literatura;leitura
+2017;23784;LC;13;;Tecnologias da informação e comunicação;leitura
+2017;38057;LC;14;;Literatura;leitura
+2017;39670;LC;15;;Literatura;leitura
+2017;48314;LC;16;;Tecnologias da informação e comunicação;leitura
+2017;30469;LC;17;;Língua portuguesa e texto;leitura
+2017;84380;LC;18;;Literatura;leitura
+2017;32266;LC;19;;Língua portuguesa e texto;leitura
+2017;44273;LC;20;;Língua portuguesa e texto;leitura
+2017;31174;LC;21;;Língua portuguesa e texto;leitura
+2017;18642;LC;22;;Tecnologias da informação e comunicação;leitura
+2017;85411;LC;23;;Literatura;leitura
+2017;84042;LC;24;;Práticas corporais;leitura
+2017;29586;LC;25;;Língua portuguesa e texto;leitura
+2017;36865;LC;26;;Artes;leitura
+2017;61636;LC;27;;Língua portuguesa e texto;leitura
+2017;86768;LC;28;;Literatura;leitura
+2017;82891;LC;29;;Literatura;leitura
+2017;77759;LC;30;;Artes;leitura
+2017;90150;LC;31;;Língua portuguesa e texto;leitura
+2017;68416;LC;32;;Língua portuguesa e texto;leitura
+2017;55771;LC;33;;Língua portuguesa e texto;leitura
+2017;29181;LC;34;;Língua portuguesa e texto;leitura
+2017;86322;LC;35;;Literatura;leitura
+2017;32474;LC;36;;Práticas corporais;leitura
+2017;31891;LC;37;;Literatura;leitura
+2017;19655;LC;38;;Artes;leitura
+2017;7069;LC;39;;Língua portuguesa e texto;leitura
+2017;90020;LC;40;;Literatura;leitura
+2017;30995;LC;41;;Artes;leitura
+2017;29528;LC;42;;Artes;leitura
+2017;68284;LC;43;;Literatura;leitura
+2017;39530;LC;44;;Literatura;leitura
+2017;84452;LC;45;;Literatura;leitura
+2017;96950;LC;46;;Língua portuguesa e texto;leitura
+2017;85925;LC;47;;Artes;leitura
+2017;53474;LC;48;;Artes;leitura
+2017;55024;LC;49;;Literatura;leitura
+2017;60715;LC;50;;Artes;leitura
+2017;87141;MT;1;;Conhecimentos numéricos;leitura
+2017;84945;MT;2;;Conhecimentos numéricos;leitura
+2017;11758;MT;3;;Conhecimentos geométricos;leitura
+2017;68172;MT;4;;Conhecimentos de estatística e probabilidade;leitura
+2017;43906;MT;5;;Conhecimentos geométricos;leitura
+2017;96088;MT;6;;Conhecimentos numéricos;leitura
+2017;45300;MT;7;;Conhecimentos geométricos;leitura
+2017;82352;MT;8;;Conhecimentos numéricos;leitura
+2017;11720;MT;9;;Conhecimentos numéricos;leitura
+2017;86907;MT;10;;Conhecimentos de estatística e probabilidade;leitura
+2017;40005;MT;11;;Conhecimentos numéricos;leitura
+2017;17360;MT;12;;Conhecimentos de estatística e probabilidade;leitura
+2017;43322;MT;13;;Conhecimentos geométricos;leitura
+2017;85776;MT;14;;Conhecimentos numéricos;leitura
+2017;95556;MT;15;;Conhecimentos geométricos;leitura
+2017;96485;MT;16;;Conhecimentos de estatística e probabilidade;leitura
+2017;29915;MT;17;;Conhecimentos geométricos;leitura
+2017;16539;MT;18;;Conhecimentos geométricos;leitura
+2017;40235;MT;19;;Conhecimentos algébricos;leitura
+2017;41047;MT;20;;Conhecimentos de estatística e probabilidade;leitura
+2017;85691;MT;21;;Conhecimentos geométricos;leitura
+2017;60584;MT;22;;Conhecimentos geométricos;leitura
+2017;29086;MT;23;;Conhecimentos geométricos;leitura
+2017;81410;MT;24;;Conhecimentos numéricos;leitura
+2017;60724;MT;25;;Conhecimentos numéricos;leitura
+2017;40717;MT;26;;Conhecimentos algébricos;leitura
+2017;89162;MT;27;;Conhecimentos algébricos;leitura
+2017;43940;MT;28;;Conhecimentos numéricos;leitura
+2017;27493;MT;29;;Conhecimentos numéricos;leitura
+2017;96366;MT;30;;Conhecimentos de estatística e probabilidade;leitura
+2017;83860;MT;31;;Conhecimentos algébricos;leitura
+2017;23866;MT;32;;Conhecimentos geométricos;leitura
+2017;17384;MT;33;;Conhecimentos geométricos;leitura
+2017;29402;MT;34;;Conhecimentos de estatística e probabilidade;leitura
+2017;81452;MT;35;;Conhecimentos de estatística e probabilidade;leitura
+2017;87751;MT;36;;Conhecimentos geométricos;leitura
+2017;89339;MT;37;;Conhecimentos de estatística e probabilidade;leitura
+2017;87821;MT;38;;Conhecimentos numéricos;leitura
+2017;30042;MT;39;;Conhecimentos de estatística e probabilidade;leitura
+2017;66556;MT;40;;Conhecimentos de estatística e probabilidade;leitura
+2017;60235;MT;41;;Conhecimentos geométricos;leitura
+2017;95803;MT;42;;Conhecimentos numéricos;leitura
+2017;38563;MT;43;;Conhecimentos numéricos;leitura
+2017;61485;MT;44;;Conhecimentos de estatística e probabilidade;leitura
+2017;9189;MT;45;;Conhecimentos numéricos;leitura
+2018;84321;CH;46;;História;leitura
+2018;111920;CH;47;;História;leitura
+2018;112045;CH;48;;Sociologia;leitura
+2018;97982;CH;49;;Filosofia;leitura
+2018;111805;CH;50;;História;leitura
+2018;96595;CH;51;;Filosofia;leitura
+2018;86760;CH;52;;Filosofia;leitura
+2018;111972;CH;53;;Geografia;leitura
+2018;44378;CH;54;;História;leitura
+2018;83733;CH;55;;História;leitura
+2018;96813;CH;56;;Geografia;leitura
+2018;97862;CH;57;;História;leitura
+2018;97652;CH;58;;História;leitura
+2018;111823;CH;59;;História;leitura
+2018;97747;CH;60;;Geografia;leitura
+2018;95752;CH;61;;História;leitura
+2018;111988;CH;62;;Geografia;leitura
+2018;89461;CH;63;;Geografia;leitura
+2018;88500;CH;64;;História;leitura
+2018;112081;CH;65;;Geografia;leitura
+2018;97786;CH;66;;História;leitura
+2018;88057;CH;67;;Geografia;leitura
+2018;87101;CH;68;;História;leitura
+2018;98027;CH;69;;História;leitura
+2018;85205;CH;70;;Sociologia;leitura
+2018;111841;CH;71;;História;leitura
+2018;111943;CH;72;;Geografia;leitura
+2018;96354;CH;73;;Filosofia;leitura
+2018;112110;CH;74;;História;leitura
+2018;112014;CH;75;;Sociologia;leitura
+2018;86195;CH;76;;História;leitura
+2018;88107;CH;77;;Geografia;leitura
+2018;97888;CH;78;;História;leitura
+2018;84853;CH;79;;Filosofia;leitura
+2018;95528;CH;80;;Sociologia;leitura
+2018;111802;CH;81;;Geografia;leitura
+2018;111978;CH;82;;Geografia;leitura
+2018;87110;CH;83;;Filosofia;leitura
+2018;89639;CH;84;;História;leitura
+2018;26427;CH;85;;História;leitura
+2018;112013;CH;86;;Geografia;leitura
+2018;111873;CH;87;;Sociologia;leitura
+2018;88520;CH;88;;Geografia;leitura
+2018;112122;CH;89;;Sociologia;leitura
+2018;89113;CH;90;;Filosofia;leitura
+2018;111456;CN;91;;Química;leitura
+2018;87205;CN;92;;Física;matriz
+2018;39342;CN;93;;Física;matriz
+2018;111635;CN;94;;Biologia;leitura
+2018;111630;CN;95;;Física;leitura
+2018;61264;CN;96;;Biologia;leitura
+2018;11526;CN;97;;Física;matriz
+2018;111506;CN;98;;Biologia;leitura
+2018;111408;CN;99;;Química;leitura
+2018;66646;CN;100;;Biologia;leitura
+2018;12591;CN;101;;Biologia;matriz
+2018;67958;CN;102;;Química;leitura
+2018;82306;CN;103;;Física;leitura
+2018;60359;CN;104;;Física;leitura
+2018;111394;CN;105;;Química;matriz
+2018;62499;CN;106;;Biologia;leitura
+2018;88496;CN;107;;Biologia;leitura
+2018;43554;CN;108;;Física;leitura
+2018;76029;CN;109;;Química;leitura
+2018;111533;CN;110;;Biologia;leitura
+2018;87724;CN;111;;Biologia;matriz
+2018;89518;CN;112;;Física;leitura
+2018;111653;CN;113;;Química;leitura
+2018;59858;CN;114;;Química;matriz
+2018;86222;CN;115;;Física;matriz
+2018;76034;CN;116;;Física;matriz
+2018;82909;CN;117;;Biologia;matriz
+2018;12199;CN;118;;Química;leitura
+2018;111720;CN;119;;Biologia;matriz
+2018;111395;CN;120;;Física;leitura
+2018;111414;CN;121;;Química;matriz
+2018;111761;CN;122;;Física;leitura
+2018;111637;CN;123;;Biologia;leitura
+2018;111612;CN;124;;Química;leitura
+2018;111463;CN;125;;Física;leitura
+2018;111411;CN;126;;Química;leitura
+2018;97446;CN;127;;Biologia;leitura
+2018;111564;CN;128;;Física;leitura
+2018;27417;CN;129;;Física;matriz
+2018;40203;CN;130;;Química;matriz
+2018;17449;CN;131;;Física;matriz
+2018;46621;CN;132;;Química;matriz
+2018;85700;CN;133;;Biologia;leitura
+2018;83440;CN;134;;Física;matriz
+2018;62289;CN;135;;Química;leitura
+2018;87035;LC;1;EN;Língua estrangeira;matriz
+2018;84836;LC;1;ES;Língua estrangeira;matriz
+2018;87507;LC;2;EN;Língua estrangeira;matriz
+2018;88480;LC;2;ES;Língua estrangeira;matriz
+2018;95804;LC;3;EN;Língua estrangeira;matriz
+2018;32893;LC;3;ES;Língua estrangeira;matriz
+2018;13652;LC;4;EN;Língua estrangeira;matriz
+2018;55925;LC;4;ES;Língua estrangeira;matriz
+2018;85387;LC;5;EN;Língua estrangeira;matriz
+2018;59531;LC;5;ES;Língua estrangeira;matriz
+2018;111829;LC;6;;Língua portuguesa e texto;leitura
+2018;111931;LC;7;;Língua portuguesa e texto;leitura
+2018;97995;LC;8;;Literatura;leitura
+2018;112051;LC;9;;Língua portuguesa e texto;leitura
+2018;97968;LC;10;;Literatura;leitura
+2018;112018;LC;11;;Artes;leitura
+2018;78076;LC;12;;Língua portuguesa e texto;leitura
+2018;9065;LC;13;;Língua portuguesa e texto;leitura
+2018;111896;LC;14;;Língua portuguesa e texto;leitura
+2018;24528;LC;15;;Literatura;leitura
+2018;96758;LC;16;;Literatura;leitura
+2018;83517;LC;17;;Literatura;leitura
+2018;89331;LC;18;;Língua portuguesa e texto;leitura
+2018;89487;LC;19;;Tecnologias da informação e comunicação;leitura
+2018;112076;LC;20;;Literatura;leitura
+2018;112092;LC;21;;Língua portuguesa e texto;leitura
+2018;111948;LC;22;;Artes;leitura
+2018;24007;LC;23;;Literatura;leitura
+2018;111970;LC;24;;Língua portuguesa e texto;leitura
+2018;23230;LC;25;;Literatura;leitura
+2018;25943;LC;26;;Práticas corporais;leitura
+2018;68242;LC;27;;Língua portuguesa e texto;leitura
+2018;112143;LC;28;;Língua portuguesa e texto;leitura
+2018;23744;LC;29;;Artes;leitura
+2018;6818;LC;30;;Artes;leitura
+2018;112066;LC;31;;Práticas corporais;leitura
+2018;23615;LC;32;;Artes;leitura
+2018;76800;LC;33;;Literatura;leitura
+2018;112150;LC;34;;Artes;leitura
+2018;112101;LC;35;;Literatura;leitura
+2018;82889;LC;36;;Literatura;leitura
+2018;112113;LC;37;;Língua portuguesa e texto;leitura
+2018;64063;LC;38;;Literatura;leitura
+2018;112054;LC;39;;Tecnologias da informação e comunicação;leitura
+2018;97416;LC;40;;Literatura;leitura
+2018;112041;LC;41;;Língua portuguesa e texto;leitura
+2018;89028;LC;42;;Literatura;leitura
+2018;8562;LC;43;;Práticas corporais;leitura
+2018;111884;LC;44;;Tecnologias da informação e comunicação;leitura
+2018;112053;LC;45;;Artes;leitura
+2018;82123;MT;136;;Conhecimentos numéricos;leitura
+2018;111477;MT;137;;Conhecimentos numéricos;leitura
+2018;32189;MT;138;;Conhecimentos algébricos;leitura
+2018;111725;MT;139;;Conhecimentos geométricos;leitura
+2018;86988;MT;140;;Conhecimentos geométricos;leitura
+2018;30331;MT;141;;Conhecimentos numéricos;leitura
+2018;66805;MT;142;;Conhecimentos numéricos;leitura
+2018;15292;MT;143;;Conhecimentos numéricos;leitura
+2018;111468;MT;144;;Conhecimentos de estatística e probabilidade;leitura
+2018;32905;MT;145;;Conhecimentos de estatística e probabilidade;leitura
+2018;111524;MT;146;;Conhecimentos numéricos;leitura
+2018;97059;MT;147;;Conhecimentos de estatística e probabilidade;leitura
+2018;48921;MT;148;;Conhecimentos algébricos;leitura
+2018;111535;MT;149;;Conhecimentos numéricos;leitura
+2018;111718;MT;150;;Conhecimentos de estatística e probabilidade;leitura
+2018;111554;MT;151;;Conhecimentos numéricos;leitura
+2018;96201;MT;152;;Conhecimentos algébricos;leitura
+2018;15884;MT;153;;Conhecimentos geométricos;leitura
+2018;111434;MT;154;;Conhecimentos numéricos;leitura
+2018;111594;MT;155;;Conhecimentos geométricos;leitura
+2018;28815;MT;156;;Conhecimentos de estatística e probabilidade;leitura
+2018;29500;MT;157;;Conhecimentos geométricos;leitura
+2018;82367;MT;158;;Conhecimentos geométricos;leitura
+2018;111609;MT;159;;Conhecimentos geométricos;leitura
+2018;111487;MT;160;;Conhecimentos de estatística e probabilidade;leitura
+2018;86027;MT;161;;Conhecimentos geométricos;leitura
+2018;62736;MT;162;;Conhecimentos numéricos;leitura
+2018;29938;MT;164;;Conhecimentos numéricos;leitura
+2018;83742;MT;165;;Conhecimentos numéricos;leitura
+2018;12922;MT;166;;Conhecimentos de estatística e probabilidade;leitura
+2018;53559;MT;167;;Conhecimentos de estatística e probabilidade;leitura
+2018;111512;MT;168;;Conhecimentos numéricos;leitura
+2018;111557;MT;169;;Conhecimentos geométricos;leitura
+2018;84768;MT;170;;Conhecimentos algébricos;leitura
+2018;111692;MT;171;;Conhecimentos geométricos;leitura
+2018;98294;MT;172;;Conhecimentos numéricos;leitura
+2018;111628;MT;173;;Conhecimentos numéricos;leitura
+2018;111523;MT;174;;Conhecimentos algébricos;leitura
+2018;18456;MT;175;;Conhecimentos numéricos;leitura
+2018;61172;MT;176;;Conhecimentos de estatística e probabilidade;leitura
+2018;32953;MT;177;;Conhecimentos numéricos;leitura
+2018;5990;MT;178;;Conhecimentos numéricos;leitura
+2018;98070;MT;179;;Conhecimentos geométricos;leitura
+2018;85892;MT;180;;Conhecimentos geométricos;leitura
+2019;111894;CH;46;;Geografia;leitura
+2019;118054;CH;47;;Geografia;leitura
+2019;66498;CH;49;;Geografia;leitura
+2019;86751;CH;50;;Filosofia;leitura
+2019;83820;CH;51;;Filosofia;leitura
+2019;77940;CH;52;;História;leitura
+2019;118034;CH;53;;Geografia;leitura
+2019;84888;CH;54;;Geografia;leitura
+2019;88233;CH;55;;História;leitura
+2019;86934;CH;56;;Geografia;leitura
+2019;118158;CH;57;;Geografia;leitura
+2019;88306;CH;58;;Filosofia;leitura
+2019;118033;CH;59;;Geografia;leitura
+2019;84769;CH;60;;Geografia;leitura
+2019;118022;CH;61;;Geografia;leitura
+2019;111844;CH;62;;Sociologia;leitura
+2019;33960;CH;63;;História;leitura
+2019;78903;CH;64;;Filosofia;leitura
+2019;97975;CH;65;;Filosofia;leitura
+2019;118108;CH;66;;Sociologia;leitura
+2019;66219;CH;67;;Filosofia;leitura
+2019;111877;CH;68;;Sociologia;leitura
+2019;88194;CH;69;;Geografia;leitura
+2019;118125;CH;70;;Sociologia;leitura
+2019;87057;CH;71;;Sociologia;leitura
+2019;85139;CH;72;;História;leitura
+2019;88308;CH;73;;Sociologia;leitura
+2019;87709;CH;74;;Filosofia;leitura
+2019;112135;CH;75;;Filosofia;leitura
+2019;81689;CH;76;;História;leitura
+2019;118029;CH;77;;Sociologia;leitura
+2019;118024;CH;78;;Filosofia;leitura
+2019;97013;CH;79;;História;leitura
+2019;11601;CH;80;;História;leitura
+2019;89147;CH;81;;História;leitura
+2019;84811;CH;82;;História;leitura
+2019;96447;CH;83;;Sociologia;leitura
+2019;96302;CH;84;;Sociologia;leitura
+2019;111820;CH;85;;Sociologia;leitura
+2019;96596;CH;86;;História;leitura
+2019;84147;CH;87;;Sociologia;leitura
+2019;95648;CH;88;;Geografia;leitura
+2019;118038;CH;89;;Geografia;leitura
+2019;82364;CN;91;;Química;matriz
+2019;117836;CN;92;;Física;matriz
+2019;29776;CN;93;;Biologia;matriz
+2019;117999;CN;94;;Física;leitura
+2019;117746;CN;95;;Biologia;leitura
+2019;86521;CN;96;;Biologia;leitura
+2019;31718;CN;97;;Biologia;matriz
+2019;89150;CN;98;;Física;matriz
+2019;117988;CN;99;;Química;matriz
+2019;7529;CN;100;;Biologia;matriz
+2019;88853;CN;101;;Biologia;leitura
+2019;117883;CN;102;;Física;leitura
+2019;82490;CN;103;;Biologia;leitura
+2019;111624;CN;104;;Química;leitura
+2019;82236;CN;105;;Física;matriz
+2019;83441;CN;106;;Física;leitura
+2019;19223;CN;107;;Biologia;leitura
+2019;78504;CN;108;;Química;matriz
+2019;7629;CN;109;;Física;matriz
+2019;14273;CN;110;;Biologia;leitura
+2019;97169;CN;111;;Física;matriz
+2019;49600;CN;112;;Física;matriz
+2019;96556;CN;113;;Física;matriz
+2019;39290;CN;114;;Biologia;leitura
+2019;89298;CN;115;;Química;matriz
+2019;55328;CN;116;;Biologia;leitura
+2019;89515;CN;117;;Física;matriz
+2019;117868;CN;118;;Química;matriz
+2019;117890;CN;119;;Física;leitura
+2019;54381;CN;120;;Química;leitura
+2019;117979;CN;121;;Física;leitura
+2019;60311;CN;123;;Química;leitura
+2019;81478;CN;124;;Química;leitura
+2019;83526;CN;125;;Biologia;leitura
+2019;111601;CN;126;;Física;leitura
+2019;111545;CN;127;;Biologia;leitura
+2019;19407;CN;128;;Química;leitura
+2019;89772;CN;129;;Química;leitura
+2019;24104;CN;130;;Química;leitura
+2019;111705;CN;131;;Biologia;leitura
+2019;117875;CN;132;;Física;leitura
+2019;117642;CN;133;;Biologia;leitura
+2019;85548;CN;134;;Química;matriz
+2019;84568;CN;135;;Física;leitura
+2019;55166;LC;1;EN;Língua estrangeira;matriz
+2019;96705;LC;1;ES;Língua estrangeira;matriz
+2019;54110;LC;2;EN;Língua estrangeira;matriz
+2019;118222;LC;2;ES;Língua estrangeira;matriz
+2019;23564;LC;3;EN;Língua estrangeira;matriz
+2019;39016;LC;3;ES;Língua estrangeira;matriz
+2019;31954;LC;4;EN;Língua estrangeira;matriz
+2019;118167;LC;4;ES;Língua estrangeira;matriz
+2019;118180;LC;5;EN;Língua estrangeira;matriz
+2019;48558;LC;5;ES;Língua estrangeira;matriz
+2019;86563;LC;6;;Língua portuguesa e texto;leitura
+2019;118161;LC;7;;Literatura;leitura
+2019;118147;LC;8;;Literatura;leitura
+2019;118118;LC;9;;Práticas corporais;leitura
+2019;118215;LC;10;;Língua portuguesa e texto;leitura
+2019;118207;LC;11;;Práticas corporais;leitura
+2019;118170;LC;12;;Língua portuguesa e texto;leitura
+2019;90165;LC;13;;Literatura;leitura
+2019;118232;LC;14;;Literatura;leitura
+2019;118174;LC;15;;Tecnologias da informação e comunicação;leitura
+2019;76167;LC;16;;Literatura;leitura
+2019;68624;LC;17;;Tecnologias da informação e comunicação;leitura
+2019;96525;LC;18;;Tecnologias da informação e comunicação;leitura
+2019;89317;LC;19;;Tecnologias da informação e comunicação;leitura
+2019;86496;LC;20;;Tecnologias da informação e comunicação;leitura
+2019;118256;LC;21;;Literatura;leitura
+2019;118306;LC;22;;Literatura;leitura
+2019;118264;LC;23;;Língua portuguesa e texto;leitura
+2019;89550;LC;24;;Artes;leitura
+2019;14169;LC;25;;Artes;leitura
+2019;118235;LC;26;;Língua portuguesa e texto;leitura
+2019;118117;LC;27;;Práticas corporais;leitura
+2019;118278;LC;28;;Literatura;leitura
+2019;59976;LC;29;;Tecnologias da informação e comunicação;leitura
+2019;23833;LC;30;;Literatura;leitura
+2019;81992;LC;31;;Artes;leitura
+2019;32261;LC;32;;Práticas corporais;leitura
+2019;118134;LC;34;;Língua portuguesa e texto;leitura
+2019;89874;LC;35;;Práticas corporais;leitura
+2019;86932;LC;36;;Artes;leitura
+2019;24785;LC;37;;Tecnologias da informação e comunicação;leitura
+2019;118028;LC;38;;Tecnologias da informação e comunicação;leitura
+2019;118246;LC;39;;Literatura;leitura
+2019;77356;LC;40;;Literatura;leitura
+2019;118276;LC;41;;Literatura;leitura
+2019;118299;LC;42;;Língua portuguesa e texto;leitura
+2019;118165;LC;43;;Tecnologias da informação e comunicação;leitura
+2019;118103;LC;44;;Literatura;leitura
+2019;118192;LC;45;;Literatura;leitura
+2019;117635;MT;136;;Conhecimentos geométricos;leitura
+2019;9779;MT;137;;Conhecimentos algébricos;leitura
+2019;111608;MT;138;;Conhecimentos de estatística e probabilidade;leitura
+2019;111696;MT;139;;Conhecimentos algébricos;leitura
+2019;63187;MT;140;;Conhecimentos numéricos;leitura
+2019;117612;MT;141;;Conhecimentos numéricos;leitura
+2019;63808;MT;142;;Conhecimentos geométricos;leitura
+2019;54448;MT;143;;Conhecimentos numéricos;leitura
+2019;86432;MT;144;;Conhecimentos de estatística e probabilidade;leitura
+2019;117798;MT;146;;Conhecimentos de estatística e probabilidade;leitura
+2019;30740;MT;147;;Conhecimentos numéricos;leitura
+2019;30436;MT;148;;Conhecimentos numéricos;leitura
+2019;117725;MT;149;;Conhecimentos de estatística e probabilidade;leitura
+2019;84409;MT;150;;Conhecimentos numéricos;leitura
+2019;28434;MT;151;;Conhecimentos numéricos;leitura
+2019;117607;MT;152;;Conhecimentos algébricos;leitura
+2019;30570;MT;153;;Conhecimentos de estatística e probabilidade;leitura
+2019;84374;MT;154;;Conhecimentos algébricos;leitura
+2019;83754;MT;155;;Conhecimentos de estatística e probabilidade;leitura
+2019;39708;MT;156;;Conhecimentos numéricos;leitura
+2019;117950;MT;157;;Conhecimentos geométricos;leitura
+2019;117845;MT;158;;Conhecimentos geométricos;leitura
+2019;117726;MT;159;;Conhecimentos algébricos;leitura
+2019;8368;MT;160;;Conhecimentos de estatística e probabilidade;leitura
+2019;13303;MT;161;;Conhecimentos de estatística e probabilidade;leitura
+2019;14324;MT;162;;Conhecimentos geométricos;leitura
+2019;18002;MT;163;;Conhecimentos de estatística e probabilidade;leitura
+2019;42803;MT;164;;Conhecimentos geométricos;leitura
+2019;117743;MT;165;;Conhecimentos algébricos;leitura
+2019;10360;MT;166;;Conhecimentos geométricos;leitura
+2019;31184;MT;167;;Conhecimentos de estatística e probabilidade;leitura
+2019;8401;MT;168;;Conhecimentos algébricos;leitura
+2019;117818;MT;169;;Conhecimentos de estatística e probabilidade;leitura
+2019;117783;MT;170;;Conhecimentos numéricos;leitura
+2019;83792;MT;171;;Conhecimentos de estatística e probabilidade;leitura
+2019;8442;MT;172;;Conhecimentos de estatística e probabilidade;leitura
+2019;89634;MT;173;;Conhecimentos de estatística e probabilidade;leitura
+2019;78445;MT;174;;Conhecimentos de estatística e probabilidade;leitura
+2019;17642;MT;175;;Conhecimentos geométricos;leitura
+2019;117767;MT;176;;Conhecimentos numéricos;leitura
+2019;83955;MT;177;;Conhecimentos algébricos;leitura
+2019;111593;MT;178;;Conhecimentos de estatística e probabilidade;leitura
+2019;111518;MT;179;;Conhecimentos numéricos;leitura
+2019;83994;MT;180;;Conhecimentos algébricos;leitura
+2020;112017;CH;46;;Geografia;leitura
+2020;111987;CH;47;;Geografia;leitura
+2020;111788;CH;48;;Sociologia;leitura
+2020;43978;CH;49;;Sociologia;leitura
+2020;84333;CH;50;;Geografia;leitura
+2020;111924;CH;51;;Geografia;leitura
+2020;89808;CH;52;;História;leitura
+2020;112106;CH;53;;Geografia;leitura
+2020;87040;CH;54;;História;leitura
+2020;111912;CH;55;;Filosofia;leitura
+2020;112103;CH;56;;Geografia;leitura
+2020;111968;CH;57;;Geografia;leitura
+2020;112012;CH;58;;Geografia;leitura
+2020;88041;CH;59;;Geografia;leitura
+2020;87216;CH;60;;Filosofia;leitura
+2020;112065;CH;61;;Geografia;leitura
+2020;42444;CH;62;;História;leitura
+2020;15291;CH;63;;Sociologia;leitura
+2020;87999;CH;64;;Sociologia;leitura
+2020;111792;CH;65;;Geografia;leitura
+2020;88307;CH;66;;Sociologia;leitura
+2020;97979;CH;67;;Geografia;leitura
+2020;111815;CH;68;;História;leitura
+2020;84269;CH;69;;Filosofia;leitura
+2020;35686;CH;70;;História;leitura
+2020;111917;CH;71;;Sociologia;leitura
+2020;85290;CH;72;;Filosofia;leitura
+2020;95418;CH;73;;Sociologia;leitura
+2020;111930;CH;74;;Filosofia;leitura
+2020;111919;CH;75;;História;leitura
+2020;63343;CH;76;;Sociologia;leitura
+2020;46932;CH;77;;Filosofia;leitura
+2020;38675;CH;78;;História;leitura
+2020;111945;CH;79;;História;leitura
+2020;111886;CH;80;;Sociologia;leitura
+2020;18425;CH;81;;História;leitura
+2020;96883;CH;82;;História;leitura
+2020;95904;CH;83;;História;leitura
+2020;95948;CH;84;;Geografia;leitura
+2020;98153;CH;85;;História;leitura
+2020;45217;CH;86;;História;leitura
+2020;85886;CH;87;;História;leitura
+2020;112015;CH;88;;Geografia;leitura
+2020;96190;CH;89;;Filosofia;leitura
+2020;111863;CH;90;;Geografia;leitura
+2020;84184;CN;91;;Física;leitura
+2020;79124;CN;92;;Química;leitura
+2020;62745;CN;93;;Química;leitura
+2020;60072;CN;94;;Química;matriz
+2020;31244;CN;95;;Biologia;leitura
+2020;17936;CN;96;;Química;matriz
+2020;14966;CN;97;;Química;leitura
+2020;59913;CN;98;;Física;matriz
+2020;49867;CN;99;;Física;matriz
+2020;76371;CN;100;;Química;matriz
+2020;10035;CN;101;;Biologia;leitura
+2020;79139;CN;102;;Química;leitura
+2020;87702;CN;103;;Biologia;leitura
+2020;95441;CN;104;;Biologia;leitura
+2020;53548;CN;105;;Física;leitura
+2020;84444;CN;106;;Física;leitura
+2020;78655;CN;107;;Física;leitura
+2020;83046;CN;108;;Biologia;matriz
+2020;97512;CN;109;;Física;leitura
+2020;82708;CN;110;;Química;leitura
+2020;85606;CN;111;;Física;leitura
+2020;111722;CN;112;;Física;leitura
+2020;83584;CN;113;;Física;leitura
+2020;89494;CN;114;;Física;leitura
+2020;49826;CN;115;;Biologia;leitura
+2020;111430;CN;116;;Física;leitura
+2020;40151;CN;117;;Física;leitura
+2020;14993;CN;118;;Biologia;matriz
+2020;83684;CN;119;;Química;leitura
+2020;111537;CN;120;;Química;leitura
+2020;38012;CN;121;;Biologia;matriz
+2020;55948;CN;122;;Biologia;leitura
+2020;82243;CN;123;;Química;leitura
+2020;87690;CN;124;;Química;leitura
+2020;98228;CN;125;;Biologia;leitura
+2020;111709;CN;126;;Física;matriz
+2020;84057;CN;127;;Biologia;leitura
+2020;81964;CN;128;;Física;leitura
+2020;77782;CN;129;;Biologia;matriz
+2020;90016;CN;130;;Física;matriz
+2020;87642;CN;131;;Química;matriz
+2020;111501;CN;132;;Química;matriz
+2020;84063;CN;133;;Física;matriz
+2020;87675;CN;134;;Química;leitura
+2020;66641;LC;1;EN;Língua estrangeira;matriz
+2020;23296;LC;1;ES;Língua estrangeira;matriz
+2020;112060;LC;2;EN;Língua estrangeira;matriz
+2020;54896;LC;2;ES;Língua estrangeira;matriz
+2020;98143;LC;3;EN;Língua estrangeira;matriz
+2020;86186;LC;3;ES;Língua estrangeira;matriz
+2020;60777;LC;4;EN;Língua estrangeira;matriz
+2020;111973;LC;4;ES;Língua estrangeira;matriz
+2020;112080;LC;5;EN;Língua estrangeira;matriz
+2020;62053;LC;5;ES;Língua estrangeira;matriz
+2020;63448;LC;6;;Literatura;leitura
+2020;112130;LC;7;;Língua portuguesa e texto;leitura
+2020;21377;LC;8;;Artes;leitura
+2020;112138;LC;9;;Língua portuguesa e texto;leitura
+2020;112059;LC;10;;Língua portuguesa e texto;leitura
+2020;96433;LC;11;;Literatura;leitura
+2020;112112;LC;12;;Artes;leitura
+2020;112089;LC;13;;Tecnologias da informação e comunicação;leitura
+2020;89327;LC;14;;Artes;leitura
+2020;89906;LC;15;;Práticas corporais;leitura
+2020;96861;LC;16;;Literatura;leitura
+2020;59955;LC;17;;Práticas corporais;leitura
+2020;17055;LC;18;;Literatura;leitura
+2020;111819;LC;19;;Artes;leitura
+2020;52618;LC;20;;Língua portuguesa e texto;leitura
+2020;30842;LC;21;;Artes;leitura
+2020;111838;LC;22;;Práticas corporais;leitura
+2020;17413;LC;23;;Artes;leitura
+2020;112151;LC;24;;Língua portuguesa e texto;leitura
+2020;15001;LC;25;;Artes;leitura
+2020;64056;LC;26;;Tecnologias da informação e comunicação;leitura
+2020;76967;LC;27;;Artes;leitura
+2020;11437;LC;28;;Artes;leitura
+2020;12204;LC;29;;Artes;leitura
+2020;32400;LC;30;;Língua portuguesa e texto;leitura
+2020;111850;LC;31;;Língua portuguesa e texto;leitura
+2020;84295;LC;32;;Literatura;leitura
+2020;111915;LC;33;;Literatura;leitura
+2020;16501;LC;34;;Práticas corporais;leitura
+2020;44328;LC;35;;Práticas corporais;leitura
+2020;96814;LC;36;;Práticas corporais;leitura
+2020;86091;LC;37;;Práticas corporais;leitura
+2020;111989;LC;38;;Língua portuguesa e texto;leitura
+2020;111903;LC;39;;Língua portuguesa e texto;leitura
+2020;11966;LC;40;;Literatura;leitura
+2020;18128;LC;41;;Literatura;leitura
+2020;112087;LC;42;;Tecnologias da informação e comunicação;leitura
+2020;33271;LC;43;;Tecnologias da informação e comunicação;leitura
+2020;35684;LC;44;;Língua portuguesa e texto;leitura
+2020;20652;LC;45;;Literatura;leitura
+2020;85224;MT;136;;Conhecimentos geométricos;leitura
+2020;82724;MT;137;;Conhecimentos numéricos;leitura
+2020;32975;MT;138;;Conhecimentos geométricos;leitura
+2020;59546;MT;139;;Conhecimentos numéricos;leitura
+2020;111432;MT;140;;Conhecimentos geométricos;leitura
+2020;29531;MT;141;;Conhecimentos numéricos;leitura
+2020;8028;MT;142;;Conhecimentos de estatística e probabilidade;leitura
+2020;37990;MT;143;;Conhecimentos numéricos;leitura
+2020;37286;MT;144;;Conhecimentos algébricos;leitura
+2020;7633;MT;145;;Conhecimentos geométricos;leitura
+2020;15248;MT;146;;Conhecimentos geométricos;leitura
+2020;86282;MT;147;;Conhecimentos numéricos;leitura
+2020;77477;MT;148;;Conhecimentos de estatística e probabilidade;leitura
+2020;84253;MT;149;;Conhecimentos algébricos;leitura
+2020;111714;MT;150;;Conhecimentos algébricos;leitura
+2020;111461;MT;151;;Conhecimentos geométricos;leitura
+2020;85793;MT;152;;Conhecimentos numéricos;leitura
+2020;49782;MT;153;;Conhecimentos numéricos;leitura
+2020;63324;MT;154;;Conhecimentos geométricos;leitura
+2020;55387;MT;155;;Conhecimentos geométricos;leitura
+2020;86803;MT;156;;Conhecimentos de estatística e probabilidade;leitura
+2020;48864;MT;158;;Conhecimentos algébricos;leitura
+2020;60666;MT;159;;Conhecimentos de estatística e probabilidade;leitura
+2020;10660;MT;160;;Conhecimentos numéricos;leitura
+2020;13085;MT;161;;Conhecimentos geométricos;leitura
+2020;111525;MT;162;;Conhecimentos geométricos;leitura
+2020;30462;MT;163;;Conhecimentos numéricos;leitura
+2020;88028;MT;164;;Conhecimentos algébricos;leitura
+2020;83753;MT;165;;Conhecimentos de estatística e probabilidade;leitura
+2020;111530;MT;166;;Conhecimentos numéricos;leitura
+2020;83638;MT;167;;Conhecimentos numéricos;leitura
+2020;41676;MT;168;;Conhecimentos geométricos;leitura
+2020;15897;MT;169;;Conhecimentos numéricos;leitura
+2020;111719;MT;170;;Conhecimentos numéricos;leitura
+2020;24338;MT;171;;Conhecimentos geométricos;leitura
+2020;111566;MT;172;;Conhecimentos geométricos;leitura
+2020;63901;MT;173;;Conhecimentos geométricos;leitura
+2020;85945;MT;174;;Conhecimentos numéricos;leitura
+2020;49630;MT;175;;Conhecimentos algébricos;leitura
+2020;30344;MT;176;;Conhecimentos geométricos;leitura
+2020;111491;MT;177;;Conhecimentos geométricos;leitura
+2020;85053;MT;178;;Conhecimentos de estatística e probabilidade;leitura
+2020;43031;MT;179;;Conhecimentos numéricos;leitura
+2020;62498;MT;180;;Conhecimentos de estatística e probabilidade;leitura
+2021;118049;CH;46;;Sociologia;leitura
+2021;86369;CH;47;;Sociologia;leitura
+2021;118058;CH;48;;Geografia;leitura
+2021;125655;CH;49;;Sociologia;leitura
+2021;125707;CH;50;;Geografia;leitura
+2021;98128;CH;51;;Geografia;leitura
+2021;52843;CH;52;;História;leitura
+2021;125676;CH;53;;Sociologia;leitura
+2021;96872;CH;54;;Sociologia;leitura
+2021;112084;CH;55;;Sociologia;leitura
+2021;118206;CH;56;;História;leitura
+2021;87238;CH;57;;Sociologia;leitura
+2021;111817;CH;58;;Geografia;leitura
+2021;125885;CH;59;;Geografia;leitura
+2021;111875;CH;60;;Sociologia;leitura
+2021;111789;CH;61;;Geografia;leitura
+2021;89649;CH;62;;Geografia;leitura
+2021;111936;CH;63;;Geografia;leitura
+2021;96289;CH;64;;Filosofia;leitura
+2021;118135;CH;65;;História;leitura
+2021;98208;CH;66;;Sociologia;leitura
+2021;125722;CH;67;;História;leitura
+2021;111925;CH;68;;Sociologia;leitura
+2021;81914;CH;69;;História;leitura
+2021;125732;CH;70;;Sociologia;leitura
+2021;96669;CH;71;;Geografia;leitura
+2021;125907;CH;72;;Geografia;leitura
+2021;88342;CH;73;;História;leitura
+2021;112114;CH;74;;História;leitura
+2021;111880;CH;75;;História;leitura
+2021;95822;CH;76;;História;leitura
+2021;125716;CH;77;;História;leitura
+2021;118129;CH;78;;História;leitura
+2021;118012;CH;79;;Sociologia;leitura
+2021;88561;CH;80;;Sociologia;leitura
+2021;95563;CH;81;;História;leitura
+2021;86998;CH;82;;Filosofia;leitura
+2021;118059;CH;83;;História;leitura
+2021;111846;CH;84;;Sociologia;leitura
+2021;88365;CH;85;;História;leitura
+2021;112129;CH;86;;Filosofia;leitura
+2021;96415;CH;87;;Filosofia;leitura
+2021;96369;CH;88;;História;leitura
+2021;33940;CH;89;;Geografia;leitura
+2021;125656;CH;90;;Geografia;leitura
+2021;117867;CN;91;;Biologia;leitura
+2021;63095;CN;92;;Física;leitura
+2021;68355;CN;93;;Biologia;matriz
+2021;85781;CN;94;;Física;matriz
+2021;117843;CN;95;;Química;matriz
+2021;63600;CN;96;;Biologia;leitura
+2021;12401;CN;97;;Química;leitura
+2021;111498;CN;98;;Biologia;leitura
+2021;126594;CN;99;;Física;leitura
+2021;117898;CN;100;;Física;leitura
+2021;48911;CN;101;;Química;matriz
+2021;62293;CN;102;;Química;leitura
+2021;88260;CN;103;;Química;leitura
+2021;117795;CN;104;;Química;leitura
+2021;59907;CN;105;;Física;matriz
+2021;117891;CN;106;;Física;matriz
+2021;60284;CN;107;;Física;leitura
+2021;98108;CN;108;;Química;leitura
+2021;89864;CN;109;;Física;leitura
+2021;111623;CN;110;;Biologia;leitura
+2021;39279;CN;111;;Química;leitura
+2021;85079;CN;112;;Biologia;leitura
+2021;66339;CN;113;;Química;matriz
+2021;19227;CN;114;;Biologia;leitura
+2021;111647;CN;115;;Física;matriz
+2021;84502;CN;116;;Química;leitura
+2021;98020;CN;117;;Química;leitura
+2021;84331;CN;119;;Física;leitura
+2021;111544;CN;120;;Física;matriz
+2021;78726;CN;121;;Biologia;leitura
+2021;82265;CN;122;;Química;leitura
+2021;85525;CN;123;;Biologia;matriz
+2021;117627;CN;124;;Química;leitura
+2021;81640;CN;125;;Física;matriz
+2021;14944;CN;126;;Física;leitura
+2021;97577;CN;127;;Biologia;leitura
+2021;111546;CN;128;;Física;matriz
+2021;87718;CN;129;;Biologia;leitura
+2021;54019;CN;130;;Química;matriz
+2021;54959;CN;131;;Física;leitura
+2021;111664;CN;132;;Biologia;leitura
+2021;88403;CN;133;;Física;leitura
+2021;117980;CN;134;;Química;leitura
+2021;46813;CN;135;;Química;leitura
+2021;111852;LC;1;EN;Língua estrangeira;matriz
+2021;112042;LC;1;ES;Língua estrangeira;matriz
+2021;118292;LC;2;EN;Língua estrangeira;matriz
+2021;89505;LC;2;ES;Língua estrangeira;matriz
+2021;118145;LC;3;EN;Língua estrangeira;matriz
+2021;117572;LC;3;ES;Língua estrangeira;matriz
+2021;81488;LC;4;EN;Língua estrangeira;matriz
+2021;85244;LC;4;ES;Língua estrangeira;matriz
+2021;63712;LC;5;EN;Língua estrangeira;matriz
+2021;118223;LC;5;ES;Língua estrangeira;matriz
+2021;15069;LC;6;;Língua portuguesa e texto;leitura
+2021;120165;LC;7;;Literatura;leitura
+2021;118073;LC;8;;Língua portuguesa e texto;leitura
+2021;86462;LC;9;;Literatura;leitura
+2021;97519;LC;10;;Artes;leitura
+2021;68920;LC;11;;Artes;leitura
+2021;118201;LC;12;;Língua portuguesa e texto;leitura
+2021;118251;LC;13;;Língua portuguesa e texto;leitura
+2021;120342;LC;14;;Artes;leitura
+2021;120646;LC;15;;Literatura;leitura
+2021;86515;LC;16;;Língua portuguesa e texto;leitura
+2021;120170;LC;17;;Práticas corporais;leitura
+2021;31981;LC;18;;Artes;leitura
+2021;118218;LC;19;;Língua portuguesa e texto;leitura
+2021;120623;LC;20;;Artes;leitura
+2021;83331;LC;21;;Língua portuguesa e texto;leitura
+2021;86329;LC;22;;Língua portuguesa e texto;leitura
+2021;119763;LC;23;;Artes;leitura
+2021;118279;LC;25;;Literatura;leitura
+2021;118269;LC;26;;Literatura;leitura
+2021;15105;LC;27;;Artes;leitura
+2021;120627;LC;28;;Tecnologias da informação e comunicação;leitura
+2021;96262;LC;29;;Tecnologias da informação e comunicação;leitura
+2021;120154;LC;30;;Literatura;leitura
+2021;118205;LC;31;;Práticas corporais;leitura
+2021;120375;LC;32;;Língua portuguesa e texto;leitura
+2021;18745;LC;33;;Língua portuguesa e texto;leitura
+2021;120340;LC;34;;Tecnologias da informação e comunicação;leitura
+2021;39441;LC;35;;Literatura;leitura
+2021;120560;LC;36;;Artes;leitura
+2021;120643;LC;37;;Artes;leitura
+2021;118302;LC;38;;Literatura;leitura
+2021;118231;LC;39;;Artes;leitura
+2021;118250;LC;40;;Literatura;leitura
+2021;37831;LC;41;;Literatura;leitura
+2021;118293;LC;42;;Artes;leitura
+2021;120639;LC;44;;Literatura;leitura
+2021;86594;LC;45;;Artes;leitura
+2021;15209;MT;136;;Conhecimentos geométricos;leitura
+2021;126019;MT;137;;Conhecimentos geométricos;leitura
+2021;95820;MT;139;;Conhecimentos de estatística e probabilidade;leitura
+2021;96226;MT;140;;Conhecimentos de estatística e probabilidade;leitura
+2021;117692;MT;141;;Conhecimentos de estatística e probabilidade;leitura
+2021;117731;MT;142;;Conhecimentos de estatística e probabilidade;leitura
+2021;86433;MT;143;;Conhecimentos de estatística e probabilidade;leitura
+2021;39923;MT;144;;Conhecimentos de estatística e probabilidade;leitura
+2021;59925;MT;145;;Conhecimentos de estatística e probabilidade;leitura
+2021;111459;MT;146;;Conhecimentos de estatística e probabilidade;leitura
+2021;84258;MT;147;;Conhecimentos algébricos;leitura
+2021;30751;MT;148;;Conhecimentos de estatística e probabilidade;leitura
+2021;97598;MT;149;;Conhecimentos algébricos;leitura
+2021;15454;MT;150;;Conhecimentos algébricos;leitura
+2021;85219;MT;151;;Conhecimentos de estatística e probabilidade;leitura
+2021;81869;MT;152;;Conhecimentos numéricos;leitura
+2021;117852;MT;153;;Conhecimentos geométricos;leitura
+2021;89238;MT;154;;Conhecimentos de estatística e probabilidade;leitura
+2021;117675;MT;155;;Conhecimentos numéricos;leitura
+2021;67990;MT;156;;Conhecimentos algébricos;leitura
+2021;96222;MT;157;;Conhecimentos de estatística e probabilidade;leitura
+2021;59786;MT;158;;Conhecimentos numéricos;leitura
+2021;88357;MT;159;;Conhecimentos numéricos;leitura
+2021;117902;MT;160;;Conhecimentos algébricos;leitura
+2021;111716;MT;161;;Conhecimentos algébricos;leitura
+2021;88518;MT;162;;Conhecimentos algébricos;leitura
+2021;117831;MT;163;;Conhecimentos numéricos;leitura
+2021;111521;MT;164;;Conhecimentos numéricos;leitura
+2021;117832;MT;165;;Conhecimentos numéricos;leitura
+2021;66618;MT;166;;Conhecimentos geométricos;leitura
+2021;82880;MT;167;;Conhecimentos numéricos;leitura
+2021;117624;MT;168;;Conhecimentos geométricos;leitura
+2021;30420;MT;169;;Conhecimentos geométricos;leitura
+2021;27471;MT;170;;Conhecimentos geométricos;leitura
+2021;88461;MT;171;;Conhecimentos algébricos;leitura
+2021;86767;MT;172;;Conhecimentos algébricos;leitura
+2021;30781;MT;173;;Conhecimentos algébricos;leitura
+2021;83741;MT;174;;Conhecimentos algébricos;leitura
+2021;111476;MT;175;;Conhecimentos geométricos;leitura
+2021;67554;MT;176;;Conhecimentos numéricos;leitura
+2021;37576;MT;177;;Conhecimentos numéricos;leitura
+2021;30836;MT;178;;Conhecimentos geométricos;leitura
+2021;117923;MT;179;;Conhecimentos numéricos;leitura
+2021;24895;MT;180;;Conhecimentos geométricos;leitura
+2022;140506;CH;46;;Sociologia;leitura
+2022;83806;CH;47;;Filosofia;leitura
+2022;141322;CH;48;;Sociologia;leitura
+2022;140639;CH;49;;Geografia;leitura
+2022;140682;CH;50;;História;leitura
+2022;87207;CH;51;;Geografia;leitura
+2022;88045;CH;52;;Geografia;leitura
+2022;140568;CH;53;;História;leitura
+2022;125706;CH;54;;História;leitura
+2022;140631;CH;55;;Geografia;leitura
+2022;141364;CH;56;;Sociologia;leitura
+2022;141355;CH;57;;Filosofia;leitura
+2022;125654;CH;58;;História;leitura
+2022;118066;CH;59;;Geografia;leitura
+2022;140429;CH;60;;Sociologia;leitura
+2022;141030;CH;61;;Sociologia;leitura
+2022;140585;CH;62;;Geografia;leitura
+2022;112145;CH;63;;História;leitura
+2022;141048;CH;65;;Sociologia;leitura
+2022;140914;CH;66;;História;leitura
+2022;141148;CH;67;;Geografia;leitura
+2022;111964;CH;68;;Geografia;leitura
+2022;82962;CH;69;;Geografia;leitura
+2022;97262;CH;70;;Sociologia;leitura
+2022;44230;CH;71;;Sociologia;leitura
+2022;141384;CH;72;;Geografia;leitura
+2022;75825;CH;73;;História;leitura
+2022;118110;CH;74;;Geografia;leitura
+2022;140721;CH;75;;Sociologia;leitura
+2022;140441;CH;76;;Geografia;leitura
+2022;140550;CH;77;;História;leitura
+2022;67980;CH;78;;Geografia;leitura
+2022;140378;CH;79;;Sociologia;leitura
+2022;95823;CH;80;;Filosofia;leitura
+2022;95739;CH;81;;História;leitura
+2022;140643;CH;82;;Geografia;leitura
+2022;141072;CH;83;;Sociologia;leitura
+2022;111893;CH;84;;Filosofia;leitura
+2022;125944;CH;85;;História;leitura
+2022;96291;CH;86;;Filosofia;leitura
+2022;140572;CH;87;;Geografia;leitura
+2022;96516;CH;88;;Filosofia;leitura
+2022;140190;CH;89;;História;leitura
+2022;111984;CH;90;;Sociologia;leitura
+2022;141574;CN;91;;Química;matriz
+2022;18228;CN;92;;Biologia;matriz
+2022;111668;CN;93;;Física;matriz
+2022;111694;CN;94;;Química;matriz
+2022;111558;CN;95;;Física;matriz
+2022;81969;CN;96;;Física;matriz
+2022;141597;CN;97;;Química;matriz
+2022;141725;CN;98;;Biologia;matriz
+2022;41054;CN;99;;Biologia;matriz
+2022;90130;CN;100;;Física;matriz
+2022;31381;CN;101;;Química;matriz
+2022;141731;CN;102;;Biologia;matriz
+2022;85445;CN;103;;Física;matriz
+2022;97727;CN;104;;Química;leitura
+2022;28034;CN;105;;Física;leitura
+2022;97915;CN;106;;Química;matriz
+2022;85860;CN;107;;Química;matriz
+2022;44969;CN;108;;Química;matriz
+2022;96189;CN;109;;Física;matriz
+2022;141712;CN;110;;Biologia;leitura
+2022;43073;CN;111;;Física;leitura
+2022;117854;CN;114;;Biologia;leitura
+2022;141545;CN;115;;Física;leitura
+2022;78377;CN;116;;Física;leitura
+2022;97761;CN;117;;Química;leitura
+2022;78716;CN;118;;Biologia;leitura
+2022;96244;CN;120;;Biologia;leitura
+2022;37769;CN;121;;Biologia;leitura
+2022;141726;CN;122;;Biologia;leitura
+2022;87998;CN;123;;Física;leitura
+2022;141547;CN;124;;Química;leitura
+2022;98106;CN;125;;Biologia;leitura
+2022;83901;CN;126;;Química;leitura
+2022;111431;CN;127;;Biologia;leitura
+2022;111613;CN;128;;Física;leitura
+2022;28632;CN;129;;Biologia;leitura
+2022;126560;CN;130;;Física;matriz
+2022;141503;CN;131;;Química;leitura
+2022;88655;CN;132;;Biologia;leitura
+2022;31313;CN;133;;Biologia;leitura
+2022;82765;CN;135;;Física;leitura
+2022;111918;LC;1;EN;Língua estrangeira;matriz
+2022;118230;LC;1;ES;Língua estrangeira;matriz
+2022;111835;LC;2;EN;Língua estrangeira;matriz
+2022;118252;LC;2;ES;Língua estrangeira;matriz
+2022;140767;LC;3;EN;Língua estrangeira;matriz
+2022;76318;LC;3;ES;Língua estrangeira;matriz
+2022;140731;LC;4;EN;Língua estrangeira;matriz
+2022;140527;LC;4;ES;Língua estrangeira;matriz
+2022;140626;LC;5;EN;Língua estrangeira;matriz
+2022;140567;LC;5;ES;Língua estrangeira;matriz
+2022;60382;LC;6;;Língua portuguesa e texto;leitura
+2022;111929;LC;7;;Língua portuguesa e texto;leitura
+2022;118120;LC;8;;Língua portuguesa e texto;leitura
+2022;66576;LC;9;;Língua portuguesa e texto;leitura
+2022;49544;LC;10;;Artes;leitura
+2022;41810;LC;11;;Artes;leitura
+2022;42674;LC;12;;Língua portuguesa e texto;leitura
+2022;120622;LC;13;;Tecnologias da informação e comunicação;leitura
+2022;42940;LC;14;;Língua portuguesa e texto;leitura
+2022;111926;LC;15;;Língua portuguesa e texto;leitura
+2022;141427;LC;16;;Literatura;leitura
+2022;141464;LC;17;;Língua portuguesa e texto;leitura
+2022;67229;LC;18;;Língua portuguesa e texto;leitura
+2022;120124;LC;19;;Práticas corporais;leitura
+2022;45201;LC;20;;Práticas corporais;leitura
+2022;140827;LC;21;;Literatura;leitura
+2022;39101;LC;22;;Tecnologias da informação e comunicação;leitura
+2022;9716;LC;23;;Literatura;leitura
+2022;141440;LC;24;;Língua portuguesa e texto;leitura
+2022;141203;LC;25;;Práticas corporais;leitura
+2022;96502;LC;26;;Artes;leitura
+2022;141410;LC;27;;Língua portuguesa e texto;leitura
+2022;120626;LC;28;;Língua portuguesa e texto;leitura
+2022;111954;LC;29;;Literatura;leitura
+2022;26545;LC;30;;Literatura;leitura
+2022;89149;LC;31;;Literatura;leitura
+2022;44570;LC;32;;Língua portuguesa e texto;leitura
+2022;86703;LC;33;;Literatura;leitura
+2022;119767;LC;34;;Práticas corporais;leitura
+2022;140898;LC;35;;Literatura;leitura
+2022;111961;LC;36;;Língua portuguesa e texto;leitura
+2022;141390;LC;37;;Tecnologias da informação e comunicação;leitura
+2022;120368;LC;38;;Artes;leitura
+2022;54528;LC;39;;Artes;leitura
+2022;6864;LC;40;;Literatura;leitura
+2022;10776;LC;41;;Literatura;leitura
+2022;90238;LC;42;;Literatura;leitura
+2022;78112;LC;43;;Literatura;leitura
+2022;81994;LC;44;;Artes;leitura
+2022;141261;LC;45;;Artes;leitura
+2022;97590;MT;136;;Conhecimentos de estatística e probabilidade;leitura
+2022;86840;MT;137;;Conhecimentos de estatística e probabilidade;leitura
+2022;30493;MT;138;;Conhecimentos de estatística e probabilidade;leitura
+2022;117973;MT;139;;Conhecimentos geométricos;leitura
+2022;10500;MT;140;;Conhecimentos numéricos;leitura
+2022;86499;MT;142;;Conhecimentos numéricos;leitura
+2022;5961;MT;143;;Conhecimentos geométricos;leitura
+2022;75829;MT;144;;Conhecimentos numéricos;leitura
+2022;117651;MT;145;;Conhecimentos numéricos;leitura
+2022;95509;MT;146;;Conhecimentos numéricos;leitura
+2022;117820;MT;147;;Conhecimentos numéricos;leitura
+2022;61248;MT;148;;Conhecimentos algébricos;leitura
+2022;111738;MT;149;;Conhecimentos de estatística e probabilidade;leitura
+2022;85343;MT;150;;Conhecimentos algébricos;leitura
+2022;30053;MT;151;;Conhecimentos de estatística e probabilidade;leitura
+2022;85228;MT;152;;Conhecimentos geométricos;leitura
+2022;86466;MT;153;;Conhecimentos geométricos;leitura
+2022;43182;MT;154;;Conhecimentos numéricos;leitura
+2022;47309;MT;155;;Conhecimentos numéricos;leitura
+2022;63646;MT;156;;Conhecimentos numéricos;leitura
+2022;53461;MT;158;;Conhecimentos algébricos;leitura
+2022;85013;MT;159;;Conhecimentos de estatística e probabilidade;leitura
+2022;8364;MT;160;;Conhecimentos geométricos;leitura
+2022;28683;MT;161;;Conhecimentos geométricos;leitura
+2022;111516;MT;162;;Conhecimentos de estatística e probabilidade;leitura
+2022;32369;MT;163;;Conhecimentos de estatística e probabilidade;leitura
+2022;117877;MT;164;;Conhecimentos numéricos;leitura
+2022;82581;MT;165;;Conhecimentos numéricos;leitura
+2022;31516;MT;166;;Conhecimentos numéricos;leitura
+2022;68369;MT;167;;Conhecimentos numéricos;leitura
+2022;10322;MT;168;;Conhecimentos numéricos;leitura
+2022;63204;MT;169;;Conhecimentos geométricos;leitura
+2022;68123;MT;170;;Conhecimentos numéricos;leitura
+2022;96315;MT;171;;Conhecimentos de estatística e probabilidade;leitura
+2022;117742;MT;172;;Conhecimentos geométricos;leitura
+2022;30327;MT;173;;Conhecimentos numéricos;leitura
+2022;14797;MT;174;;Conhecimentos geométricos;leitura
+2022;60441;MT;175;;Conhecimentos numéricos;leitura
+2022;117886;MT;176;;Conhecimentos numéricos;leitura
+2022;95676;MT;177;;Conhecimentos numéricos;leitura
+2022;19807;MT;178;;Conhecimentos numéricos;leitura
+2022;85588;MT;179;;Conhecimentos de estatística e probabilidade;leitura
+2022;10409;MT;180;;Conhecimentos geométricos;leitura
+2023;140612;CH;46;;Sociologia;leitura
+2023;125687;CH;47;;História;leitura
+2023;140453;CH;48;;Geografia;leitura
+2023;140581;CH;49;;Geografia;leitura
+2023;141106;CH;50;;História;leitura
+2023;63635;CH;51;;História;leitura
+2023;140194;CH;52;;Filosofia;leitura
+2023;141131;CH;53;;Geografia;leitura
+2023;141136;CH;54;;Filosofia;leitura
+2023;48754;CH;55;;Sociologia;leitura
+2023;141388;CH;56;;Sociologia;leitura
+2023;125719;CH;57;;Filosofia;leitura
+2023;140376;CH;58;;Sociologia;leitura
+2023;48747;CH;59;;Sociologia;leitura
+2023;141049;CH;60;;Filosofia;leitura
+2023;140440;CH;61;;Sociologia;leitura
+2023;141118;CH;62;;Geografia;leitura
+2023;141363;CH;63;;História;leitura
+2023;141113;CH;64;;Geografia;leitura
+2023;141104;CH;65;;História;leitura
+2023;140166;CH;66;;Sociologia;leitura
+2023;140499;CH;67;;Geografia;leitura
+2023;118063;CH;68;;História;leitura
+2023;140674;CH;69;;Sociologia;leitura
+2023;95744;CH;70;;História;leitura
+2023;140819;CH;71;;Geografia;leitura
+2023;141046;CH;72;;Sociologia;leitura
+2023;140657;CH;73;;História;leitura
+2023;140214;CH;74;;História;leitura
+2023;141383;CH;75;;Sociologia;leitura
+2023;140534;CH;76;;Geografia;leitura
+2023;140543;CH;77;;História;leitura
+2023;140430;CH;78;;Geografia;leitura
+2023;140592;CH;79;;Filosofia;leitura
+2023;28657;CH;80;;História;leitura
+2023;141350;CH;81;;Sociologia;leitura
+2023;125684;CH;82;;História;leitura
+2023;140815;CH;83;;Geografia;leitura
+2023;141123;CH;84;;História;leitura
+2023;140476;CH;85;;Geografia;leitura
+2023;141022;CH;86;;História;leitura
+2023;140468;CH;87;;História;leitura
+2023;141051;CH;88;;Sociologia;leitura
+2023;141142;CH;89;;Geografia;leitura
+2023;140571;CH;90;;Filosofia;leitura
+2023;84422;CN;91;;Biologia;leitura
+2023;83378;CN;92;;Química;leitura
+2023;117887;CN;93;;Química;leitura
+2023;66330;CN;94;;Química;leitura
+2023;48492;CN;95;;Biologia;matriz
+2023;63155;CN;96;;Química;matriz
+2023;84041;CN;97;;Biologia;leitura
+2023;86347;CN;98;;Biologia;matriz
+2023;89769;CN;99;;Biologia;matriz
+2023;111665;CN;100;;Física;matriz
+2023;117711;CN;101;;Biologia;leitura
+2023;48641;CN;102;;Química;matriz
+2023;82754;CN;103;;Biologia;leitura
+2023;60978;CN;104;;Química;matriz
+2023;87721;CN;105;;Química;leitura
+2023;141723;CN;106;;Biologia;leitura
+2023;12018;CN;107;;Biologia;matriz
+2023;117823;CN;108;;Física;leitura
+2023;83552;CN;109;;Física;leitura
+2023;78578;CN;110;;Química;leitura
+2023;54162;CN;111;;Física;leitura
+2023;111466;CN;112;;Física;leitura
+2023;82446;CN;113;;Física;matriz
+2023;97149;CN;114;;Física;leitura
+2023;117866;CN;115;;Biologia;leitura
+2023;60037;CN;116;;Biologia;leitura
+2023;82333;CN;117;;Física;matriz
+2023;60689;CN;118;;Química;leitura
+2023;88557;CN;119;;Física;matriz
+2023;47231;CN;120;;Física;leitura
+2023;47317;CN;121;;Química;leitura
+2023;97767;CN;122;;Física;leitura
+2023;54804;CN;123;;Química;matriz
+2023;66259;CN;124;;Física;matriz
+2023;64023;CN;125;;Biologia;leitura
+2023;87989;CN;126;;Química;leitura
+2023;97813;CN;127;;Biologia;leitura
+2023;40724;CN;128;;Física;leitura
+2023;60332;CN;129;;Química;leitura
+2023;126604;CN;130;;Química;leitura
+2023;117631;CN;131;;Biologia;leitura
+2023;83558;CN;132;;Física;matriz
+2023;43890;CN;133;;Química;matriz
+2023;85436;CN;134;;Biologia;matriz
+2023;26042;CN;135;;Física;leitura
+2023;140743;LC;1;EN;Língua estrangeira;matriz
+2023;140765;LC;1;ES;Língua estrangeira;matriz
+2023;140595;LC;2;EN;Língua estrangeira;matriz
+2023;141707;LC;2;ES;Língua estrangeira;matriz
+2023;140736;LC;3;EN;Língua estrangeira;matriz
+2023;141715;LC;3;ES;Língua estrangeira;matriz
+2023;140785;LC;4;EN;Língua estrangeira;matriz
+2023;140649;LC;4;ES;Língua estrangeira;matriz
+2023;140732;LC;5;EN;Língua estrangeira;matriz
+2023;15035;LC;5;ES;Língua estrangeira;matriz
+2023;141233;LC;6;;Práticas corporais;leitura
+2023;140884;LC;7;;Literatura;leitura
+2023;141443;LC;8;;Língua portuguesa e texto;leitura
+2023;88031;LC;9;;Língua portuguesa e texto;leitura
+2023;111887;LC;10;;Tecnologias da informação e comunicação;leitura
+2023;118301;LC;11;;Língua portuguesa e texto;leitura
+2023;141776;LC;12;;Literatura;leitura
+2023;140949;LC;13;;Literatura;leitura
+2023;140899;LC;14;;Literatura;leitura
+2023;118195;LC;15;;Língua portuguesa e texto;leitura
+2023;140918;LC;16;;Língua portuguesa e texto;leitura
+2023;120115;LC;17;;Língua portuguesa e texto;leitura
+2023;140905;LC;18;;Artes;leitura
+2023;141474;LC;19;;Artes;leitura
+2023;140869;LC;20;;Língua portuguesa e texto;leitura
+2023;140942;LC;21;;Língua portuguesa e texto;leitura
+2023;140847;LC;22;;Literatura;leitura
+2023;140987;LC;23;;Língua portuguesa e texto;leitura
+2023;140857;LC;24;;Língua portuguesa e texto;leitura
+2023;140880;LC;25;;Literatura;leitura
+2023;140959;LC;26;;Literatura;leitura
+2023;141814;LC;27;;Literatura;leitura
+2023;141448;LC;28;;Literatura;leitura
+2023;140944;LC;29;;Literatura;leitura
+2023;140885;LC;30;;Literatura;leitura
+2023;140858;LC;31;;Literatura;leitura
+2023;141229;LC;32;;Literatura;leitura
+2023;141239;LC;33;;Artes;leitura
+2023;120648;LC;34;;Artes;leitura
+2023;141243;LC;35;;Práticas corporais;leitura
+2023;141260;LC;36;;Artes;leitura
+2023;141201;LC;37;;Tecnologias da informação e comunicação;leitura
+2023;141214;LC;38;;Artes;leitura
+2023;97007;LC;39;;Tecnologias da informação e comunicação;leitura
+2023;141212;LC;40;;Práticas corporais;leitura
+2023;141204;LC;41;;Práticas corporais;leitura
+2023;141802;LC;42;;Práticas corporais;leitura
+2023;16384;LC;43;;Literatura;leitura
+2023;40390;LC;44;;Língua portuguesa e texto;leitura
+2023;140920;LC;45;;Língua portuguesa e texto;leitura
+2023;48324;MT;136;;Conhecimentos geométricos;leitura
+2023;31650;MT;137;;Conhecimentos de estatística e probabilidade;leitura
+2023;141582;MT;138;;Conhecimentos de estatística e probabilidade;leitura
+2023;141567;MT;139;;Conhecimentos de estatística e probabilidade;leitura
+2023;98278;MT;140;;Conhecimentos de estatística e probabilidade;leitura
+2023;14994;MT;141;;Conhecimentos de estatística e probabilidade;leitura
+2023;117634;MT;142;;Conhecimentos geométricos;leitura
+2023;111446;MT;143;;Conhecimentos numéricos;leitura
+2023;39385;MT;144;;Conhecimentos geométricos;leitura
+2023;125929;MT;145;;Conhecimentos algébricos;leitura
+2023;14410;MT;146;;Conhecimentos numéricos;leitura
+2023;16795;MT;147;;Conhecimentos numéricos;leitura
+2023;141566;MT;148;;Conhecimentos geométricos;leitura
+2023;125884;MT;149;;Conhecimentos algébricos;leitura
+2023;117706;MT;150;;Conhecimentos algébricos;leitura
+2023;141570;MT;151;;Conhecimentos algébricos;leitura
+2023;86783;MT;152;;Conhecimentos algébricos;leitura
+2023;125935;MT;153;;Conhecimentos de estatística e probabilidade;leitura
+2023;126028;MT;154;;Conhecimentos geométricos;leitura
+2023;13725;MT;155;;Conhecimentos geométricos;leitura
+2023;141513;MT;156;;Conhecimentos algébricos;leitura
+2023;32176;MT;157;;Conhecimentos de estatística e probabilidade;leitura
+2023;117633;MT;158;;Conhecimentos algébricos;leitura
+2023;125977;MT;159;;Conhecimentos numéricos;leitura
+2023;141540;MT;160;;Conhecimentos numéricos;leitura
+2023;27119;MT;162;;Conhecimentos algébricos;leitura
+2023;125902;MT;163;;Conhecimentos numéricos;leitura
+2023;28932;MT;165;;Conhecimentos geométricos;leitura
+2023;81946;MT;166;;Conhecimentos de estatística e probabilidade;leitura
+2023;27330;MT;167;;Conhecimentos numéricos;leitura
+2023;24523;MT;168;;Conhecimentos de estatística e probabilidade;leitura
+2023;81743;MT;169;;Conhecimentos algébricos;leitura
+2023;37441;MT;170;;Conhecimentos algébricos;leitura
+2023;84857;MT;171;;Conhecimentos numéricos;leitura
+2023;125888;MT;172;;Conhecimentos geométricos;leitura
+2023;125933;MT;173;;Conhecimentos numéricos;leitura
+2023;126039;MT;174;;Conhecimentos numéricos;leitura
+2023;85504;MT;175;;Conhecimentos numéricos;leitura
+2023;81742;MT;176;;Conhecimentos numéricos;leitura
+2023;14389;MT;177;;Conhecimentos algébricos;leitura
+2023;111754;MT;178;;Conhecimentos algébricos;leitura
+2023;14366;MT;179;;Conhecimentos numéricos;leitura
+2023;125969;MT;180;;Conhecimentos algébricos;leitura
+2024;141067;CH;46;;Geografia;leitura
+2024;141035;CH;47;;Sociologia;leitura
+2024;141161;CH;48;;Geografia;leitura
+2024;125946;CH;49;;História;leitura
+2024;140199;CH;50;;História;leitura
+2024;149806;CH;51;;História;leitura
+2024;140185;CH;52;;Sociologia;leitura
+2024;140621;CH;53;;Geografia;leitura
+2024;140552;CH;54;;Sociologia;leitura
+2024;88833;CH;55;;Filosofia;leitura
+2024;140161;CH;56;;Sociologia;leitura
+2024;141143;CH;57;;Geografia;leitura
+2024;149862;CH;58;;Filosofia;leitura
+2024;149789;CH;59;;História;leitura
+2024;125718;CH;60;;Sociologia;leitura
+2024;140574;CH;61;;Filosofia;leitura
+2024;141045;CH;62;;Filosofia;leitura
+2024;141016;CH;63;;Sociologia;leitura
+2024;149791;CH;64;;História;leitura
+2024;82093;CH;65;;Sociologia;leitura
+2024;118064;CH;66;;Sociologia;leitura
+2024;141402;CH;67;;Sociologia;leitura
+2024;141068;CH;68;;Geografia;leitura
+2024;111879;CH;69;;Filosofia;leitura
+2024;67577;CH;70;;Geografia;leitura
+2024;141401;CH;71;;Geografia;leitura
+2024;141374;CH;72;;Sociologia;leitura
+2024;141338;CH;73;;Sociologia;leitura
+2024;141032;CH;74;;Sociologia;leitura
+2024;149808;CH;75;;História;leitura
+2024;141033;CH;76;;Filosofia;leitura
+2024;125794;CH;77;;Sociologia;leitura
+2024;140684;CH;78;;Filosofia;leitura
+2024;98152;CH;79;;Geografia;leitura
+2024;140423;CH;80;;Sociologia;leitura
+2024;86938;CH;81;;Sociologia;leitura
+2024;140159;CH;82;;Filosofia;leitura
+2024;85551;CH;83;;Geografia;leitura
+2024;149741;CH;84;;Sociologia;leitura
+2024;140564;CH;85;;História;leitura
+2024;149795;CH;86;;Geografia;leitura
+2024;141010;CH;87;;Filosofia;leitura
+2024;149830;CH;88;;Geografia;leitura
+2024;141127;CH;89;;Geografia;leitura
+2024;44318;CH;90;;Sociologia;leitura
+2024;84075;CN;91;;Física;leitura
+2024;141598;CN;92;;Química;matriz
+2024;77606;CN;93;;Química;leitura
+2024;97327;CN;94;;Química;matriz
+2024;111650;CN;95;;Biologia;leitura
+2024;111400;CN;96;;Física;leitura
+2024;98061;CN;97;;Química;matriz
+2024;141807;CN;98;;Biologia;leitura
+2024;126592;CN;99;;Física;leitura
+2024;118000;CN;100;;Física;leitura
+2024;141661;CN;101;;Física;leitura
+2024;87137;CN;102;;Biologia;leitura
+2024;76197;CN;103;;Física;leitura
+2024;141808;CN;104;;Biologia;leitura
+2024;141753;CN;105;;Química;leitura
+2024;111475;CN;106;;Física;leitura
+2024;78441;CN;107;;Biologia;matriz
+2024;141791;CN;108;;Biologia;leitura
+2024;111460;CN;109;;Biologia;leitura
+2024;117915;CN;110;;Biologia;matriz
+2024;85697;CN;111;;Biologia;leitura
+2024;141775;CN;112;;Biologia;leitura
+2024;117963;CN;113;;Biologia;leitura
+2024;117780;CN;114;;Química;leitura
+2024;111658;CN;115;;Biologia;leitura
+2024;89141;CN;116;;Química;leitura
+2024;86002;CN;117;;Biologia;matriz
+2024;111515;CN;118;;Química;leitura
+2024;117932;CN;119;;Física;matriz
+2024;117878;CN;120;;Biologia;matriz
+2024;141621;CN;121;;Física;matriz
+2024;141558;CN;122;;Física;matriz
+2024;111693;CN;123;;Química;matriz
+2024;87263;CN;124;;Biologia;leitura
+2024;88293;CN;125;;Física;matriz
+2024;141743;CN;126;;Biologia;leitura
+2024;68866;CN;127;;Física;matriz
+2024;117837;CN;128;;Física;matriz
+2024;42680;CN;130;;Física;leitura
+2024;117859;CN;131;;Física;leitura
+2024;141594;CN;132;;Física;leitura
+2024;111416;CN;133;;Química;matriz
+2024;111726;CN;134;;Química;matriz
+2024;141591;CN;135;;Química;matriz
+2024;61929;LC;1;EN;Língua estrangeira;matriz
+2024;140710;LC;1;ES;Língua estrangeira;matriz
+2024;118194;LC;2;EN;Língua estrangeira;matriz
+2024;140789;LC;2;ES;Língua estrangeira;matriz
+2024;87876;LC;3;EN;Língua estrangeira;matriz
+2024;141730;LC;3;ES;Língua estrangeira;matriz
+2024;118157;LC;4;EN;Língua estrangeira;matriz
+2024;111888;LC;4;ES;Língua estrangeira;matriz
+2024;97312;LC;5;EN;Língua estrangeira;matriz
+2024;140760;LC;5;ES;Língua estrangeira;matriz
+2024;150678;LC;6;;Práticas corporais;leitura
+2024;150675;LC;7;;Língua portuguesa e texto;leitura
+2024;141218;LC;8;;Artes;leitura
+2024;141206;LC;9;;Práticas corporais;leitura
+2024;150425;LC;10;;Tecnologias da informação e comunicação;leitura
+2024;150680;LC;11;;Língua portuguesa e texto;leitura
+2024;150766;LC;12;;Língua portuguesa e texto;leitura
+2024;150621;LC;13;;Língua portuguesa e texto;leitura
+2024;140894;LC;14;;Língua portuguesa e texto;leitura
+2024;150540;LC;15;;Tecnologias da informação e comunicação;leitura
+2024;141221;LC;16;;Artes;leitura
+2024;150627;LC;17;;Tecnologias da informação e comunicação;leitura
+2024;141803;LC;18;;Práticas corporais;leitura
+2024;150767;LC;19;;Literatura;leitura
+2024;150622;LC;20;;Língua portuguesa e texto;leitura
+2024;46766;LC;21;;Artes;leitura
+2024;120624;LC;22;;Artes;leitura
+2024;111901;LC;23;;Língua portuguesa e texto;leitura
+2024;150665;LC;24;;Literatura;leitura
+2024;40924;LC;25;;Artes;leitura
+2024;118254;LC;26;;Práticas corporais;leitura
+2024;150645;LC;27;;Artes;leitura
+2024;140881;LC;28;;Literatura;leitura
+2024;140961;LC;29;;Língua portuguesa e texto;leitura
+2024;150640;LC;30;;Literatura;leitura
+2024;17182;LC;31;;Literatura;leitura
+2024;141799;LC;32;;Literatura;leitura
+2024;150588;LC;33;;Língua portuguesa e texto;leitura
+2024;150523;LC;34;;Tecnologias da informação e comunicação;leitura
+2024;140892;LC;35;;Literatura;leitura
+2024;119743;LC;36;;Artes;leitura
+2024;141444;LC;37;;Artes;leitura
+2024;118297;LC;38;;Literatura;leitura
+2024;150666;LC;39;;Língua portuguesa e texto;leitura
+2024;118217;LC;40;;Artes;leitura
+2024;141460;LC;41;;Língua portuguesa e texto;leitura
+2024;150747;LC;42;;Literatura;leitura
+2024;141202;LC;43;;Artes;leitura
+2024;141244;LC;44;;Práticas corporais;leitura
+2024;150676;LC;45;;Literatura;leitura
+2024;125949;MT;136;;Conhecimentos numéricos;leitura
+2024;29740;MT;137;;Conhecimentos de estatística e probabilidade;leitura
+2024;29021;MT;138;;Conhecimentos numéricos;leitura
+2024;117723;MT;139;;Conhecimentos algébricos;leitura
+2024;35949;MT;140;;Conhecimentos numéricos;leitura
+2024;141677;MT;141;;Conhecimentos algébricos;leitura
+2024;83799;MT;142;;Conhecimentos numéricos;leitura
+2024;117797;MT;143;;Conhecimentos numéricos;leitura
+2024;125887;MT;144;;Conhecimentos geométricos;leitura
+2024;55423;MT;145;;Conhecimentos geométricos;leitura
+2024;117796;MT;146;;Conhecimentos algébricos;leitura
+2024;87519;MT;147;;Conhecimentos numéricos;leitura
+2024;13141;MT;148;;Conhecimentos algébricos;leitura
+2024;84940;MT;149;;Conhecimentos geométricos;leitura
+2024;111708;MT;150;;Conhecimentos geométricos;leitura
+2024;15394;MT;151;;Conhecimentos geométricos;leitura
+2024;42136;MT;152;;Conhecimentos de estatística e probabilidade;leitura
+2024;76177;MT;153;;Conhecimentos numéricos;leitura
+2024;55806;MT;154;;Conhecimentos numéricos;leitura
+2024;125957;MT;155;;Conhecimentos geométricos;leitura
+2024;117618;MT;156;;Conhecimentos algébricos;leitura
+2024;125993;MT;157;;Conhecimentos algébricos;leitura
+2024;60313;MT;158;;Conhecimentos numéricos;leitura
+2024;117747;MT;159;;Conhecimentos numéricos;leitura
+2024;117712;MT;160;;Conhecimentos numéricos;leitura
+2024;141550;MT;161;;Conhecimentos geométricos;leitura
+2024;125992;MT;162;;Conhecimentos numéricos;leitura
+2024;17539;MT;163;;Conhecimentos geométricos;leitura
+2024;79213;MT;164;;Conhecimentos geométricos;leitura
+2024;111706;MT;165;;Conhecimentos numéricos;leitura
+2024;39631;MT;166;;Conhecimentos numéricos;leitura
+2024;81496;MT;167;;Conhecimentos geométricos;leitura
+2024;111549;MT;168;;Conhecimentos algébricos;leitura
+2024;125923;MT;169;;Conhecimentos algébricos;leitura
+2024;96636;MT;170;;Conhecimentos algébricos;leitura
+2024;95687;MT;171;;Conhecimentos geométricos;leitura
+2024;125890;MT;172;;Conhecimentos numéricos;leitura
+2024;84423;MT;173;;Conhecimentos de estatística e probabilidade;leitura
+2024;125996;MT;174;;Conhecimentos geométricos;leitura
+2024;49701;MT;175;;Conhecimentos geométricos;leitura
+2024;141579;MT;176;;Conhecimentos algébricos;leitura
+2024;12877;MT;177;;Conhecimentos algébricos;leitura
+2024;14995;MT;178;;Conhecimentos de estatística e probabilidade;leitura
+2024;117774;MT;179;;Conhecimentos numéricos;leitura
+2024;60335;MT;180;;Conhecimentos numéricos;leitura
+2025;141102;CH;46;;Geografia;leitura
+2025;125735;CH;47;;Geografia;leitura
+2025;87509;CH;48;;Filosofia;leitura
+2025;112144;CH;49;;História;leitura
+2025;111883;CH;50;;Filosofia;leitura
+2025;111927;CH;51;;Sociologia;leitura
+2025;111982;CH;52;;Sociologia;leitura
+2025;149742;CH;53;;História;leitura
+2025;140428;CH;54;;Geografia;leitura
+2025;95807;CH;55;;Sociologia;leitura
+2025;149784;CH;56;;Geografia;leitura
+2025;140583;CH;57;;Sociologia;leitura
+2025;55300;CH;58;;História;leitura
+2025;140491;CH;59;;Geografia;leitura
+2025;140201;CH;60;;Sociologia;leitura
+2025;85670;CH;61;;Filosofia;leitura
+2025;141135;CH;62;;Filosofia;leitura
+2025;140594;CH;63;;Geografia;leitura
+2025;85827;CH;64;;História;leitura
+2025;141009;CH;65;;Sociologia;leitura
+2025;141340;CH;66;;Sociologia;leitura
+2025;84849;CH;67;;Sociologia;leitura
+2025;149824;CH;68;;Geografia;leitura
+2025;88661;CH;69;;História;leitura
+2025;56368;CH;70;;Geografia;leitura
+2025;83900;CH;71;;História;leitura
+2025;84812;CH;72;;Filosofia;leitura
+2025;96978;CH;73;;História;leitura
+2025;95495;CH;74;;História;leitura
+2025;90024;CH;75;;Geografia;leitura
+2025;141167;CH;76;;Filosofia;leitura
+2025;118062;CH;77;;Geografia;leitura
+2025;56054;CH;78;;História;leitura
+2025;141162;CH;79;;Filosofia;leitura
+2025;118057;CH;80;;Geografia;leitura
+2025;140932;CH;81;;Sociologia;leitura
+2025;55581;CH;82;;Filosofia;leitura
+2025;125788;CH;83;;História;leitura
+2025;140518;CH;84;;Geografia;leitura
+2025;140451;CH;85;;Sociologia;leitura
+2025;141078;CH;86;;Geografia;leitura
+2025;111941;CH;87;;História;leitura
+2025;85913;CH;88;;Sociologia;leitura
+2025;149787;CH;89;;Sociologia;leitura
+2025;140432;CH;90;;História;leitura
+2025;117652;CN;91;;Química;leitura
+2025;88062;CN;92;;Biologia;matriz
+2025;89916;CN;93;;Biologia;matriz
+2025;141609;CN;94;;Física;leitura
+2025;76022;CN;95;;Física;matriz
+2025;117869;CN;96;;Biologia;leitura
+2025;141754;CN;97;;Biologia;leitura
+2025;97320;CN;98;;Biologia;leitura
+2025;44307;CN;99;;Biologia;matriz
+2025;97650;CN;100;;Química;matriz
+2025;78625;CN;101;;Física;matriz
+2025;88181;CN;102;;Biologia;matriz
+2025;111667;CN;103;;Biologia;leitura
+2025;141710;CN;104;;Biologia;leitura
+2025;141577;CN;105;;Física;matriz
+2025;86643;CN;106;;Química;leitura
+2025;87450;CN;107;;Biologia;leitura
+2025;60058;CN;108;;Física;leitura
+2025;111737;CN;109;;Química;matriz
+2025;87716;CN;110;;Física;matriz
+2025;84440;CN;111;;Química;leitura
+2025;85481;CN;112;;Biologia;leitura
+2025;67752;CN;113;;Física;matriz
+2025;141590;CN;114;;Física;leitura
+2025;83614;CN;115;;Química;matriz
+2025;117734;CN;116;;Biologia;matriz
+2025;83213;CN;117;;Física;matriz
+2025;76686;CN;118;;Física;leitura
+2025;141522;CN;119;;Física;leitura
+2025;141642;CN;120;;Física;leitura
+2025;77992;CN;121;;Química;leitura
+2025;141601;CN;122;;Física;matriz
+2025;97091;CN;124;;Química;matriz
+2025;61018;CN;126;;Física;matriz
+2025;95445;CN;127;;Química;leitura
+2025;97616;CN;128;;Física;leitura
+2025;98246;CN;129;;Biologia;leitura
+2025;141529;CN;130;;Física;leitura
+2025;96328;CN;131;;Química;matriz
+2025;86958;CN;133;;Química;leitura
+2025;141671;CN;134;;Biologia;leitura
+2025;97292;CN;135;;Física;leitura
+2025;153875;LC;1;EN;Língua estrangeira;matriz
+2025;152688;LC;1;ES;Língua estrangeira;matriz
+2025;118169;LC;2;EN;Língua estrangeira;matriz
+2025;153945;LC;2;ES;Língua estrangeira;matriz
+2025;153836;LC;3;EN;Língua estrangeira;matriz
+2025;140709;LC;3;ES;Língua estrangeira;matriz
+2025;112036;LC;4;EN;Língua estrangeira;matriz
+2025;154015;LC;4;ES;Língua estrangeira;matriz
+2025;153930;LC;5;EN;Língua estrangeira;matriz
+2025;153833;LC;5;ES;Língua estrangeira;matriz
+2025;157751;LC;6;;Língua portuguesa e texto;leitura
+2025;157750;LC;7;;Língua portuguesa e texto;leitura
+2025;157779;LC;8;;Língua portuguesa e texto;leitura
+2025;157781;LC;9;;Tecnologias da informação e comunicação;leitura
+2025;157775;LC;10;;Língua portuguesa e texto;leitura
+2025;150940;LC;11;;Literatura;leitura
+2025;157571;LC;12;;Práticas corporais;leitura
+2025;153400;LC;13;;Língua portuguesa e texto;leitura
+2025;157665;LC;14;;Língua portuguesa e texto;leitura
+2025;153556;LC;15;;Artes;leitura
+2025;157615;LC;16;;Literatura;leitura
+2025;157598;LC;17;;Literatura;leitura
+2025;154020;LC;18;;Práticas corporais;leitura
+2025;157619;LC;19;;Práticas corporais;leitura
+2025;150612;LC;20;;Práticas corporais;leitura
+2025;153392;LC;21;;Artes;leitura
+2025;158757;LC;22;;Língua portuguesa e texto;leitura
+2025;158716;LC;23;;Artes;leitura
+2025;150674;LC;24;;Língua portuguesa e texto;leitura
+2025;150643;LC;25;;Língua portuguesa e texto;leitura
+2025;44047;LC;26;;Língua portuguesa e texto;leitura
+2025;118196;LC;27;;Práticas corporais;leitura
+2025;150505;LC;28;;Literatura;leitura
+2025;150761;LC;29;;Literatura;leitura
+2025;153420;LC;30;;Literatura;leitura
+2025;153419;LC;31;;Literatura;leitura
+2025;140908;LC;32;;Literatura;leitura
+2025;140845;LC;33;;Língua portuguesa e texto;leitura
+2025;120341;LC;34;;Língua portuguesa e texto;leitura
+2025;150642;LC;35;;Língua portuguesa e texto;leitura
+2025;153681;LC;36;;Língua portuguesa e texto;leitura
+2025;97881;LC;37;;Literatura;leitura
+2025;43532;LC;38;;Língua portuguesa e texto;leitura
+2025;152784;LC;39;;Tecnologias da informação e comunicação;leitura
+2025;150607;LC;40;;Literatura;leitura
+2025;153550;LC;41;;Artes;leitura
+2025;66526;LC;42;;Língua portuguesa e texto;leitura
+2025;157593;LC;43;;Língua portuguesa e texto;leitura
+2025;17166;LC;44;;Língua portuguesa e texto;leitura
+2025;120714;LC;45;;Língua portuguesa e texto;leitura
+2025;60344;MT;136;;Conhecimentos geométricos;leitura
+2025;96778;MT;137;;Conhecimentos numéricos;leitura
+2025;125905;MT;138;;Conhecimentos geométricos;leitura
+2025;86942;MT;139;;Conhecimentos geométricos;leitura
+2025;141568;MT;140;;Conhecimentos numéricos;leitura
+2025;63293;MT;141;;Conhecimentos numéricos;leitura
+2025;38222;MT;142;;Conhecimentos de estatística e probabilidade;leitura
+2025;95625;MT;143;;Conhecimentos numéricos;leitura
+2025;49136;MT;144;;Conhecimentos geométricos;leitura
+2025;117764;MT;145;;Conhecimentos de estatística e probabilidade;leitura
+2025;153134;MT;146;;Conhecimentos de estatística e probabilidade;leitura
+2025;50210;MT;147;;Conhecimentos algébricos;leitura
+2025;125926;MT;148;;Conhecimentos geométricos;leitura
+2025;16540;MT;149;;Conhecimentos geométricos;leitura
+2025;31953;MT;150;;Conhecimentos numéricos;leitura
+2025;96979;MT;151;;Conhecimentos numéricos;leitura
+2025;16995;MT;152;;Conhecimentos de estatística e probabilidade;leitura
+2025;88952;MT;153;;Conhecimentos de estatística e probabilidade;leitura
+2025;83162;MT;154;;Conhecimentos de estatística e probabilidade;leitura
+2025;84096;MT;155;;Conhecimentos numéricos;leitura
+2025;15396;MT;156;;Conhecimentos geométricos;leitura
+2025;117625;MT;157;;Conhecimentos de estatística e probabilidade;leitura
+2025;117856;MT;158;;Conhecimentos numéricos;leitura
+2025;41895;MT;159;;Conhecimentos geométricos;leitura
+2025;95816;MT;160;;Conhecimentos algébricos;leitura
+2025;141518;MT;161;;Conhecimentos geométricos;leitura
+2025;83575;MT;162;;Conhecimentos numéricos;leitura
+2025;96852;MT;163;;Conhecimentos de estatística e probabilidade;leitura
+2025;28216;MT;164;;Conhecimentos geométricos;leitura
+2025;49227;MT;165;;Conhecimentos de estatística e probabilidade;leitura
+2025;63713;MT;166;;Conhecimentos de estatística e probabilidade;leitura
+2025;44306;MT;167;;Conhecimentos numéricos;leitura
+2025;63313;MT;168;;Conhecimentos numéricos;leitura
+2025;111771;MT;169;;Conhecimentos algébricos;leitura
+2025;111673;MT;170;;Conhecimentos geométricos;leitura
+2025;141562;MT;171;;Conhecimentos geométricos;leitura
+2025;111422;MT;173;;Conhecimentos geométricos;leitura
+2025;27847;MT;175;;Conhecimentos numéricos;leitura
+2025;28587;MT;176;;Conhecimentos de estatística e probabilidade;leitura
+2025;44510;MT;177;;Conhecimentos geométricos;leitura
+2025;8460;MT;178;;Conhecimentos de estatística e probabilidade;leitura
+2025;126023;MT;179;;Conhecimentos algébricos;leitura
+2025;84405;MT;180;;Conhecimentos numéricos;leitura

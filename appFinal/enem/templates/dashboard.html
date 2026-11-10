@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>try{var t=localStorage.getItem("apollo-tema");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<title>Dashboard — Apollo</title>
+<link rel="icon" type="image/png" href="/static/enem/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3f2f2;--surface:#eae9e9;--text:#201e1d;--muted:#605d5d;
+  --rule:rgba(32,30,29,.4);--rule-soft:rgba(32,30,29,.16);--rule-strong:rgba(32,30,29,.62);
+  --accent:#175DE8;--accent-fill:#175DE8;--accent-fill-hover:#5817E8;--on-accent:#fff;--accent-text:#175DE8;--accent-tint:#dbe6fd;
+  --accent2:#5817E8;--accent2-text:#5817E8;
+  --amarelo:#E8C517;--verde:#1B8068;--verde-text:#166B55;--btn:#1B8068;--btn-hover:#166B55;--alta:#E57373;--alta-hover:#D95F5F;--on-alta:#201e1d;
+  --track:#d7d3d3;--hover:rgba(32,30,29,.07);
+  --font:"Archivo",system-ui,sans-serif;
+  --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;--s6:32px;--s7:48px;--s8:72px;
+  --radius:0px;--gutter:16px;--max:1120px;
+  --fs-xs:12px;--fs-sm:14px;--fs-md:16px;--fs-lg:20px;--fs-xl:28px;
+  --shadow:0 12px 32px rgba(45,43,43,.22);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#161514;--surface:#222020;--text:#f3f2f2;--muted:#bab6b6;
+  --rule:rgba(243,242,242,.42);--rule-soft:rgba(243,242,242,.16);--rule-strong:rgba(243,242,242,.62);
+  --accent:#5b8dff;--accent-fill:#175DE8;--accent-fill-hover:#3f7bf2;--on-accent:#fff;--accent-text:#8fb2ff;--accent-tint:#14264d;
+  --accent2:#7b4bf0;--accent2-text:#b9a0ff;
+  --amarelo:#F2D43D;--verde:#41D9A6;--verde-text:#41D9A6;--btn:#1B8068;--btn-hover:#166B55;--alta:#EE8B86;--alta-hover:#F6A8A3;--on-alta:#201e1d;
+  --track:#444141;--hover:rgba(243,242,242,.08);
+  --shadow:0 0 0 1px rgba(243,242,242,.2),0 16px 40px rgba(0,0,0,.6);
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#161514;--surface:#222020;--text:#f3f2f2;--muted:#bab6b6;
+  --rule:rgba(243,242,242,.42);--rule-soft:rgba(243,242,242,.16);--rule-strong:rgba(243,242,242,.62);
+  --accent:#5b8dff;--accent-fill:#175DE8;--accent-fill-hover:#3f7bf2;--on-accent:#fff;--accent-text:#8fb2ff;--accent-tint:#14264d;
+  --accent2:#7b4bf0;--accent2-text:#b9a0ff;
+  --amarelo:#F2D43D;--verde:#41D9A6;--verde-text:#41D9A6;--btn:#1B8068;--btn-hover:#166B55;--alta:#EE8B86;--alta-hover:#F6A8A3;--on-alta:#201e1d;
+  --track:#444141;--hover:rgba(243,242,242,.08);
+  --shadow:0 0 0 1px rgba(243,242,242,.2),0 16px 40px rgba(0,0,0,.6);
+  color-scheme:dark;
+}
+.logo-escuro{display:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .logo-claro{display:none}:root:not([data-theme="light"]) .logo-escuro{display:block}}
+:root[data-theme="dark"] .logo-claro{display:none}:root[data-theme="dark"] .logo-escuro{display:block}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);font-size:var(--fs-md);line-height:1.5;overflow-x:hidden}
+h1,h2,h3,h4{font-weight:800;line-height:1.08;letter-spacing:-.02em;margin:0 0 var(--s3);text-wrap:balance}
+h1,h2,h3{overflow-wrap:anywhere}
+h1{font-size:clamp(32px,7vw,48px)}h2{font-size:clamp(24px,5vw,32px)}h3{font-size:var(--fs-lg)}
+p{margin:0 0 var(--s3);text-wrap:pretty}
+a{color:var(--accent-text);text-underline-offset:3px}a:hover{color:var(--text)}
+:focus{outline:none}:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+::selection{background:var(--accent-tint);color:var(--text)}
+[hidden]{display:none!important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+.muted{color:var(--muted)}.small{font-size:var(--fs-sm)}
+.kicker{font-size:var(--fs-xs);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 var(--s2)}
+.skip{position:absolute;left:var(--gutter);top:-60px;background:var(--text);color:var(--bg);padding:var(--s2) var(--s3);z-index:50}
+.skip:focus{top:var(--s2);color:var(--bg)}
+
+.topo{border-bottom:2px solid var(--rule);background:var(--bg)}
+.topo-in{display:grid;grid-template-columns:1fr auto;align-items:center;gap:0 var(--s4)}
+.marca{font-weight:800;font-size:22px;letter-spacing:-.03em;color:var(--text);text-decoration:none;padding:var(--s3) 0;display:inline-flex;align-items:baseline;gap:5px;justify-self:start}
+.marca::after{content:"";width:9px;height:9px;background:var(--accent)}
+.menu{grid-column:1/-1;grid-row:2;display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:0 var(--s5);border-top:1px solid var(--rule-soft)}
+.menu a{color:var(--text);text-decoration:none;font-size:var(--fs-sm);font-weight:600;padding:var(--s3) 0;min-height:44px;display:flex;align-items:center;border-bottom:2px solid transparent;margin-bottom:-2px}
+.menu a:hover{color:var(--accent-text)}
+.menu a[aria-current="page"]{border-bottom-color:var(--accent)}
+@media (min-width:720px){.topo-in{grid-template-columns:auto 1fr auto;gap:0 var(--s6)}.menu{grid-column:auto;grid-row:auto;border-top:0}.menu a{padding:var(--s4) 0}}
+
+.btn{display:inline-flex;align-items:center;justify-content:flex-start;gap:var(--s2);min-height:44px;padding:var(--s2) var(--s4);font:800 var(--fs-sm)/1.2 var(--font);color:var(--text);background:transparent;border:1px solid transparent;border-radius:var(--radius);cursor:pointer;text-decoration:none;text-align:left}
+.btn:disabled,.btn[aria-disabled="true"]{opacity:.45;cursor:not-allowed}
+.btn-pri{background:var(--accent-fill);color:var(--on-accent)}
+.btn-pri:hover:not(:disabled){background:var(--accent-fill-hover);color:var(--on-accent)}
+.btn-sec{border-color:var(--rule-strong)}
+.btn-sec:hover:not(:disabled){background:var(--hover);color:var(--text)}
+.btn-txt{color:var(--accent-text);padding-inline:var(--s1);text-decoration:underline;text-underline-offset:3px}
+.btn-txt:hover:not(:disabled){background:var(--hover)}
+.btn-g{font-size:var(--fs-md);padding:var(--s3) var(--s5);min-height:52px;min-width:200px;justify-content:space-between}
+.btn svg{flex:none}
+
+.campo{display:flex;flex-direction:column;gap:6px;min-width:0}
+.campo>label,.rotulo{font-size:var(--fs-xs);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.input{width:100%;min-height:44px;padding:var(--s2) var(--s3);font:inherit;font-size:var(--fs-md);color:var(--text);background:var(--surface);border:1px solid var(--rule-strong);border-radius:var(--radius);caret-color:var(--accent)}
+.input:focus-visible{border-color:var(--accent);outline-offset:0}
+textarea.input{min-height:140px;resize:vertical;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:15px}
+.seg{display:flex;flex-wrap:wrap;border:1px solid var(--rule-strong);width:fit-content;max-width:100%}
+.seg label{position:relative;display:flex;align-items:center;min-height:44px;padding:0 var(--s4);font-size:var(--fs-sm);font-weight:600;cursor:pointer;border-right:1px solid var(--rule-soft);flex:1 0 auto}
+.seg label:last-child{border-right:0}
+.seg input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.seg label:hover{background:var(--hover)}
+.seg label:has(input:checked){background:var(--text);color:var(--bg)}
+.seg label:has(input:focus-visible){outline:2px solid var(--accent);outline-offset:2px;z-index:1}
+
+.tag{display:inline-flex;align-items:center;gap:4px;font-size:var(--fs-xs);font-weight:600;padding:2px var(--s2);border:1px solid var(--rule-strong);white-space:nowrap}
+.tag-alta{background:var(--alta);border-color:var(--alta);color:var(--on-alta)}
+.tag-media{background:var(--amarelo);border-color:var(--amarelo);color:#201e1d}
+.tag-baixa{border-color:var(--verde);color:var(--verde-text)}
+
+.sec{border-top:2px solid var(--rule);padding-block:var(--s5) var(--s7)}
+.sec-h{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:var(--s2) var(--s4);margin-bottom:var(--s4)}
+.sec-h h2{margin:0}
+
+.aviso{border-top:2px solid var(--rule);border-bottom:1px solid var(--rule-soft);padding:var(--s3) 0;font-size:var(--fs-sm);color:var(--muted);display:grid;grid-template-columns:auto 1fr;gap:var(--s3);align-items:start}
+.aviso b{color:var(--text);font-size:var(--fs-xs);letter-spacing:.08em;text-transform:uppercase;line-height:21px}
+.alerta{border:2px solid var(--accent2);padding:var(--s3) var(--s4);font-size:var(--fs-sm);font-weight:600}
+.alerta::before{content:"! ";font-weight:800;color:var(--accent2-text)}
+
+.kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:2px solid var(--rule);border-left:1px solid var(--rule-soft)}
+.kpi{padding:var(--s3) var(--s3) var(--s4);border-right:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft);min-width:0}
+.kpi dt{font-size:var(--fs-xs);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.kpi dd{margin:var(--s1) 0 0;font-size:clamp(26px,7vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1.05;font-variant-numeric:tabular-nums}
+.kpi small{display:block;font-size:var(--fs-xs);font-weight:400;letter-spacing:0;color:var(--muted);margin-top:var(--s1)}
+dl.kpis{margin:0}
+@media (min-width:720px){.kpis{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+.barras{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule-soft)}
+.barras li{padding:var(--s3) 0;border-bottom:1px solid var(--rule-soft);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--s1) var(--s3);align-items:baseline}
+.b-rot{font-weight:600;font-size:var(--fs-sm);min-width:0}
+.b-rot small{display:block;font-weight:400;color:var(--muted);font-size:var(--fs-xs)}
+.b-num{font-size:var(--fs-sm);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.b-num b{font-weight:800}
+.b-bar{grid-column:1/-1;height:8px;background:var(--track);display:block}
+.b-bar i{display:block;height:100%;background:var(--text)}
+.b-bar.alta i{background:var(--alta)}.b-bar.media i{background:var(--amarelo)}.b-bar.baixa i{background:var(--verde)}
+.b-ok{font-size:var(--fs-sm);color:var(--muted);margin:var(--s3) 0 0}
+
+.estado{border:1px solid var(--rule-soft);background:var(--surface);padding:var(--s5) var(--s4);display:flex;flex-direction:column;align-items:flex-start;gap:var(--s3)}
+.estado h3{margin:0}.estado p{margin:0;color:var(--muted)}
+.skel{background:var(--track);height:16px;margin-bottom:var(--s3);animation:pulso 1.2s ease-in-out infinite alternate}
+.skel.g{height:64px}.skel.c{width:60%}
+@keyframes pulso{from{opacity:.4}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.skel{animation:none}*{scroll-behavior:auto!important}}
+
+.rodape{border-top:2px solid var(--rule);padding:var(--s5) 0 var(--s7);font-size:var(--fs-sm);color:var(--muted)}
+.rodape-in{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);justify-content:space-between}
+.rodape b{color:var(--text);font-weight:800}
+.pg-h{padding:var(--s6) 0 var(--s5)}
+.pg-h p{color:var(--muted);margin:0}
+select.input{appearance:none;background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);background-position:calc(100% - 18px) 19px,calc(100% - 12px) 19px;background-size:6px 6px;background-repeat:no-repeat;padding-right:36px}
+.filtros{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:var(--s2);margin-bottom:var(--s3)}
+.atalhos{display:flex;flex-wrap:wrap;gap:var(--s2);align-items:center;margin-bottom:var(--s3)}
+.atalhos p{margin:0 0 0 auto;font-size:var(--fs-sm)}
+.lista{list-style:none;margin:0;padding:0;border-top:2px solid var(--rule);max-height:372px;overflow-y:auto}
+.sub{display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:var(--s3);align-items:center;padding:var(--s2) var(--s1);min-height:52px;border-bottom:1px solid var(--rule-soft);cursor:pointer}
+.sub:hover{background:var(--hover)}
+.sub input{width:20px;height:20px;margin:0;accent-color:var(--accent-fill)}
+.sub b{font-weight:800;display:block;font-variant-numeric:tabular-nums}
+.sub small{color:var(--muted);font-size:var(--fs-xs);display:block}
+.sub span:last-child{text-align:right}
+@media (min-width:720px){.filtros{max-width:520px}}
+.areas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-left:1px solid var(--rule-soft);margin:var(--s5) 0}
+.area-c{padding:var(--s3);border-right:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft);border-top:2px solid var(--rule);min-width:0}
+.area-c h3{font-size:var(--fs-sm);margin:0;display:flex;gap:var(--s2);align-items:baseline}
+.area-c h3 span{font-weight:400;color:var(--muted);font-size:var(--fs-xs);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.area-c strong{display:block;font-size:var(--fs-xl);font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums;margin-top:var(--s1)}
+.area-c small{color:var(--muted);font-size:var(--fs-xs)}
+.area-c.vazia strong{color:var(--muted)}
+@media (min-width:720px){.areas{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.inicio{display:grid;gap:0;border-top:2px solid var(--rule);border-left:1px solid var(--rule-soft);list-style:none;margin:0 0 var(--s6);padding:0}
+.inicio li{padding:var(--s4);border-right:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft);background:var(--surface)}
+.inicio .n{font-size:40px;font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--accent-text);display:block;margin-bottom:var(--s3)}
+.inicio p{margin:0 0 var(--s3)}
+@media (min-width:860px){.inicio{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.cols3{display:grid;gap:var(--s6);margin-top:var(--s5)}
+.cols3 h3{border-top:2px solid var(--rule);padding-top:var(--s3)}
+@media (min-width:980px){.cols3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.var-s{font-size:.6em;margin-right:4px}
+html{scrollbar-gutter:stable}
+body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}
+body>main{flex:1 0 auto;width:100%}
+.topo{position:sticky;top:0;z-index:30}
+.rodape{flex:none}
+
+html{min-height:100%}
+body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}
+main{flex:1 0 auto;width:100%}
+.rodape{margin-top:auto}
+.topo{position:sticky;top:0;z-index:20}
+.marca::after{display:none}.marca{padding:var(--s2) 0}.marca img{height:60px;width:auto}
+.topo-acoes{display:flex;gap:var(--s2);align-items:center;justify-self:end}
+.btn-tema{min-width:44px;padding:0;justify-content:center;font-size:18px;line-height:1}
+img,svg{max-width:100%}
+.topo-in{gap:0 var(--s3)}
+@media (max-width:480px){
+  :root{--gutter:14px}
+  .marca img{height:44px}
+  .btn-g{min-width:0;width:100%}
+  .topo-acoes .btn:not(.btn-tema){padding-inline:var(--s3)}
+  .menu{gap:0 var(--s4)}
+  .sec{padding-block:var(--s4) var(--s6)}
+  .hero{padding-block:var(--s6)}
+}
+@media (max-width:380px){.menu a{font-size:13px}}
+
+/* Seleções (abas, área, cor, idioma, alternativas) usam a cor de "prioridade alta" */
+.tabs button[aria-selected="true"],.seg label:has(input:checked),.q button[aria-checked="true"]{background:var(--alta);color:var(--on-alta)}
+.seg label:has(input:checked):hover{background:var(--alta-hover)}
+.notas{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule-soft)}
+.notas li{padding:var(--s3) 0;border-bottom:1px solid var(--rule-soft);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--s1) var(--s3);align-items:baseline}
+.nt-rot b{font-weight:800;display:block}.nt-rot small,.nt-val small{color:var(--muted);font-size:var(--fs-xs);display:block}
+.nt-val{text-align:right;font-variant-numeric:tabular-nums}.nt-val b{font-size:var(--fs-xl);font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.nt-trilha{grid-column:1/-1;position:relative;height:14px;background:var(--track)}
+.nt-bar{display:block;height:100%;background:var(--accent-fill)}
+.cols2{display:grid;gap:var(--s6);margin-top:var(--s5)}
+.cols2 h3{border-top:2px solid var(--rule);padding-top:var(--s3)}
+@media (min-width:860px){.cols2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.area-r{margin-bottom:var(--s5)}
+.area-r h3{display:flex;flex-wrap:wrap;gap:var(--s1) var(--s2);align-items:baseline;margin:0 0 var(--s2)}
+.area-r h3 span{font-weight:400;color:var(--muted);font-size:var(--fs-sm)}
+.ed{border-top:2px solid var(--rule);padding:var(--s4) 0 var(--s5)}
+.ed-h{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s3);align-items:baseline;margin-bottom:var(--s3)}
+.ed-h h3{margin:0}.ed-h small{color:var(--muted);font-size:var(--fs-sm)}
+.ed-areas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-left:1px solid var(--rule-soft)}
+@media (min-width:720px){.ed-areas{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.ed-a{padding:var(--s3);border-right:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft);min-width:0}
+.ed-a b{display:block;font-size:var(--fs-sm)}.ed-a strong{display:block;font-size:var(--fs-xl);font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.ed-a small{display:block;color:var(--muted);font-size:var(--fs-xs)}
+.ed-a.falta strong{font-size:var(--fs-md);color:var(--text)}
+.ed-a.falta{background:var(--surface)}
+.ed-a .del{margin-top:var(--s2);min-height:36px;padding:var(--s1) var(--s3);font-size:var(--fs-xs);border-color:var(--rule-strong)}
+.ed-a .del.conf{background:var(--text);color:var(--bg);border-color:var(--text)}
+.ed-a .del-erro{color:var(--text);font-weight:700}
+.pz{display:grid;gap:var(--s5);align-items:center;margin-top:var(--s4)}
+@media (min-width:720px){.pz{grid-template-columns:minmax(0,260px) minmax(0,1fr)}}
+.pz svg{display:block;width:100%;max-width:260px;height:auto;margin-inline:auto}
+.pz .centro{font:800 20px var(--font);fill:var(--text)}.pz .centro-s{font:400 8.5px var(--font);fill:var(--muted)}
+.pz-leg{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule-soft)}
+.pz-leg li{display:grid;grid-template-columns:18px minmax(0,1fr) auto;gap:var(--s2);padding:var(--s2) 0;border-bottom:1px solid var(--rule-soft);font-size:var(--fs-sm);align-items:center}
+.pz-leg i{display:block;width:14px;height:14px}.pz-leg .v{font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap}
+</style>
+</head>
+<body data-page="dashboard">
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo">
+  <div class="wrap topo-in">
+    <a class="marca" href="/" data-rota="inicio" aria-label="Apollo — início"><img class="logo-claro" src="/static/enem/logo-claro.png" alt="Apollo" width="96" height="48"><img class="logo-escuro" src="/static/enem/logo-escuro.png" alt="" width="96" height="48"></a>
+    <nav class="menu" aria-label="Principal">
+      <a href="/" data-rota="inicio">Início</a>
+      <a href="/enviar/" data-rota="enviar">Enviar respostas</a>
+      <a href="/dashboard/" data-rota="dashboard">Dashboard</a>
+    </nav>
+    <div class="topo-acoes"><button class="btn btn-sec btn-tema" id="btnTema" type="button" title="Mudar tema">&#9790;&#xFE0E;</button><button class="btn btn-sec" id="btnSessao" type="button">Entrar</button></div>
+  </div>
+</header>
+<main id="conteudo" class="wrap">
+  <div class="pg-h">
+    <h1 id="ola">Dashboard</h1>
+    <p>Selecione as provas e veja a evolução da nota e onde concentrar os estudos.</p>
+  </div>
+  <div id="geral" aria-live="polite"><div class="skel g"></div><div class="skel"></div><div class="skel c"></div><span class="sr">Carregando seus resultados…</span></div>
+
+  <div id="painel" hidden>
+    <section class="sec" aria-labelledby="hRP" style="padding-top:var(--s4)">
+      <div class="sec-h"><h2 id="hRP">Resumo de provas</h2></div>
+      <dl class="kpis" id="kpisGeral"></dl>
+    </section>
+
+    <section class="sec" aria-labelledby="hArq">
+      <div class="sec-h"><h2 id="hArq">Suas provas por edição</h2><span class="tag">Prova completa = 4 áreas</span></div>
+      <div id="arquivo"></div>
+    </section>
+
+    <section class="sec" id="secPizza" aria-labelledby="hPizza" hidden>
+      <div class="sec-h"><h2 id="hPizza">Acertos e erros da prova inteira</h2></div>
+      <div class="filtros">
+        <div class="campo" id="pzEdBox"><label for="pzEd">Edição</label><select class="input" id="pzEd"></select></div>
+        <div class="campo"><span class="rotulo" id="rPz">Ver</span><div class="seg" role="radiogroup" aria-labelledby="rPz" id="segPz"></div></div>
+      </div>
+      <div id="pizza" aria-live="polite"></div>
+    </section>
+
+    <section class="sec" aria-labelledby="hSel">
+      <div class="sec-h"><h2 id="hSel">Provas</h2></div>
+      <div class="filtros">
+        <div class="campo"><label for="fArea">Área</label><select class="input" id="fArea"></select></div>
+        <div class="campo"><label for="fAno">Ano</label><select class="input" id="fAno"></select></div>
+        <div class="campo"><label for="fCor">Cor</label><select class="input" id="fCor"></select></div>
+      </div>
+      <div class="atalhos">
+        <button class="btn btn-sec" type="button" id="aTodas">Todas</button>
+        <button class="btn btn-sec" type="button" id="aUltima">Só a última</button>
+        <button class="btn btn-sec" type="button" id="aLimpar">Limpar</button>
+        <p id="selCont" aria-live="polite"></p>
+      </div>
+      <ul class="lista" id="lista"></ul>
+    </section>
+
+    <div id="semSel" hidden></div>
+
+    <div id="analise" aria-live="polite">
+      <section class="sec" aria-labelledby="hResumo">
+        <div class="sec-h"><h2 id="hResumo">Seu desempenho</h2><span class="tag">Nota TRI estimada</span></div>
+        <p class="small muted" style="margin-bottom:var(--s3)">Cada área é comparada só com ela mesma (CH com CH, MT com MT).</p>
+        <div id="areas"></div>
+        <h3>Nota de cada prova</h3>
+        <p class="small muted" style="margin-bottom:var(--s3)">Cada barra é uma prova, em uma escala de 300 a 1000 pontos.</p>
+        <ul class="notas" id="notas"></ul>
+      </section>
+
+      <section class="sec" aria-labelledby="hMelhorar">
+        <div class="sec-h"><h2 id="hMelhorar">Áreas a melhorar</h2></div>
+        <div class="campo"><span class="rotulo" id="rRank">Ver área</span>
+          <div class="seg" role="radiogroup" aria-labelledby="rRank" id="segRank"></div>
+        </div>
+        <p class="kicker" style="margin-top:var(--s5)">Comece por aqui</p>
+        <ol class="inicio" id="inicio"></ol>
+        <p class="small muted">Faixas pela taxa de erro: ▲ alta (60% ou mais), ■ média (40 a 59%), ▽ baixa (menos de 40%).</p>
+        <h3 style="margin-top:var(--s6)">Erros por eixo temático</h3>
+        <div id="rkEixos"></div>
+        <div class="cols2">
+          <section><h3>Competências</h3><div id="rkComp"></div></section>
+          <section><h3>Habilidades</h3><div id="rkHab"></div></section>
+        </div>
+      </section>
+    </div>
+
+    <p class="aviso" style="margin-bottom:var(--s7)"><b>Estimativa</b><span>As notas TRI mostradas aqui não são notas oficiais do INEP. O erro médio da estimativa fica entre 6 e 25 pontos, conforme a área.</span></p>
+  </div>
+</main>
+<footer class="rodape"><div class="wrap rodape-in"><span><b>Apollo</b> · diagnóstico de provas do ENEM</span><span>A nota TRI é uma estimativa, não a nota oficial do INEP.</span></div></footer>
+
+<script>
+const ROTAS = {inicio:"/", login:"/login/", home:"/home/", enviar:"/enviar/", dashboard:"/dashboard/"};
+
+const csrf = () => (document.cookie.match(/csrftoken=([^;]+)/) || [])[1] || "";
+async function api(path, method="GET", body){
+  const r = await fetch("/api/"+path, {method, credentials:"same-origin",
+    headers:{"Content-Type":"application/json","X-CSRFToken":csrf()}, body: body?JSON.stringify(body):undefined});
+  let data=null; try{ data=await r.json(); }catch(e){}
+  if(!r.ok){ const e=new Error((data&&data.detail)||"Erro "+r.status); e.status=r.status; e.data=data; throw e; }
+  return data;
+}
+
+const $ = (s, r=document) => r.querySelector(s);
+const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const AREAS = {LC:"Linguagens", CH:"Ciências Humanas", CN:"Ciências da Natureza", MT:"Matemática"};
+const ORDEM_AREAS = ["LC","CH","CN","MT"];
+const CAMPOS = {nome:"Nome", email:"E-mail", senha:"Senha", ano:"Ano", area:"Área", cor:"Cor", lingua:"Idioma", respostas:"Respostas"};
+const fmtNota = n => (n==null || isNaN(n)) ? "—" : Number(n).toLocaleString("pt-BR",{minimumFractionDigits:1,maximumFractionDigits:1});
+const fmtCor = c => c ? c[0] + c.slice(1).toLowerCase() : "";
+const fmtData = iso => { const d=new Date(iso); return isNaN(d) ? "" : d.toLocaleDateString("pt-BR",{day:"2-digit",month:"2-digit",year:"2-digit"}); };
+const pct = t => Math.round(t*100) + "%";
+const ordHab = k => parseInt(String(k).replace(/\D/g,""),10) || 0;
+
+/* Erros do backend: {detail:"..."} ou {campo:["msg"]} → texto legível */
+function msgErro(e){
+  if(e && e.data && typeof e.data==="object" && !e.data.detail){
+    const partes=[];
+    const plano = v => Array.isArray(v) ? v.map(plano).join(" ") : (v && typeof v==="object" ? Object.values(v).map(plano).join(" ") : String(v));
+    for(const [k,v] of Object.entries(e.data)){
+      const m = plano(v);
+      partes.push(k==="non_field_errors" ? m : (CAMPOS[k]||k)+": "+m);
+    }
+    if(partes.length) return partes.join(" · ");
+  }
+  if(e && e.status) return e.message;
+  return "Não foi possível conectar. Verifique sua internet e tente de novo.";
+}
+
+function faixa(taxa){
+  if(taxa>=.6) return {id:"alta", texto:"Prioridade alta", curto:"▲ Alta"};
+  if(taxa>=.4) return {id:"media", texto:"Prioridade média", curto:"■ Média"};
+  return {id:"baixa", texto:"Prioridade baixa", curto:"▽ Baixa"};
+}
+
+/* itens: [{rotulo, sub, erros, total}] já ordenados */
+function htmlBarras(itens, comFaixa){
+  if(!itens.length) return '<p class="b-ok">Nenhum erro aqui.</p>';
+  return '<ul class="barras">' + itens.map(it => {
+    const taxa = it.total ? it.erros/it.total : 0, f = faixa(taxa);
+    return `<li><span class="b-rot">${esc(it.rotulo)}${it.sub?`<small>${esc(it.sub)}</small>`:""}</span>
+      <span class="b-num"><b>${it.erros}</b> de ${it.total} · ${pct(taxa)}${comFaixa?` <span class="tag tag-${f.id}" title="${f.texto}">${f.curto}</span>`:""}</span>
+      <span class="b-bar ${f.id}" aria-hidden="true"><i style="width:${Math.max(taxa*100, it.erros?2:0)}%"></i></span></li>`;
+  }).join("") + "</ul>";
+}
+const ordenarErros = (a,b) => b.erros-a.erros || (b.erros/b.total)-(a.erros/a.total) || String(a.rotulo).localeCompare(String(b.rotulo),"pt-BR",{numeric:true});
+function tituloComp(matriz, area, c){
+  const m = matriz && matriz[area] && matriz[area].find(x => x.competencia===c);
+  return m ? m.titulo : "";
+}
+
+let sessao = null;
+function atualizarTopo(){
+  $$("[data-rota]").forEach(a => {
+    if(sessao && a.dataset.rota==="inicio"){ a.dataset.rota = "home"; if(a.matches(".menu a")) a.textContent = "Home"; }
+    a.setAttribute("href", ROTAS[a.dataset.rota]);
+  });
+  const pg = document.body.dataset.page;
+  $$(".menu a").forEach(a => a.dataset.rota===pg ? a.setAttribute("aria-current","page") : a.removeAttribute("aria-current"));
+  const b = $("#btnSessao"); if(b) b.textContent = sessao ? "Sair" : "Entrar";
+}
+async function verificarSessao(obrigatoria){
+  try{ sessao = await api("dashboard/"); }
+  catch(e){
+    sessao = null;
+    if(obrigatoria && e.status===403){ location.href = ROTAS.login; return new Promise(()=>{}); }
+    if(obrigatoria){ atualizarTopo(); throw e; }
+  }
+  atualizarTopo();
+  return sessao;
+}
+document.addEventListener("DOMContentLoaded", () => {
+  atualizarTopo();
+  const b = $("#btnSessao");
+  if(b) b.addEventListener("click", async () => {
+    if(sessao){
+      b.disabled = true;
+      try{ await api("logout/","POST"); }catch(e){}
+      location.href = ROTAS.inicio;
+    } else location.href = ROTAS.login;
+  });
+});
+
+const st = {subs:[], matriz:null, sel:new Set(), f:{area:"", ano:"", cor:""}, areaRank:null, aberto:{}, pzEd:null, pzArea:"GERAL"};
+const nota = s => s.resultado ? Number(s.resultado.nota_tri) : NaN;
+const tempo = s => new Date(s.criada_em).getTime() || 0;
+
+function estado(el, titulo, texto, acao){
+  el.innerHTML = `<div class="estado"><h3>${esc(titulo)}</h3><p>${esc(texto)}</p>${acao ? (acao.href ? `<a class="btn btn-pri" href="${acao.href}">${esc(acao.rotulo)}</a>` : `<button class="btn btn-sec" type="button">${esc(acao.rotulo)}</button>`) : ""}</div>`;
+  if(acao && acao.fn) $("button", el).addEventListener("click", acao.fn);
+}
+
+async function carregar(){
+  const box = $("#geral");
+  box.innerHTML = '<div class="skel g"></div><div class="skel"></div><div class="skel c"></div><span class="sr">Carregando seus resultados…</span>';
+  box.hidden = false; $("#painel").hidden = true;
+  try{
+    await verificarSessao(true);
+    if(sessao && sessao.aluno) $("#ola").textContent = "Olá, " + sessao.aluno;
+    const todas = []; let pg = 1, r;
+    do{ r = await api("submissoes/?page="+pg); todas.push(...(r.results||[])); pg++; } while(r.next && pg<200);
+    st.subs = todas.sort((a,b) => tempo(b)-tempo(a));
+    st.matriz = await api("matriz/").catch(() => null);
+  }catch(e){
+    if(e.status===403){ location.href = ROTAS.login; return; }
+    return estado(box, "Não foi possível carregar seus resultados", msgErro(e), {rotulo:"Tentar de novo", fn:carregar});
+  }
+  if(!st.subs.length) return estado(box, "Envie sua primeira prova", "Depois do primeiro envio, sua nota TRI estimada e as áreas a melhorar aparecem aqui.", {rotulo:"Enviar respostas", href:ROTAS.enviar});
+  box.hidden = true; box.innerHTML = ""; $("#painel").hidden = false;
+  st.sel = new Set(st.subs.map(s => s.id));
+  montarFiltros(); pintarGeral(); pintar();
+}
+
+function montarFiltros(){
+  const unicos = f => Array.from(new Set(st.subs.map(f)));
+  const op = (todas, lista, rot) => `<option value="">${todas}</option>` + lista.map(v => `<option value="${esc(v)}">${esc(rot(v))}</option>`).join("");
+  $("#fArea").innerHTML = op("Todas", ORDEM_AREAS.filter(a => st.subs.some(s => s.area===a)), a => a + " · " + AREAS[a]);
+  $("#fAno").innerHTML = op("Todos", unicos(s => s.ano).sort((a,b) => b-a), String);
+  $("#fCor").innerHTML = op("Todas", unicos(s => s.cor).sort(), fmtCor);
+}
+const visiveis = () => st.subs.filter(s => (!st.f.area || s.area===st.f.area) && (!st.f.ano || String(s.ano)===st.f.ano) && (!st.f.cor || s.cor===st.f.cor));
+const ativas = () => visiveis().filter(s => st.sel.has(s.id));
+
+function pintar(){
+  const vis = visiveis();
+  $("#lista").innerHTML = vis.length ? vis.map(s => `<li><label class="sub"><input type="checkbox" data-id="${esc(s.id)}"${st.sel.has(s.id)?" checked":""}>
+    <span><b>${esc(s.area)} · ${esc(s.ano)}</b><small>Caderno ${esc(fmtCor(s.cor).toLowerCase())} · ${fmtData(s.criada_em)}</small></span>
+    <span><b>${fmtNota(nota(s))}</b><small>${s.resultado ? s.resultado.acertos : "—"} acertos</small></span></label></li>`).join("")
+    : '<li class="small muted" style="padding:var(--s4) 0">Nenhuma prova com esses filtros.</li>';
+  pintarAnalise();
+}
+
+/* ---------- Visão geral: resumo, provas por edição e pizza (todas as provas enviadas) ---------- */
+const NOME_AREA = a => AREAS[a] || a;
+function edicoes(){
+  const m = {};
+  st.subs.filter(s => s.resultado).forEach(s => {
+    const e = m[s.ano] || (m[s.ano] = {ano:s.ano, por:{}}), a = e.por[s.area];
+    if(!a || tempo(s) > tempo(a)) e.por[s.area] = s;
+  });
+  return Object.values(m).sort((a,b) => b.ano-a.ano).map(e => {
+    const faltam = ORDEM_AREAS.filter(a => !e.por[a]);
+    /* mesmo dia = mesmo caderno = mesma cor (2016: CH/CN e LC/MT) */
+    const pares = e.ano===2016 ? [["CH","CN"],["LC","MT"]] : [["LC","CH"],["CN","MT"]];
+    const incoerentes = pares.filter(([a,b]) => e.por[a] && e.por[b] && e.por[a].cor!==e.por[b].cor);
+    return Object.assign(e, {faltam, incoerentes, completa: faltam.length===0 && !incoerentes.length});
+  });
+}
+const somaRes = (lista, campo) => lista.reduce((t,s) => t + ((s.resultado && Number(s.resultado[campo])) || 0), 0);
+
+function pintarGeral(){
+  const eds = edicoes(), comp = eds.filter(e => e.completa).length, ult = st.subs[0];
+  $("#kpisGeral").innerHTML = `
+    <div class="kpi"><dt>Provas enviadas</dt><dd>${st.subs.length}<small>${eds.length} ${eds.length===1?"edição":"edições"} do ENEM</small></dd></div>
+    <div class="kpi"><dt>Edições completas</dt><dd>${comp}<small>com as 4 áreas enviadas</small></dd></div>
+    <div class="kpi"><dt>Edições incompletas</dt><dd>${eds.length-comp}<small>${eds.length-comp ? "faltam áreas ou há cores inconsistentes" : "nenhuma pendente"}</small></dd></div>
+    <div class="kpi"><dt>Última prova</dt><dd>${fmtNota(ult && nota(ult))}<small>${ult ? esc(ult.area+" "+ult.ano+" · "+fmtData(ult.criada_em)) : ""}</small></dd></div>`;
+
+  $("#arquivo").innerHTML = eds.map(e => {
+    const lista = ORDEM_AREAS.filter(a => e.por[a]).map(a => e.por[a]);
+    const cab = e.completa
+      ? `<small>${somaRes(lista,"acertos")} acertos em ${somaRes(lista,"acertos")+somaRes(lista,"erros")+somaRes(lista,"brancos")} questões</small>`
+      : e.incoerentes.length
+        ? `<small><b>${e.incoerentes.map(([a,b]) => "Cores diferentes em "+NOME_AREA(a)+" e "+NOME_AREA(b)+" (mesmo caderno)").map(esc).join(" · ")}</b> Exclua o envio errado e reenvie.</small>`
+        : `<small><b>${e.faltam.map(a => "Falta área "+NOME_AREA(a)+"!").map(esc).join(" · ")}</b> <a href="${ROTAS.enviar}">Enviar respostas</a></small>`;
+    return `<article class="ed"><div class="ed-h"><h3>Prova ${esc(e.ano)}</h3><span class="tag tag-${e.completa?"baixa":"media"}">${e.completa?"Completa":(e.incoerentes.length?"Inconsistente":"Incompleta")}</span>${cab}</div>
+      <div class="ed-areas">${ORDEM_AREAS.map(a => { const x = e.por[a];
+        return x ? `<div class="ed-a"><b>${esc(a)} · ${esc(NOME_AREA(a))}</b><strong>${fmtNota(nota(x))}</strong><small>${x.resultado.acertos} acertos · caderno ${esc(fmtCor(x.cor).toLowerCase())}</small><button type="button" class="btn del" data-del="${esc(x.id)}" aria-label="Excluir envio de ${esc(NOME_AREA(a))} ${esc(e.ano)}">Excluir</button></div>`
+                 : `<div class="ed-a falta"><b>${esc(a)} · ${esc(NOME_AREA(a))}</b><strong>Falta área ${esc(NOME_AREA(a))}!</strong><small>Envie as respostas desta área</small></div>`; }).join("")}</div></article>`;
+  }).join("");
+
+  const completas = eds.filter(e => e.completa);
+  $("#secPizza").hidden = !completas.length;
+  if(completas.length){
+    if(!completas.some(e => String(e.ano)===String(st.pzEd))) st.pzEd = completas[0].ano;
+    $("#pzEd").innerHTML = completas.map(e => `<option value="${esc(e.ano)}"${String(e.ano)===String(st.pzEd)?" selected":""}>ENEM ${esc(e.ano)}</option>`).join("");
+    $("#pzEdBox").hidden = completas.length<2;
+    $("#segPz").innerHTML = ["GERAL"].concat(ORDEM_AREAS).map(a => `<label title="${a==="GERAL"?"Prova inteira":esc(NOME_AREA(a))}"><input type="radio" name="pzArea" value="${a}"${a===st.pzArea?" checked":""}>${a==="GERAL"?"Geral":a}</label>`).join("");
+    pintarPizza();
+  }
+}
+
+function pintarPizza(){
+  const e = edicoes().find(x => String(x.ano)===String(st.pzEd)); if(!e) return;
+  const lista = st.pzArea==="GERAL" ? ORDEM_AREAS.map(a => e.por[a]) : [e.por[st.pzArea]];
+  const fat = [
+    {rot:"Acertos", n:somaRes(lista,"acertos"), cor:"var(--verde)"},
+    {rot:"Erros", n:somaRes(lista,"erros"), cor:"var(--alta)"},
+    {rot:"Em branco", n:somaRes(lista,"brancos"), cor:"var(--muted)"},
+  ].filter(f => f.n>0 || f.rot!=="Em branco");
+  const total = fat.reduce((t,f) => t+f.n, 0), box = $("#pizza");
+  if(!total){ box.innerHTML = '<p class="b-ok">Sem questões contadas nesta seleção.</p>'; return; }
+  const R = 38, C = 2*Math.PI*R; let off = 0;
+  const arcos = fat.filter(f => f.n>0).map(f => { const len = f.n/total*C, o = off; off += len;
+    return `<circle cx="50" cy="50" r="${R}" fill="none" stroke="${f.cor}" stroke-width="20" stroke-dasharray="${len.toFixed(2)} ${(C-len).toFixed(2)}" stroke-dashoffset="${(-o).toFixed(2)}" transform="rotate(-90 50 50)"/>`; }).join("");
+  const ac = fat[0].n/total, desc = fat.map(f => `${f.rot}: ${f.n} (${pct(f.n/total)})`).join("; ");
+  const titulo = st.pzArea==="GERAL" ? `ENEM ${e.ano}, prova inteira` : `ENEM ${e.ano}, ${NOME_AREA(st.pzArea)}`;
+  box.innerHTML = `<div class="pz"><svg viewBox="0 0 100 100" role="img" aria-label="${esc(titulo)}. ${esc(desc)}.">${arcos}
+      <text class="centro" x="50" y="52" text-anchor="middle">${pct(ac)}</text><text class="centro-s" x="50" y="64" text-anchor="middle">de acertos</text></svg>
+    <div><p class="kicker">${esc(titulo)}</p><ul class="pz-leg">${fat.map(f => `<li><i style="background:${f.cor}"></i><span>${f.rot}</span><span class="v"><b>${f.n}</b> · ${pct(f.n/total)}</span></li>`).join("")}</ul>
+    <p class="small muted" style="margin-top:var(--s3)">${total} questões contadas (itens anulados pelo INEP ficam de fora).</p></div></div>`;
+}
+
+/* ---------- Análise das provas selecionadas ---------- */
+function pintarAnalise(){
+  const at = ativas().slice().sort((a,b) => tempo(a)-tempo(b));
+  $("#selCont").innerHTML = `<b>${at.length}</b> de ${visiveis().length} selecionadas`;
+  const vazio = $("#semSel");
+  if(!at.length){
+    $("#analise").hidden = true; vazio.hidden = false;
+    estado(vazio, "Nenhuma prova selecionada", "Marque ao menos uma prova na lista para ver o resumo e as áreas a melhorar.", {rotulo:"Selecionar todas", fn:() => { visiveis().forEach(s => st.sel.add(s.id)); pintar(); }});
+    return;
+  }
+  vazio.hidden = true; vazio.innerHTML = ""; $("#analise").hidden = false;
+  pintarResumo(at); pintarNotas(at); pintarRankings(at);
+}
+
+/* Cada área é resumida só com provas da própria área (CH com CH, MT com MT) */
+function pintarResumo(at){
+  const rot = s => `${s.ano} · ${fmtData(s.criada_em)}`;
+  $("#areas").innerHTML = ORDEM_AREAS.filter(a => at.some(s => s.area===a)).map(a => {
+    const l = at.filter(s => s.area===a).sort((x,y) => tempo(x)-tempo(y)), ns = l.map(nota).filter(n => !isNaN(n));
+    const media = ns.reduce((x,y) => x+y, 0) / (ns.length||1), melhor = l.reduce((m,s) => nota(s) > nota(m) ? s : m, l[0]), ult = l[l.length-1];
+    const d = l.length>1 ? nota(ult) - nota(l[0]) : null;
+    const varTxt = d===null ? "—" : `<span class="var-s" aria-hidden="true">${d>0?"▲":d<0?"▼":"="}</span>${d>0?"+":d<0?"−":""}${fmtNota(Math.abs(d))}`;
+    return `<section class="area-r"><h3>${esc(a)} <span>${esc(NOME_AREA(a))} · ${l.length} ${l.length===1?"prova":"provas"}</span></h3><dl class="kpis">
+      <div class="kpi"><dt>Média</dt><dd>${fmtNota(media)}<small>${l.length} ${l.length===1?"prova":"provas"} de ${esc(a)}</small></dd></div>
+      <div class="kpi"><dt>Melhor</dt><dd>${fmtNota(nota(melhor))}<small>${esc(rot(melhor))}</small></dd></div>
+      <div class="kpi"><dt>Última</dt><dd>${fmtNota(nota(ult))}<small>${esc(rot(ult))}</small></dd></div>
+      <div class="kpi"><dt>Variação</dt><dd>${varTxt}<small>${d===null ? "selecione 2 ou mais provas de "+esc(a) : (d>0?"subiu":d<0?"caiu":"sem mudança")+" entre a primeira e a última"}</small></dd></div></dl></section>`;
+  }).join("");
+}
+
+const NT_MIN = 300, NT_MAX = 1000;
+const pos = n => Math.max(0, Math.min(100, (n-NT_MIN)/(NT_MAX-NT_MIN)*100));
+function pintarNotas(at){
+  const l = at.slice().sort((a,b) => ORDEM_AREAS.indexOf(a.area)-ORDEM_AREAS.indexOf(b.area) || a.ano-b.ano || tempo(a)-tempo(b));
+  $("#notas").innerHTML = l.map(s => { const n = nota(s);
+    return `<li><span class="nt-rot"><b>${esc(NOME_AREA(s.area))} · ${esc(s.ano)}</b><small>Caderno ${esc(fmtCor(s.cor).toLowerCase())} · ${fmtData(s.criada_em)}</small></span>
+      <span class="nt-val"><b>${fmtNota(n)}</b><small>${s.resultado ? s.resultado.acertos+" acertos" : ""}</small></span>
+      <span class="nt-trilha" aria-hidden="true"><i class="nt-bar" style="width:${pos(n)}%"></i></span></li>`; }).join("");
+}
+
+function somar(lista, chave){
+  const m = {};
+  lista.forEach(s => Object.entries((s.resultado && s.resultado.analise && s.resultado.analise[chave]) || {}).forEach(([k,v]) => {
+    const o = m[k] || (m[k] = {k, erros:0, total:0}); o.erros += v.erros||0; o.total += v.total||0;
+  }));
+  return Object.values(m).filter(o => o.total>0);
+}
+/* Nome da competência a que uma habilidade pertence (a Matriz só nomeia competências) */
+function nomeCompDeHab(matriz, area, h){
+  const m = matriz && matriz[area] && matriz[area].find(x => (x.habilidades||[]).includes(h));
+  return m ? m.titulo : "";
+}
+function pintarRankings(at){
+  const presentes = ORDEM_AREAS.filter(a => at.some(s => s.area===a));
+  if(!presentes.includes(st.areaRank)) st.areaRank = presentes[0];
+  $("#segRank").innerHTML = presentes.map(a => `<label title="${AREAS[a]}"><input type="radio" name="areaRank" value="${a}"${a===st.areaRank?" checked":""}>${a}</label>`).join("");
+
+  /* Tudo abaixo usa só a área escolhida: nada compara áreas diferentes */
+  const a = st.areaRank, l = at.filter(s => s.area===a), M = st.matriz;
+  const cand = [];
+  somar(l,"eixos").forEach(o => cand.push(Object.assign(o, {tipo:"eixo"})));
+  somar(l,"competencias").forEach(o => cand.push(Object.assign(o, {tipo:"comp"})));
+  somar(l,"habilidades").forEach(o => cand.push(Object.assign(o, {tipo:"hab"})));
+  const top = cand.filter(o => o.erros>0 && o.total>=2).map(o => Object.assign(o, {rotulo:o.k})).sort(ordenarErros).slice(0,3);
+  $("#inicio").innerHTML = top.length ? top.map((o,i) => {
+    const t = o.erros/o.total, f = faixa(t), nums = `você errou ${o.erros} de ${o.total} ${o.total===1?"questão":"questões"} (${pct(t)})`;
+    let frase;
+    if(o.tipo==="eixo") frase = `Revise ${o.k}, em ${AREAS[a]}: ${nums}.`;
+    else if(o.tipo==="comp"){ const nm = tituloComp(M, a, o.k); frase = `Treine a competência ${nm ? "“"+nm+"”" : o.k} de ${AREAS[a]}: ${nums}.`; }
+    else { const nm = nomeCompDeHab(M, a, o.k); frase = `Pratique a habilidade ${o.k}${nm ? ", da competência “"+nm+"”," : ""} de ${AREAS[a]}: ${nums}.`; }
+    return `<li><span class="n" aria-hidden="true">${i+1}</span><p>${esc(frase)}</p><span class="tag tag-${f.id}">${f.curto} · ${f.texto.toLowerCase()}</span></li>`;
+  }).join("") : '<li><p style="margin:0">Nenhum erro nesta área nas provas selecionadas.</p></li>';
+
+  const bloco = (id, chave, mapa) => {
+    const itens = somar(l, chave).filter(o => o.erros>0).map(o => Object.assign({erros:o.erros, total:o.total}, mapa ? mapa(o.k) : {rotulo:o.k, sub:""})).sort(ordenarErros);
+    const tudo = st.aberto[id] || itens.length<=8, el = $("#"+id);
+    el.innerHTML = htmlBarras(tudo ? itens : itens.slice(0,8), true) + (itens.length>8 ? `<button class="btn btn-txt" type="button" style="margin-top:var(--s2)">${tudo ? "Mostrar menos" : `Mostrar todos (${itens.length})`}</button>` : "");
+    const b = $("button", el); if(b) b.addEventListener("click", () => { st.aberto[id] = !st.aberto[id]; pintarRankings(ativas()); });
+  };
+  bloco("rkEixos", "eixos");
+  bloco("rkComp", "competencias", k => { const nm = tituloComp(M, a, k); return nm ? {rotulo:nm, sub:"Competência "+k} : {rotulo:"Competência "+k, sub:""}; });
+  bloco("rkHab", "habilidades", k => { const nm = nomeCompDeHab(M, a, k); return nm ? {rotulo:nm, sub:"Habilidade "+k} : {rotulo:"Habilidade "+k, sub:""}; });
+}
+
+/* Excluir um envio (corrige cor errada): 1º clique pede confirmação, 2º clique apaga e recarrega */
+let delTimer = null;
+function iniciarExclusao(){
+  $("#arquivo").addEventListener("click", async e => {
+    const b = e.target.closest("button[data-del]"); if(!b) return;
+    if(!b.classList.contains("conf")){
+      $$("#arquivo .del.conf").forEach(x => { x.classList.remove("conf"); x.textContent = "Excluir"; });
+      b.classList.add("conf"); b.textContent = "Confirmar exclusão"; clearTimeout(delTimer);
+      delTimer = setTimeout(() => { b.classList.remove("conf"); b.textContent = "Excluir"; }, 5000); return;
+    }
+    clearTimeout(delTimer); b.disabled = true; b.textContent = "Excluindo…";
+    try{ await api("submissoes/"+b.dataset.del+"/", "DELETE"); await carregar(); }
+    catch(err){
+      if(err.status===403){ location.href = ROTAS.login; return; }
+      b.disabled = false; b.classList.remove("conf"); b.textContent = "Excluir";
+      b.insertAdjacentHTML("afterend", `<small class="del-erro" role="alert">Não foi possível excluir: ${esc(msgErro(err))}</small>`);
+    }
+  });
+}
+
+function iniciar(){
+  iniciarExclusao();
+  [["fArea","area"],["fAno","ano"],["fCor","cor"]].forEach(([id,k]) => $("#"+id).addEventListener("change", e => { st.f[k] = e.target.value; pintar(); }));
+  $("#lista").addEventListener("change", e => {
+    const c = e.target; if(c.type!=="checkbox") return;
+    const s = st.subs.find(x => String(x.id)===c.dataset.id); if(!s) return;
+    c.checked ? st.sel.add(s.id) : st.sel.delete(s.id); pintarAnalise();
+  });
+  $("#aTodas").addEventListener("click", () => { visiveis().forEach(s => st.sel.add(s.id)); pintar(); });
+  $("#aUltima").addEventListener("click", () => { const v = visiveis(); st.sel = new Set(v.length ? [v[0].id] : []); pintar(); });
+  $("#aLimpar").addEventListener("click", () => { st.sel.clear(); pintar(); });
+  $("#pzEd").addEventListener("change", e => { st.pzEd = e.target.value; pintarPizza(); });
+  $("#segPz").addEventListener("change", e => { st.pzArea = e.target.value; pintarPizza(); });
+  $("#segRank").addEventListener("change", e => { st.areaRank = e.target.value; st.aberto = {}; pintarRankings(ativas().sort((a,b) => tempo(a)-tempo(b))); });
+  carregar();
+}
+document.addEventListener("DOMContentLoaded", iniciar);
+</script>
+<script>
+(function(){
+  var b=document.getElementById("btnTema"); if(!b) return;
+  var el=document.documentElement;
+  function atual(){ return el.getAttribute("data-theme") || (window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); }
+  function rotulo(){ var d=atual()==="dark"; b.textContent=d?"\u2600\uFE0E":"\u263E\uFE0E"; b.title=d?"Mudar para o tema claro":"Mudar para o tema escuro"; b.setAttribute("aria-label",d?"Mudar para o tema claro":"Mudar para o tema escuro"); }
+  b.addEventListener("click",function(){ var n=atual()==="dark"?"light":"dark"; el.setAttribute("data-theme",n); try{localStorage.setItem("apollo-tema",n)}catch(e){} rotulo(); });
+  rotulo();
+})();
+</script>
+</body>
+</html>
