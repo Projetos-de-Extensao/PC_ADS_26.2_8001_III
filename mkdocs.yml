@@ -24,6 +24,7 @@ nav:
       - Aplicação (appFinal): Construcao/aplicacao.md
 
   - Transição:
+      - Index: Transicao/index.md
       - Atividades de Deploy: Transicao/ativ_deploy.md
 
   - Histórico (v1 - AP1):

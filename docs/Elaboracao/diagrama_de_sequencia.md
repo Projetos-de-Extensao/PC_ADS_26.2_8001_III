@@ -34,7 +34,7 @@ Registrar a interação entre os componentes da arquitetura AWS do projeto Apoll
 - **ID do Caso de Uso:** UC01
 - **Ator(es):** Candidato
 - **Prioridade:** Alta
-- **Responsável:** `<a definir>`
+- **Responsável:** Arthur Maurity, Bernardo Casanovas, Bernardo Miller e Lucas Jesus
 - **Data:** 2026
 
 ##### 2. Referências
@@ -181,4 +181,4 @@ Formulário apresenta o resultado ao Candidato
 
 | Data | Versão | Descrição | Autor(es) |
 | -- | -- | -- | -- |
-| 2026 | 1.0 | Modelagem do caso de uso UC01 sobre a arquitetura AWS do projeto Apollo. | Equipe Apollo (`<a definir>`) |
+| 2026 | 1.0 | Modelagem do caso de uso UC01 sobre a arquitetura AWS do projeto Apollo. | Equipe Apollo (Arthur Maurity, Bernardo Casanovas, Bernardo Miller, Lucas Jesus) |

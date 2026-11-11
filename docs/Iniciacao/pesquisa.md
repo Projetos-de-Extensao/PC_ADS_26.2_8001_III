@@ -64,4 +64,4 @@ A Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018) é a principal
 
 | Data | Versão | Descrição | Autor(es) |
 | -- | -- | -- | -- |
-| 2026 | 1.0 | Registro da pesquisa de contexto, mercado e legislação do projeto Apollo. | Equipe Apollo (`<a definir>`) |
+| 2026 | 1.0 | Registro da pesquisa de contexto, mercado e legislação do projeto Apollo. | Equipe Apollo (Arthur Maurity, Bernardo Casanovas, Bernardo Miller e Lucas Jesus) |

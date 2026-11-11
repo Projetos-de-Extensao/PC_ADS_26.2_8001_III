@@ -413,8 +413,8 @@ Os seis fluxos cobrem os requisitos centrais da AP2: transação atômica, índi
 
 | **Função** | **Nome** | **Data** | **Assinatura** |
 | --- | --- | --- | --- |
-| Arquiteto de Soluções |  |  |  |
-| Professor Responsável |  |  |  |
+| Arquiteto de Soluções | Arthur Maurity, Bernardo Casanovas, Bernardo Miller, Lucas Jesus | 10/11/2026 | Aprovado em revisão da equipe |
+| Professor Responsável | Jonh Carvalho | 17/11/2026 | Pendente (avaliação da AP2) |
 
 # 8. Histórico de Versões
 

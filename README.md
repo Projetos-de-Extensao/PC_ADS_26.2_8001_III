@@ -1,60 +1,139 @@
-# Projeto Apollo — Análise de Gabarito do ENEM
+# Projeto Apollo — Análise de desempenho no ENEM (AP2)
 
-**Código da Disciplina**: IBM8936<br>
-**Disciplina**: Big Data e Cloud Computing (5º período)<br>
+**Disciplinas:** Big Data e Cloud Computing (IBM8936) · Projeto de Cloud<br>
+**Turma:** PC_ADS_26.2_8001_III<br>
+**Integrantes:** Arthur Maurity, Bernardo Casanovas, Bernardo Miller, Lucas Jesus
+
+| | Link |
+| --- | --- |
+| **API publicada** | http://IP_DA_EC2:8000/api/ |
+| **Front-end** | http://IP_DA_EC2:8000/ |
+| **Saúde (app + banco)** | http://IP_DA_EC2:8000/health/ |
+| **Documentação (MkDocs)** | https://projetos-de-extensao.github.io/PC_ADS_26.2_8001_III/ |
 
 ## Sobre
 
-O Apollo é um sistema web de análise de gabarito do ENEM implantado na nuvem AWS. O candidato seleciona uma área de conhecimento (LC, CH, CN ou MT), preenche as 45 respostas da prova e recebe a nota estimada, as contagens de acertos, erros e questões em branco e a lista das questões erradas com o gabarito correto. A estimativa é produzida por uma engine TRI em Python puro, executada em AWS Lambda a partir do gabarito oficial e dos parâmetros de item publicados pelo INEP — e não corresponde à nota oficial do exame.
+O Apollo é uma API Django REST + PostgreSQL que estima a nota TRI do ENEM. O aluno envia as 45 respostas de uma área (LC, CH, CN ou MT) de uma edição entre 2016 e 2025 e recebe acertos, erros, nota TRI estimada e as habilidades e eixos em que mais errou. A base usa os itens oficiais do INEP (7.400 questões, gabarito e parâmetros a/b/c). A nota é uma estimativa, não a oficial.
 
-O projeto é acadêmico e tem como objetivo demonstrar, em um sistema funcional, o uso integrado dos serviços de nuvem estudados na disciplina. Esta versão trabalha com um gabarito fixo (ENEM 2025, caderno azul), carregado no banco por script de seed.
+Na AP1 a API rodava no Elastic Beanstalk com SQLite. Na AP2 ela passou para **uma EC2 com Docker Compose** (contêineres `web` e `db`) e **PostgreSQL 16 multimodelo** (relacional + JSONB com índice GIN).
 
-A documentação completa do projeto está em [docs/](docs/), com destaque para o [Documento de Visão](docs/Iniciacao/documento_de_visao.md) e o [Levantamento de Requisitos](docs/Elaboracao/levreq.md).
+## Arquitetura
 
-### Arquitetura
+```mermaid
+flowchart LR
+  U[Aluno / cliente HTTP] -->|HTTP :8000| W
+  subgraph EC2 ["AWS EC2 (Ubuntu) + Docker Compose"]
+    W["web: Django + DRF + Gunicorn"] -->|rede interna :5432| D[("db: PostgreSQL 16")]
+    D --- V[("volume nomeado pgdata")]
+  end
+  DEV[Windows do grupo] -->|git push| GH[GitHub]
+  GH -->|git pull + docker compose up -d --build| EC2
+```
 
-| Serviço AWS | Papel |
-| -- | -- |
-| Amazon VPC | Rede isolada: sub-rede pública para o load balancer da API administrativa; sub-rede privada para EC2 e RDS |
-| Amazon EC2 (Nginx + Gunicorn) | API administrativa em Django REST Framework |
-| Amazon RDS (PostgreSQL) | Gabarito, parâmetros de item e histórico de submissões |
-| Amazon DynamoDB | Sessões temporárias do formulário, com TTL de 30 minutos |
-| AWS Lambda + Amazon API Gateway | Endpoint de análise e execução da engine TRI |
-| Amazon S3 + Amazon CloudFront | Frontend HTML estático distribuído com HTTPS |
-| AWS CodePipeline + CodeBuild + CodeDeploy | Testes e implantação automática a partir do repositório |
-| Amazon CloudWatch | Logs e alarme de taxa de erro da função Lambda |
-| AWS Secrets Manager | Credencial do banco de dados |
+| Componente | Papel |
+| --- | --- |
+| EC2 t3.medium (Ubuntu, gp3 30 GB criptografado) | Hospeda os dois contêineres |
+| Security Group | Entrada só 22 (SSH, IP do grupo) e 8000 (API). A 5432 **não** é publicada |
+| `web` | Django + DRF servido pelo Gunicorn (3 *workers*); roda migrations, `collectstatic` e importação dos itens ao subir |
+| `db` | `postgres:16` com `healthcheck` (`pg_isready`) e volume `pgdata` |
+| `.env` | Segredos (`SECRET_KEY`, `POSTGRES_*`, superusuário) só na EC2, fora do Git; `.env.example` versionado sem senhas |
 
-## Instalação
+Custo estimado: ≈ US$ 37/mês (EC2 t3.medium + EBS), dentro do orçamento de US$ 100/mês. Detalhes em [Dimensionamento de Computação](https://projetos-de-extensao.github.io/PC_ADS_26.2_8001_III/Elaboracao/dim_comp/) e [Atividades de Deploy](https://projetos-de-extensao.github.io/PC_ADS_26.2_8001_III/Transicao/ativ_deploy/).
 
-**Linguagens**: Python, Django (Django REST Framework)<br>
-**Infraestrutura como código**: AWS CDK em Python<br>
-**Tecnologias**: AWS, GitHub, Visual Studio Code<br>
+### Modelo de dados
 
-Pré-requisitos para executar o projeto:
+| Model | Tipo | Relacionamentos |
+| --- | --- | --- |
+| `EdicaoEnem` | Relacional | 1—N `Questao`, 1—N `Submissao` |
+| `Questao` | Relacional + **documento** | `atributos` = `JSONField` (JSONB) com **índice GIN** `questao_atributos_gin` (migration `0001`) |
+| `Aluno` | Relacional | 1—1 `User`; 1—N `Submissao` |
+| `Submissao` | Relacional | FK `Aluno`, FK `EdicaoEnem`; **N—N** `Questao` via `RespostaInformada` |
+| `RespostaInformada` | Tabela associativa com atributos | `alternativa`, `correta` |
+| `Resultado` | Relacional + documento | 1—1 `Submissao`; `analise` em JSONB |
 
-- conta AWS com credenciais configuradas localmente;
-- Python e AWS CDK instalados;
-- gabarito oficial e parâmetros de item do ENEM 2025 disponíveis para a carga inicial.
+**Transação:** `POST /api/submissoes/` grava `Submissao` + 45 `RespostaInformada` + `Resultado` dentro de `transaction.atomic()`. Prova incompleta, alternativa inválida ou cor de caderno diferente da área parceira do mesmo dia ⇒ HTTP 400 e rollback total.
 
-Etapas de implantação:
+**Filtro JSONB:** `GET /api/questoes/?ano=2023&area=MT&atributos__habilidade=H12`.
 
-1. provisionar a infraestrutura com `cdk deploy`;
-2. executar o script de seed, que carrega o gabarito e os parâmetros de item no Amazon RDS — sem essa etapa a análise não pode ser realizada;
-3. publicar o frontend no bucket S3;
-4. verificar a implantação automática pelo AWS CodePipeline a partir de um push na branch principal.
+### Endpoints principais (prefixo `/api/`)
 
-## Aplicação (appFinal)
+| Método | Rota | Descrição |
+| --- | --- | --- |
+| POST | `/api/cadastro/` | Cria usuário + aluno |
+| POST | `/api/login/` | Sessão (cookie) |
+| POST | `/api/submissoes/` | Envio transacional da prova |
+| GET/DELETE | `/api/submissoes/`, `/api/submissoes/{id}/` | Submissões do aluno com respostas e resultado aninhados |
+| GET | `/api/dashboard/` | Nota por área, histórico e habilidades prioritárias |
+| CRUD | `/api/edicoes/`, `/api/questoes/`, `/api/alunos/`, `/api/resultados/` | Escrita só para staff; também em `/admin/` |
 
-O código da aplicação está na pasta [`appFinal/`](appFinal/) (Django + Django REST Framework + PostgreSQL, com Docker Compose). O pacote completo também pode ser baixado em [`docs/assets/appFinal.zip`](docs/assets/appFinal.zip) e a documentação está em [docs/Construcao/aplicacao.md](docs/Construcao/aplicacao.md).
+Documentação completa da aplicação: [`appFinal/README.md`](appFinal/README.md).
 
-Subir localmente com Docker:
+## Execução local
+
+Pré-requisito: Docker Desktop.
 
 ```bash
 cd appFinal
-./scripts/gerar_env.sh localhost   # cria o .env (não versionado) com segredos aleatórios
-docker compose up -d --build
-curl http://localhost:8000/health/
+cp .env.example .env              # PowerShell: Copy-Item .env.example .env — edite as senhas
+docker compose up -d --build      # sobe db + web; migra e importa as questões sozinho
+docker compose exec web python manage.py test
 ```
 
-Os segredos ficam apenas no arquivo `.env`, que está no `.gitignore` e nunca é versionado.
+Abra http://localhost:8000/ (front-end), http://localhost:8000/api/ (API) e http://localhost:8000/admin/ (usuário e senha do `.env`).
+
+## Deploy na EC2
+
+1. Criar a EC2 (Ubuntu, t3.medium, gp3 30 GB criptografado) e o Security Group com entrada 22 (IP do grupo) e 8000 (0.0.0.0/0).
+2. Instalar Docker, Compose e Git:
+   ```bash
+   sudo apt update && sudo apt install -y docker.io docker-compose-v2 git
+   sudo usermod -aG docker $USER   # reconectar o SSH depois
+   ```
+3. Clonar e gerar o `.env` (senhas aleatórias, permissão 600, nunca vai ao Git):
+   ```bash
+   git clone https://github.com/Projetos-de-Extensao/PC_ADS_26.2_8001_III.git apollo
+   cd apollo/appFinal
+   ./scripts/gerar_env.sh IP_DA_EC2
+   docker compose up -d --build
+   curl http://localhost:8000/health/
+   ```
+4. Fluxo de atualização: alterar no Windows → `git push` → na EC2 `./scripts/deploy.sh` (faz `pg_dump` pré-deploy, `git pull`, `docker compose up -d --build` e checa `/health/`). Rollback: `./scripts/deploy.sh <tag-anterior>`.
+5. Backup diário: cron com `scripts/backup.sh` (`pg_dump` compactado).
+
+**Nunca** usar `docker compose down -v`: apaga o volume `pgdata`.
+
+## Evidências do deploy (B8)
+
+| Evidência | Print |
+| --- | --- |
+| `docker ps` com `web` e `db` (healthy) | ![docker ps](docs/assets/evidencias/docker_ps.png) |
+| `docker compose logs` | ![logs](docs/assets/evidencias/compose_logs.png) |
+| API acessada pelo IP público | ![api](docs/assets/evidencias/api_ip_publico.png) |
+| Tabela no Postgres via `psql` | ![psql](docs/assets/evidencias/psql_tabela.png) |
+| Persistência: dado existe antes e depois de `down`/`up` | ![persistência](docs/assets/evidencias/persistencia.png) |
+| Security Group (22 e 8000; sem 5432) | ![security group](docs/assets/evidencias/security_group.png) |
+| `manage.py test` passando | ![testes](docs/assets/evidencias/testes.png) |
+
+Comandos usados (na EC2, dentro de `appFinal/`):
+
+```bash
+docker ps
+docker compose logs --tail 50 web db
+curl http://IP_DA_EC2:8000/api/
+docker compose exec db sh -c 'psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "SELECT count(*) FROM enem_questao;"'
+# persistência
+docker compose exec db sh -c 'psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "SELECT count(*) FROM enem_submissao;"'
+docker compose down && docker compose up -d
+docker compose exec db sh -c 'psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "SELECT count(*) FROM enem_submissao;"'
+docker compose exec web python manage.py test
+```
+
+## Documentação (RUP)
+
+| Fase | Documentos |
+| --- | --- |
+| Iniciação | [Documento de Visão](https://projetos-de-extensao.github.io/PC_ADS_26.2_8001_III/Iniciacao/dv/), [Requisitos Suplementares](https://projetos-de-extensao.github.io/PC_ADS_26.2_8001_III/Iniciacao/rs/) |
+| Elaboração | [Casos de Uso Arquiteturais](https://projetos-de-extensao.github.io/PC_ADS_26.2_8001_III/Elaboracao/cua/), [Pacotes/Segurança](https://projetos-de-extensao.github.io/PC_ADS_26.2_8001_III/Elaboracao/maps/), [Computação](https://projetos-de-extensao.github.io/PC_ADS_26.2_8001_III/Elaboracao/dim_comp/), [Banco de Dados](https://projetos-de-extensao.github.io/PC_ADS_26.2_8001_III/Elaboracao/dimrbd/), [Sequência e Comunicação](https://projetos-de-extensao.github.io/PC_ADS_26.2_8001_III/Elaboracao/seq_com/) |
+| Transição | [Atividades de Deploy](https://projetos-de-extensao.github.io/PC_ADS_26.2_8001_III/Transicao/ativ_deploy/) |
+
+O site é gerado com MkDocs Material a partir de `docs/` e publicado na branch `gh-pages` (`mkdocs gh-deploy`).

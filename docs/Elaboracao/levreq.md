@@ -173,4 +173,4 @@ Os requisitos são considerados atendidos quando:
 
 | Data | Versão | Descrição | Autor(es) |
 | -- | -- | -- | -- |
-| 2026 | 1.0 | Consolidação dos requisitos a partir do Documento de Visão e do Documento de Requisitos Suplementares. | Equipe Apollo (`<a definir>`) |
+| 2026 | 1.0 | Consolidação dos requisitos a partir do Documento de Visão e do Documento de Requisitos Suplementares. | Equipe Apollo (Arthur Maurity, Bernardo Casanovas, Bernardo Miller, Lucas Jesus) |

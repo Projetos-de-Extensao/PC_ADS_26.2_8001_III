@@ -271,7 +271,7 @@ end note
 - **Versão**: `v1.0`
 - **Data**: 23/09/2026
 - **Autor(es)**: Equipe do Projeto Apollo
-- **Revisor(es)**: `<a definir>`
+- **Revisor(es)**: Arthur Maurity, Bernardo Casanovas, Bernardo Miller e Lucas Jesus
 - **Resumo da alteração**: modelagem conceitual e de especificação do domínio completo do Apollo, com rastreabilidade aos demais artefatos RUP/UP e relação explícita com o recorte reduzido do `apollo_eb`.
 
 ### 5) Entregáveis

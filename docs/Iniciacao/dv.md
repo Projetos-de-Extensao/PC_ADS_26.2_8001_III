@@ -207,8 +207,8 @@ O Documento de Visão alinha escopo, arquitetura e metas do Apollo para a AP2. M
 
 | **Função** | **Nome** | **Data** | **Assinatura** |
 | --- | --- | --- | --- |
-| Gerente do Projeto |  |  |  |
-| Professor Responsável |  |  |  |
+| Gerente do Projeto | Arthur Maurity, Bernardo Casanovas, Bernardo Miller, Lucas Jesus | 10/11/2026 | Aprovado em revisão da equipe |
+| Professor Responsável | Jonh Carvalho | 17/11/2026 | Pendente (avaliação da AP2) |
 
 # 12. Histórico de Versões
 
