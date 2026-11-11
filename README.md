@@ -108,13 +108,12 @@ Abra http://localhost:8000/ (front-end), http://localhost:8000/api/ (API) e http
 
 | Evidência | Print |
 | --- | --- |
-| `docker ps` com `web` e `db` (healthy) | ![docker ps](docs/assets/evidencias/docker_ps.png) |
-| `docker compose logs` | ![logs](docs/assets/evidencias/compose_logs.png) |
+| `docker ps`: `web` em execução e `db` (healthy) | ![docker ps](docs/assets/evidencias/docker_ps.png) |
 | API acessada pelo IP público | ![api](docs/assets/evidencias/api_ip_publico.png) |
 | Tabela no Postgres via `psql` | ![psql](docs/assets/evidencias/psql_tabela.png) |
 | Persistência: dado existe antes e depois de `down`/`up` | ![persistência](docs/assets/evidencias/persistencia.png) |
 | Security Group (22 e 8000; sem 5432) | ![security group](docs/assets/evidencias/security_group.png) |
-| `manage.py test` passando | ![testes](docs/assets/evidencias/testes.png) |
+| `manage.py test` passando (69 testes, OK) | ![testes início](docs/assets/evidencias/testes_inicio.png) ![testes fim](docs/assets/evidencias/testes_fim.png) |
 | Tempo de 1 envio (POST /api/submissoes/): 356 ms | ![timing](docs/assets/evidencias/post_submissao_timing.png) |
 
 Comandos usados (na EC2, dentro de `appFinal/`):
