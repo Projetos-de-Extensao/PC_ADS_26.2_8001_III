@@ -35,7 +35,7 @@ Publicação de novas versões da aplicação Django (`web`) e aplicação de mi
 
 ## 1.4. Referências
 
-* Requisitos Suplementares v2.0 (RNF-MAN-01/02, RNF-CON, RNF-CUS)
+* Requisitos Suplementares v2.2 (RNF-MAN-01/02, RNF-CON, RNF-CUS)
 * Casos de Uso Arquiteturais v2.0 (UC-ARQ-006, UC-ARQ-007)
 * Dimensionamento de Computação e de Banco de Dados v1.0
 * Roteiro 14 — Django + PostgreSQL em Docker na EC2

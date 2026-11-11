@@ -6,8 +6,8 @@
 | --- | --- |
 | **Projeto** | Apollo — Plataforma de Análise de Desempenho no ENEM |
 | **Documento** | Diagramas de Sequência e de Comunicação |
-| **Versão** | 1.0 |
-| **Data** | 08/11/2026 |
+| **Versão** | 1.1 |
+| **Data** | 11/11/2026 |
 | **Status** | Em Revisão |
 | **Responsável** | Equipe do Projeto Apollo |
 | **Disciplina** | Projeto de Cloud |
@@ -120,7 +120,7 @@ W -> D : INSERT Resultado
 alt regras válidas
   W -> D : COMMIT
   W --> Aluno : 201 Created (acertos, nota TRI)
-else gabarito inconsistente / regra violada
+else gabarito inconsistente / regra violada (ex.: cor de caderno divergente da área parceira do dia)
   W -> D : ROLLBACK
   W --> Aluno : 400 Bad Request (nenhuma linha gravada)
 end
@@ -421,3 +421,4 @@ Os seis fluxos cobrem os requisitos centrais da AP2: transação atômica, índi
 | **Versão** | **Data** | **Autor** | **Descrição das Alterações** |
 | --- | --- | --- | --- |
 | 1.0 | 08/11/2026 | Equipe do Projeto Apollo | Criação: seis fluxos com sequência e comunicação, classes de análise e matriz. |
+| 1.1 | 11/11/2026 | Equipe do Projeto Apollo | Fluxo de envio: rollback/400 também para cor de caderno divergente por dia. |

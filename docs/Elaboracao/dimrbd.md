@@ -36,7 +36,7 @@ Modelo de dados, capacidade, backup/recuperação, parâmetros, segurança de re
 
 ## 1.4. Referências
 
-* Requisitos Suplementares v2.0 (RNF-PER, RNF-CAP, RNF-CON, RNF-DAD)
+* Requisitos Suplementares v2.2 (RNF-PER, RNF-CAP, RNF-CON, RNF-DAD)
 * Dimensionamento de Computação v1.0
 * Roteiro 14; documentação do PostgreSQL 16 e do Amazon RDS
 

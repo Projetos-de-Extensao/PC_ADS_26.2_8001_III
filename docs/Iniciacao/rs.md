@@ -6,8 +6,8 @@
 | --- | --- |
 | **Projeto** | Apollo — Plataforma de Análise de Desempenho no ENEM |
 | **Documento** | Documento de Requisitos Suplementares |
-| **Versão** | 2.0 |
-| **Data** | 08/11/2026 |
+| **Versão** | 2.2 |
+| **Data** | 11/11/2026 |
 | **Status** | Em Revisão |
 | **Responsável** | Equipe do Projeto Apollo |
 | **Disciplina** | Projeto de Cloud |
@@ -41,8 +41,8 @@ Aplica-se à plataforma Apollo completa: aplicação Django (`web`), banco Postg
 
 ## 1.4. Referências
 
-* Documento de Visão — Projeto Apollo (v2.0)
-* Casos de Uso Arquiteturais — Projeto Apollo (v2.0)
+* Documento de Visão — Projeto Apollo (v2.2)
+* Casos de Uso Arquiteturais — Projeto Apollo (v2.1)
 * Roteiro 14 — Django + PostgreSQL em Docker na EC2
 * AWS Well-Architected Framework
 * Documentação oficial do Django, DRF, PostgreSQL 16 e Docker Compose
@@ -131,6 +131,7 @@ Aplica-se à plataforma Apollo completa: aplicação Django (`web`), banco Postg
 | RNF-USA-01 | O aluno entende seu desempenho sem apoio técnico. | Dashboard mostra nota TRI, acertos/erros/brancos e habilidades a melhorar em linguagem simples. |
 | RNF-USA-02 | Envio de respostas simples. | Grade de 45 questões (A–E) por área em uma tela, com validação antes do envio. |
 | RNF-USA-03 | Mensagens de erro orientam a ação. | Erros de validação indicam campo e correção esperada. |
+| RNF-USA-04 | A cor do caderno deve ser consistente por dia de aplicação. | LC e CH (dia 1) e CN e MT (dia 2) usam a mesma cor, pois cada dia aplica um único caderno de 90 questões (em 2016: CH com CN e LC com MT). A API recusa cor divergente (HTTP 400), a tela de envio trava a cor já escolhida e o dashboard sinaliza a edição como inconsistente. |
 
 # 10. Requisitos de Custo
 
@@ -189,3 +190,4 @@ Os requisitos acima são a referência de verificação do Apollo na AP2. Cada i
 | 1.0 | 21/09/2026 | Equipe do Projeto Apollo | Versão inicial (arquitetura serverless/RDS). |
 | 2.0 | 08/11/2026 | Equipe do Projeto Apollo | Adoção de Django + PostgreSQL em Docker na EC2; novos RNF de dados e persistência; revisão de segurança, backup e custo. |
 | 2.1 | 10/11/2026 | Equipe do Projeto Apollo | RES-03 alinhado à base implantada (ENEM 2016–2025, 7.400 itens). |
+| 2.2 | 11/11/2026 | Equipe do Projeto Apollo | Incluído RNF-USA-04 (regra de cor do caderno por dia de aplicação). |

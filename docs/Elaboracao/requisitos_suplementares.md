@@ -29,7 +29,7 @@ Não fazem parte deste documento a implementação completa do código da aplica
 | **Item** | **Premissa ou restrição** |
 | --- | --- |
 | Escala inicial | Uso acadêmico/piloto — dezenas a centenas de alunos simultâneos (turma/escola), não milhões de usuários |
-| Cobertura de conteúdo | Provas do ENEM de 2019 a 2025 (7 edições), 4 áreas (LC, CH, CN, MT), 45 questões por área |
+| Cobertura de conteúdo | Provas do ENEM de 2016 a 2025 (10 edições), 4 áreas (LC, CH, CN, MT), 45 questões por área |
 | Frequência de uso | Envios pontuais por aluno (uma submissão por simulado/prova realizada), não telemetria contínua |
 | Pico de uso esperado | Após aplicação de um simulado, dezenas de submissões concorrentes em uma janela curta (ex.: 1 hora) |
 | Stack obrigatória | Python, Django REST Framework e serviços gerenciados AWS |

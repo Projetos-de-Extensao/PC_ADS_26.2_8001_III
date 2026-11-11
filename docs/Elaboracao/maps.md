@@ -37,7 +37,7 @@ Protege: respostas e resultados dos alunos, credenciais do banco, `SECRET_KEY` d
 
 ## 1.4. Referências
 
-* Requisitos Suplementares v2.0 (RNF-SEG-01 a 08)
+* Requisitos Suplementares v2.2 (RNF-SEG-01 a 08)
 * Casos de Uso Arquiteturais v2.0 (UC-ARQ-002, 003, 004, 007)
 * AWS Well-Architected — Security Pillar; Django Security Checklist (`manage.py check --deploy`)
 

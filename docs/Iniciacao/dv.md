@@ -6,8 +6,8 @@
 | --- | --- |
 | **Projeto** | Apollo — Plataforma de Análise de Desempenho no ENEM |
 | **Documento** | Documento de Visão |
-| **Versão** | 2.0 |
-| **Data** | 08/11/2026 |
+| **Versão** | 2.2 |
+| **Data** | 11/11/2026 |
 | **Status** | Em Revisão |
 | **Responsável** | Equipe do Projeto Apollo |
 | **Disciplina** | Projeto de Cloud |
@@ -21,7 +21,7 @@ Este documento descreve a visão do **Apollo**: uma plataforma SaaS na qual estu
 
 ## 1.2. Escopo
 
-Inclui: cadastro e autenticação de alunos; base de provas e gabaritos do ENEM de **2016 a 2025** (10 edições; 4 áreas — Linguagens, Humanas, Natureza e Matemática — com 45 questões cada, em até 4 cadernos por cor; 7.400 itens carregados); envio de respostas; correção; cálculo da nota TRI; análise de erros por área, habilidade e assunto; dashboard; API REST e painel administrativo.
+Inclui: cadastro e autenticação de alunos; base de provas e gabaritos do ENEM de **2016 a 2025** (10 edições; 4 áreas — Linguagens, Humanas, Natureza e Matemática — com 45 questões cada, em até 4 cadernos por cor; 7.400 itens carregados); envio de respostas (a cor do caderno é validada por dia de aplicação: LC e CH, e CN e MT, usam a mesma cor); correção; cálculo da nota TRI; análise de erros por área, habilidade e assunto; dashboard; API REST e painel administrativo.
 
 Não inclui: correção de redação, aplicativo móvel nativo, pagamento/assinatura e integração com sistemas oficiais do INEP.
 
@@ -38,8 +38,8 @@ Não inclui: correção de redação, aplicativo móvel nativo, pagamento/assina
 
 ## 1.4. Referências
 
-* Documento de Requisitos Suplementares — Apollo (v2.0)
-* Casos de Uso Arquiteturais — Apollo (v2.0)
+* Documento de Requisitos Suplementares — Apollo (v2.2)
+* Casos de Uso Arquiteturais — Apollo (v2.1)
 * Matrizes de Referência do ENEM e provas/gabaritos publicados pelo INEP
 * Roteiros da disciplina (Django, PostgreSQL, Docker, EC2)
 
@@ -217,3 +217,4 @@ O Documento de Visão alinha escopo, arquitetura e metas do Apollo para a AP2. M
 | 1.0 | 21/09/2026 | Equipe do Projeto Apollo | Versão inicial. |
 | 2.0 | 08/11/2026 | Equipe do Projeto Apollo | Escopo 2019–2025; arquitetura Django + PostgreSQL em Docker na EC2; custo e RNF unificados com o RS v2.0. |
 | 2.1 | 10/11/2026 | Equipe do Projeto Apollo | Escopo alinhado à base implantada na EC2: ENEM 2016–2025 (10 edições, 7.400 itens). |
+| 2.2 | 11/11/2026 | Equipe do Projeto Apollo | Incluída a regra de cor do caderno por dia de aplicação no escopo; referências cruzadas atualizadas (RS v2.2, CUA v2.1). |

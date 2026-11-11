@@ -6,8 +6,8 @@
 | --- | --- |
 | **Projeto** | Apollo — Plataforma de Análise de Desempenho no ENEM |
 | **Documento** | Modelo de Casos de Uso Arquiteturais |
-| **Versão** | 2.0 |
-| **Data** | 08/11/2026 |
+| **Versão** | 2.1 |
+| **Data** | 11/11/2026 |
 | **Status** | Em Revisão |
 | **Responsável** | Equipe do Projeto Apollo |
 | **Disciplina** | Projeto de Cloud |
@@ -35,7 +35,7 @@ Cobre a arquitetura implementada na AP2: **uma EC2** com Docker Compose executan
 
 ## 1.4. Referências
 
-* Documento de Visão (v2.0) e Requisitos Suplementares (v2.0)
+* Documento de Visão (v2.2) e Requisitos Suplementares (v2.2)
 * Roteiro 14 — Django + PostgreSQL em Docker na EC2
 * AWS Well-Architected Framework
 
@@ -244,7 +244,7 @@ U7 ..> U3 : <<include>>
 | --- | --- |
 | Alt 1 | `web` não conecta ao banco por usar `localhost` em vez de `db` → corrigir `POSTGRES_HOST`. |
 | Alt 2 | Erro 400 `DisallowedHost` → incluir o IP/domínio em `ALLOWED_HOSTS`. |
-| Alt 3 | Violação de regra de negócio no envio → *rollback* e resposta 400, sem linhas gravadas. |
+| Alt 3 | Violação de regra de negócio no envio (prova incompleta, alternativa inválida ou cor de caderno diferente da área parceira do mesmo dia) → *rollback* e resposta 400, sem linhas gravadas. |
 
 **Requisitos Não Funcionais**
 
@@ -532,3 +532,4 @@ Os sete casos de uso cobrem o ciclo da infraestrutura do Apollo, do provisioname
 | --- | --- | --- | --- |
 | 1.0 | 21/09/2026 | Equipe do Projeto Apollo | Versão inicial (serverless/RDS). |
 | 2.0 | 08/11/2026 | Equipe do Projeto Apollo | Reescrita para EC2 + Docker Compose + PostgreSQL; novos UC-ARQ-003/007; diagramas PlantUML. |
+| 2.1 | 11/11/2026 | Equipe do Projeto Apollo | Alt 3 do envio detalha a regra de cor do caderno por dia; referências cruzadas atualizadas (DV v2.2, RS v2.2). |

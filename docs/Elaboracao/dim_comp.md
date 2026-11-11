@@ -35,7 +35,7 @@ Uma instância EC2 em uma AZ, executando Docker Compose. Fora do escopo: Auto Sc
 
 ## 1.4. Referências
 
-* Requisitos Suplementares v2.0 (RNF-PER, RNF-CAP, RNF-CUS)
+* Requisitos Suplementares v2.2 (RNF-PER, RNF-CAP, RNF-CUS)
 * Casos de Uso Arquiteturais v2.0 (UC-ARQ-001, UC-ARQ-004)
 * Documentação AWS EC2 (tipos burstable T3) e Gunicorn
 
