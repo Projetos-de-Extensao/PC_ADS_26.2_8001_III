@@ -103,7 +103,7 @@ As telas cobrem o fluxo completo do aluno e correspondem à aplicação implanta
 | **Função** | **Nome** | **Data** | **Assinatura** |
 | --- | --- | --- | --- |
 | Designer / Desenvolvedor Frontend |  |  |  |
-| Professor Responsável |  |  |  |
+| Professor Responsável | Jonh Carvalho |  |  |
 
 # 7. Histórico de Versões
 

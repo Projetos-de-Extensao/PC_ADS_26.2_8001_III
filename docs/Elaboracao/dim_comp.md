@@ -185,7 +185,7 @@ A instância única é suficiente para o pico previsto e tem custo baixo (≈ US
 | **Função** | **Nome** | **Data** | **Assinatura** |
 | --- | --- | --- | --- |
 | Arquiteto de Soluções | Arthur Maurity, Bernardo Casanovas, Bernardo Miller, Lucas Jesus | 10/11/2026 | Aprovado em revisão da equipe |
-| Professor Responsável |  |  |  |
+| Professor Responsável | Jonh Carvalho |  |  |
 
 # 10. Histórico de Versões
 

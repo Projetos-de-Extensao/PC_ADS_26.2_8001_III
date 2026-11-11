@@ -270,7 +270,7 @@ A opção A atende aos requisitos de desempenho, capacidade e recuperação a cu
 | **Função** | **Nome** | **Data** | **Assinatura** |
 | --- | --- | --- | --- |
 | Arquiteto de Soluções | Arthur Maurity, Bernardo Casanovas, Bernardo Miller, Lucas Jesus | 10/11/2026 | Aprovado em revisão da equipe |
-| Professor Responsável |  |  |  |
+| Professor Responsável | Jonh Carvalho |  |  |
 
 # 11. Histórico de Versões
 

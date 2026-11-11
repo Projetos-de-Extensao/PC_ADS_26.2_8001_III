@@ -180,7 +180,7 @@ Os requisitos acima são a referência de verificação do Apollo na AP2. Cada i
 | **Função** | **Nome** | **Data** | **Assinatura** |
 | --- | --- | --- | --- |
 | Arquiteto de Soluções | Arthur Maurity, Bernardo Casanovas, Bernardo Miller, Lucas Jesus | 10/11/2026 | Aprovado em revisão da equipe |
-| Professor Responsável |  |  |  |
+| Professor Responsável | Jonh Carvalho |  |  |
 
 # 15. Histórico de Versões
 
