@@ -4,7 +4,7 @@
 
 ## Resumo da fase
 
-O Apollo roda numa EC2 t3.medium com Docker Compose. A estratégia escolhida é **Recreate/Rolling simples**: alteração no Windows → `git push` → `./scripts/deploy.sh` na EC2 (backup `pg_dump`, `git pull`, `docker compose up -d --build`, checagem de `/health/`). O rollback volta para a *tag* anterior com o mesmo script. Blue-Green e Canary foram avaliadas e ficaram como evolução por custo.
+O Apollo roda numa EC2 t3.small com Docker Compose. A estratégia escolhida é **Recreate/Rolling simples**: alteração no Windows → `git push` → `./scripts/deploy.sh` na EC2 (backup `pg_dump`, `git pull`, `docker compose up -d --build`, checagem de `/health/`). O rollback volta para a *tag* anterior com o mesmo script. Blue-Green e Canary foram avaliadas e ficaram como evolução por custo.
 
 ## Documentos da fase
 

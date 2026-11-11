@@ -259,7 +259,7 @@ O volume de 30 GB (gp3) comporta o banco com margem superior a 95%.
 | `docker compose down -v` apaga o volume | Perda total | Nunca usar `-v` em produção; dump diário |
 | Disco cheio | Banco para | Alarme de disco; retenção de 7 dias |
 | Falha da EC2 | Indisponibilidade | Snapshot EBS e runbook de restauração |
-| Competição de memória `web` × `db` | Lentidão | Limites de memória no Compose; medição com `docker stats` |
+| Competição de memória `web` × `db` | Lentidão | Monitorar com `docker stats` (sem limites de memória no Compose) |
 
 # 9. Considerações Finais
 

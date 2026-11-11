@@ -98,11 +98,11 @@ U7 ..> U3 : <<include>>
 | Ator Principal | Administrador de Infraestrutura |
 | Ator Secundário | Sistema AWS |
 | Pré-condição | Conta AWS ativa; permissão para criar EC2, SG e EBS; par de chaves SSH. |
-| Pós-condição | EC2 Ubuntu em execução na VPC padrão, com IP público (idealmente Elastic IP), Docker, Docker Compose e Git instalados. |
+| Pós-condição | EC2 Amazon Linux em execução na VPC padrão, com IP público (idealmente Elastic IP), Docker, Docker Compose e Git instalados. |
 
 **Fluxo Principal**
 
-1. Administrador cria instância `t3.medium` (Ubuntu LTS) com disco gp3 de 30 GB **criptografado**.
+1. Administrador cria instância `t3.small` (Amazon Linux) com disco gp3 de 30 GB **criptografado**.
 2. Associa o Security Group do UC-ARQ-002 e o par de chaves.
 3. (Opcional) Associa um Elastic IP para endereço estável.
 4. Conecta por SSH, instala Docker Engine, plugin Compose e Git.
@@ -123,7 +123,7 @@ U7 ..> U3 : <<include>>
 | --- | --- |
 | Desempenho | Provisionamento e instalação em até 30 min |
 | Segurança | Disco criptografado; chave SSH privada fora do repositório (RNF-SEG-02/05) |
-| Custo | ≈ US$ 36,42/mês no conjunto (RNF-CUS-01) |
+| Custo | ≈ US$ 21,23/mês no conjunto (RNF-CUS-01) |
 
 **Riscos**
 
@@ -485,7 +485,7 @@ node "Notebook Windows (dev)" as DEV {
   artifact "Código Django" as CODE
 }
 cloud "GitHub" as GH
-node "AWS EC2 t3.medium (Ubuntu)" as EC2 {
+node "AWS EC2 t3.small (Amazon Linux)" as EC2 {
   node "Docker Compose" {
     artifact "web:latest" as WEB
     artifact "postgres:16" as DB

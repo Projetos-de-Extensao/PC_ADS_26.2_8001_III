@@ -54,13 +54,13 @@ Publicação de novas versões da aplicação Django (`web`) e aplicação de mi
 | Zero downtime | Não exigido (indisponibilidade de segundos é tolerada pelo SLA) | Decisão do projeto |
 | Usuários | ≈ 200 alunos | Dimensionamento |
 | TPS no pico | ≈ 0,83 submissão/s (≈ 2,5 req/s totais) | RNF-PER-02 |
-| Custo adicional aceito para deploy | até US$ 5/mês (a infraestrutura base custa ≈ US$ 36,42 na AWS Pricing Calculator) | Decisão do projeto |
+| Custo adicional aceito para deploy | até US$ 5/mês (a infraestrutura base custa ≈ US$ 21,23 na AWS Pricing Calculator) | Decisão do projeto |
 
 ## 2.2. Comparação das Estratégias
 
 | **Critério** | **Recreate/Rolling simples** | **Blue-Green** | **Canary** |
 | --- | --- | --- | --- |
-| Custo adicional | US$ 0 | ≈ US$ 30/mês (2ª EC2 permanente) ou ≈ US$ 0,05/h só durante o deploy | ≈ US$ 47/mês (ALB + 2ª EC2) |
+| Custo adicional | US$ 0 | ≈ US$ 15/mês (2ª EC2 permanente) ou ≈ US$ 0,02/h só durante o deploy | ≈ US$ 32/mês (ALB + 2ª EC2) |
 | Complexidade | Baixa (3 comandos) | Média (duas pilhas, troca de tráfego, banco compartilhado) | Alta (ALB, pesos, métricas) |
 | Risco | Médio: erro afeta 100% dos usuários por alguns segundos | Baixo | Muito baixo |
 | Tempo de rollback | ≈ 10 min | ≈ 2 min (volta o tráfego) | ≈ 2 min |
@@ -68,7 +68,7 @@ Publicação de novas versões da aplicação Django (`web`) e aplicação de mi
 | Detecção de erros | Manual (`/health/` + logs) | Teste na pilha nova antes da troca | Métricas por fatia de tráfego |
 | Adequação ao SLA de 99% | ✅ (7 h/mês de tolerância) | ✅ | ✅ |
 | Adequação ao RTO | ✅ | ✅ | ✅ |
-| Adequação ao custo | ✅ | ⚠️ (≈ +US$ 30/mês) | ❌ (≈ +US$ 47/mês) |
+| Adequação ao custo | ✅ | ⚠️ (≈ +US$ 15/mês) | ❌ (≈ +US$ 32/mês) |
 | **Escolha** | ✅ | ❌ | ❌ |
 
 > **Banco de dados:** em qualquer estratégia o `db` é único. Migrações incompatíveis com a versão anterior inviabilizam a coexistência de duas versões (Blue-Green/Canary) sem *expand/contract*, o que aumenta a complexidade.
@@ -80,7 +80,7 @@ Publicação de novas versões da aplicação Django (`web`) e aplicação de mi
 skinparam shadowing false
 actor Desenvolvedor as DEV
 cloud GitHub as GH
-node "EC2 t3.medium" {
+node "EC2 t3.small" {
   node "Docker Compose" {
     component "web (nova versão)" as WEB
     database "db (PostgreSQL 16)" as DB
@@ -103,12 +103,12 @@ CW ..> WEB : alarme de saúde
 
 ## 2.4. Plataformas de Hospedagem Avaliadas
 
-Além da estratégia de publicação (seção 2.2), o grupo comparou onde executar a aplicação e o banco. Os valores são estimativas de custo mensal (Leste dos EUA); a do Apollo foi feita na [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=8e4fe0a08f011b6f4a2ad10ee8757d1241cf9b53) e as demais são aproximações.
+Além da estratégia de publicação (seção 2.2), o grupo comparou onde executar a aplicação e o banco. Os valores são estimativas de custo mensal (Leste dos EUA); a do Apollo foi feita na [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=365b5512217c340237a796be1dccc64a85cac245) e as demais são aproximações.
 
 | **Alternativa** | **Como funciona** | **Custo estimado** | **Prós** | **Contras** | **Decisão** |
 | --- | --- | --- | --- | --- | --- |
 | Elastic Beanstalk + SQLite (AP1) | A plataforma gerencia a EC2; o banco é um arquivo no disco da instância | ≈ US$ 15–30 | Deploy simples pela plataforma | Banco no disco efêmero (perde dados se a instância for substituída); sem JSONB/GIN; sem controle do ambiente | Substituída |
-| **EC2 + Docker Compose + PostgreSQL em contêiner** | `web` e `db` em uma EC2, dados no volume `pgdata` | **≈ US$ 36,42** | Controle total; PostgreSQL com JSONB e GIN; portátil; custo baixo; reproduz o Roteiro 14 | Administração manual; ponto único de falha; backup por `pg_dump` | **Escolhida** |
+| **EC2 + Docker Compose + PostgreSQL em contêiner** | `web` e `db` em uma EC2, dados no volume `pgdata` | **≈ US$ 21,23** | Controle total; PostgreSQL com JSONB e GIN; portátil; custo baixo; reproduz o Roteiro 14 | Administração manual; ponto único de falha; backup por `pg_dump` | **Escolhida** |
 | EC2 + Amazon RDS (PostgreSQL) | `web` na EC2 e banco gerenciado | ≈ US$ 50–55 | Backups, patches e Multi-AZ gerenciados | Custo maior; rede VPC/SG mais complexa; excede a necessidade de ≈ 200 alunos | Evolução (ver `dimrbd`) |
 | ECS/Fargate + RDS | Contêineres sem gerenciar a VM | ≈ US$ 60 ou mais | Sem servidor para administrar | Mais configuração (cluster, roles, ALB); custo maior | Descartada |
 
@@ -237,8 +237,8 @@ endif
 | **Critério** | **Recreate** | **Blue-Green** |
 | --- | --- | --- |
 | Downtime | ≈ 30–60 s | ≈ 0 s |
-| Custo | US$ 0 | +US$ 30/mês (permanente) |
-| Memória na EC2 | ≈ 2 GiB | ≈ 2,5–3 GiB com duas pilhas `web` (cabe, mas reduz a folga) |
+| Custo | US$ 0 | +US$ 15/mês (permanente) |
+| Memória na EC2 | ≈ 184 MiB medidos (`web` + `db`) | ≈ 320 MiB com duas pilhas `web` (estimativa; cabe nos 2 GiB) |
 | Banco | Migração direta | Exige migrações compatíveis nas duas versões |
 
 **Conclusão:** benefício (zero downtime) não exigido pelo SLA; custo e complexidade desproporcionais. **Descartada.**
@@ -272,7 +272,7 @@ stop
 
 | **Critério** | **Recreate** | **Canary** |
 | --- | --- | --- |
-| Custo | US$ 0 | ≈ US$ 47/mês (ALB + 2ª EC2) |
+| Custo | US$ 0 | ≈ US$ 32/mês (ALB + 2ª EC2) |
 | Volume de tráfego | ≈ 2,5 req/s | Insuficiente para métricas estatisticamente úteis em 10% |
 | Complexidade | Baixa | Alta |
 
@@ -333,10 +333,10 @@ endif
 
 | **Etapa** | **Tempo** | **Custo** |
 | --- | --- | --- |
-| Subir pilha verde (build + testes) | 8 min | ≈ US$ 0,05 por hora de 2ª EC2 (ou US$ 30/mês permanente) |
+| Subir pilha verde (build + testes) | 8 min | ≈ US$ 0,02 por hora de 2ª EC2 (ou US$ 15/mês permanente) |
 | Troca de tráfego | 1 min | US$ 0 |
 | Observação e desligamento da azul | 60 min | ≈ US$ 0,04 |
-| **Total** | **≈ 70 min** (limite de 15 min ❌ se contada a observação; 9 min até a troca ✅) | **US$ 0,10 por deploy ou US$ 30/mês** |
+| **Total** | **≈ 70 min** (limite de 15 min ❌ se contada a observação; 9 min até a troca ✅) | **US$ 0,04 por deploy ou US$ 15/mês** |
 
 ## 6.3. Canary
 
@@ -345,7 +345,7 @@ endif
 | Subir canary | 8 min | EC2 adicional |
 | Observação | 30 min | ALB ≈ US$ 0,0225/h |
 | Promoção | 2 min | US$ 0 |
-| **Total** | **≈ 40 min** (acima do limite de 15 min ❌) | **≈ US$ 47/mês fixos** |
+| **Total** | **≈ 40 min** (acima do limite de 15 min ❌) | **≈ US$ 32/mês fixos** |
 
 # 7. Lições e Próximos Passos
 

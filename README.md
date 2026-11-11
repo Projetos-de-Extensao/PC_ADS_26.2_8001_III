@@ -22,7 +22,7 @@ Na AP1 a API rodava no Elastic Beanstalk com SQLite. Na AP2 ela passou para **um
 ```mermaid
 flowchart LR
   U[Aluno / cliente HTTP] -->|HTTP :8000| W
-  subgraph EC2 ["AWS EC2 (Ubuntu) + Docker Compose"]
+  subgraph EC2 ["AWS EC2 (Amazon Linux) + Docker Compose"]
     W["web: Django + DRF + Gunicorn"] -->|rede interna :5432| D[("db: PostgreSQL 16")]
     D --- V[("volume nomeado pgdata")]
   end
@@ -32,13 +32,13 @@ flowchart LR
 
 | Componente | Papel |
 | --- | --- |
-| EC2 t3.medium (Ubuntu, gp3 30 GB criptografado) | Hospeda os dois contêineres |
-| Security Group | Entrada só 22 (SSH, IP do grupo) e 8000 (API). A 5432 **não** é publicada |
+| EC2 t3.small (Amazon Linux, gp3 30 GB criptografado) | Hospeda os dois contêineres |
+| Security Group | Entrada só 22 (SSH) e 8000 (API). A 5432 **não** é publicada |
 | `web` | Django + DRF servido pelo Gunicorn (3 *workers*); roda migrations, `collectstatic` e importação dos itens ao subir |
 | `db` | `postgres:16` com `healthcheck` (`pg_isready`) e volume `pgdata` |
 | `.env` | Segredos (`SECRET_KEY`, `POSTGRES_*`, superusuário) só na EC2, fora do Git; `.env.example` versionado sem senhas |
 
-Custo estimado: ≈ US$ 36,42/mês (EC2 t3.medium + EBS gp3 30 GB + IPv4 público), calculado na [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=8e4fe0a08f011b6f4a2ad10ee8757d1241cf9b53) (Leste dos EUA, sob demanda, Linux, 730 h/mês). Detalhes em [Dimensionamento de Computação](https://projetos-de-extensao.github.io/PC_ADS_26.2_8001_III/Elaboracao/dim_comp/) e [Atividades de Deploy](https://projetos-de-extensao.github.io/PC_ADS_26.2_8001_III/Transicao/ativ_deploy/).
+Custo estimado: ≈ US$ 21,23/mês (EC2 t3.small + EBS gp3 30 GB + IPv4 público), calculado na [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=365b5512217c340237a796be1dccc64a85cac245) (Leste dos EUA, sob demanda, Linux, 730 h/mês). Detalhes em [Dimensionamento de Computação](https://projetos-de-extensao.github.io/PC_ADS_26.2_8001_III/Elaboracao/dim_comp/) e [Atividades de Deploy](https://projetos-de-extensao.github.io/PC_ADS_26.2_8001_III/Transicao/ativ_deploy/).
 
 ### Modelo de dados
 
@@ -83,10 +83,12 @@ Abra http://localhost:8000/ (front-end), http://localhost:8000/api/ (API) e http
 
 ## Deploy na EC2
 
-1. Criar a EC2 (Ubuntu, t3.medium, gp3 30 GB criptografado) e o Security Group com entrada 22 (IP do grupo) e 8000 (0.0.0.0/0).
+1. Criar a EC2 (Amazon Linux, t3.small, gp3 30 GB criptografado) e o Security Group com entrada 22 (SSH) e 8000 (0.0.0.0/0).
 2. Instalar Docker, Compose e Git:
    ```bash
-   sudo apt update && sudo apt install -y docker.io docker-compose-v2 git
+   sudo dnf install -y docker git
+   sudo systemctl enable --now docker
+   # plugin Docker Compose v2: instalar conforme a documentação oficial do Docker
    sudo usermod -aG docker $USER   # reconectar o SSH depois
    ```
 3. Clonar e gerar o `.env` (senhas aleatórias, permissão 600, nunca vai ao Git):

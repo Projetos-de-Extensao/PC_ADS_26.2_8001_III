@@ -29,7 +29,7 @@ Na Elaboração, a equipe definiu e documentou a arquitetura **Django + PostgreS
 | **Decisão** | **Escolha** | **Documento** |
 | --- | --- | --- |
 | Hospedagem do banco | PostgreSQL 16 em contêiner com volume `pgdata` | dimrbd |
-| Computação | 1 EC2 t3.medium, 3 *workers* Gunicorn | dim_comp |
+| Computação | 1 EC2 t3.small, 3 *workers* Gunicorn | dim_comp |
 | Segredos | `.env` fora do Git + `.env.example` | maps |
 | Deploy | Recreate/Rolling simples, rollback por *tag* | ativ_deploy |
-| Custo estimado | ≈ US$ 36,42/mês (AWS Pricing Calculator) | rs |
+| Custo estimado | ≈ US$ 21,23/mês (AWS Pricing Calculator) | rs |

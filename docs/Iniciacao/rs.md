@@ -58,7 +58,7 @@ Aplica-se à plataforma Apollo completa: aplicação Django (`web`), banco Postg
 | Deploy | `git pull` + `docker compose up -d --build` | CodePipeline / Blue-Green |
 | Backup | `pg_dump` agendado + snapshot EBS | Backup automático do RDS |
 
-**Justificativa:** com 4 estudantes, custo estimado de ≈ US$ 36,42/mês e foco em demonstrar o ciclo completo (código → contêiner → nuvem), uma única EC2 com Docker Compose entrega os requisitos do projeto com menor custo e menor superfície de configuração. O preço é um ponto único de falha, aceito pelo SLA de 99% (Seção 5).
+**Justificativa:** com 4 estudantes, custo estimado de ≈ US$ 21,23/mês e foco em demonstrar o ciclo completo (código → contêiner → nuvem), uma única EC2 com Docker Compose entrega os requisitos do projeto com menor custo e menor superfície de configuração. O preço é um ponto único de falha, aceito pelo SLA de 99% (Seção 5).
 
 # 3. Requisitos de Desempenho e Capacidade
 
@@ -140,14 +140,14 @@ Aplica-se à plataforma Apollo completa: aplicação Django (`web`), banco Postg
 | RNF-CUS-02 | Estimativa de custo registrada. | Estimativa da AWS Pricing Calculator revisada antes da entrega. |
 | RNF-CUS-03 | Recursos ociosos desligados. | EC2 parada fora de períodos de teste/apresentação, quando não houver avaliação programada. |
 
-**Estimativa de custo mensal ([AWS Pricing Calculator](https://calculator.aws/#/estimate?id=8e4fe0a08f011b6f4a2ad10ee8757d1241cf9b53); Leste dos EUA, sob demanda, Linux, 730 h) [Certain]:**
+**Estimativa de custo mensal ([AWS Pricing Calculator](https://calculator.aws/#/estimate?id=365b5512217c340237a796be1dccc64a85cac245); Leste dos EUA, sob demanda, Linux, 730 h) [Certain]:**
 
 | **Recurso** | **Especificação** | **Custo (US$/mês)** |
 | --- | --- | --- |
-| EC2 | t3.medium (2 vCPU, 4 GiB) | ≈ 30,37 |
+| EC2 | t3.small (2 vCPU, 2 GiB) | ≈ 15,18 |
 | EBS | gp3, 30 GB | ≈ 2,40 |
 | IPv4 público | 1 endereço | ≈ 3,65 |
-| **Total** |  | **≈ 36,42** |
+| **Total** |  | **≈ 21,23** |
 
 Valores conforme a AWS Pricing Calculator, sujeitos à tabela vigente da AWS no momento da entrega.
 
@@ -158,7 +158,7 @@ Valores conforme a AWS Pricing Calculator, sujeitos à tabela vigente da AWS no 
 | RES-01 | Backend em Python/Django com Django REST Framework e PostgreSQL. |
 | RES-02 | Execução em contêineres Docker orquestrados por Docker Compose. |
 | RES-03 | Provas do ENEM de 2016 a 2025 (10 edições), 4 áreas × 45 questões em até 4 cadernos por cor (7.400 itens carregados na implantação). |
-| RES-04 | Custo mensal estimado na AWS Pricing Calculator (≈ US$ 36,42). |
+| RES-04 | Custo mensal estimado na AWS Pricing Calculator (≈ US$ 21,23). |
 | RES-05 | Equipe de 4 estudantes; prazo do semestre letivo. |
 
 # 12. Alternativas Avaliadas e Evolução

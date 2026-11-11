@@ -146,7 +146,7 @@ U3 .> U4 : <<extend>>
 | Disponibilidade | 99% mensal | RNF-CON-01 |
 | Recuperação | RPO < 24 h; RTO < 4 h | RNF-CON-03/04 |
 | Segurança | Segredos fora do Git; banco não exposto; LGPD | RNF-SEG |
-| Custo | ≈ US$ 36,42/mês (AWS Pricing Calculator) | RNF-CUS-01 |
+| Custo | ≈ US$ 21,23/mês (AWS Pricing Calculator) | RNF-CUS-01 |
 
 # 6. Arquitetura da Solução (Visão Geral)
 
@@ -157,7 +157,7 @@ A aplicação Django + DRF e o banco PostgreSQL executam em contêineres Docker 
 skinparam shadowing false
 actor "Aluno" as A
 cloud "Internet" as NET
-node "AWS - EC2 (Ubuntu + Docker)" {
+node "AWS - EC2 (Amazon Linux + Docker)" {
   node "Docker Compose" {
     component "web\nDjango + DRF + Gunicorn" as WEB
     database "db\nPostgreSQL 16" as DB
@@ -176,7 +176,7 @@ DB --> VOL
 # 7. Restrições
 
 * Pilha: Python/Django, DRF, PostgreSQL, Docker, AWS EC2.
-* Custo: ≈ US$ 36,42/mês, estimado na AWS Pricing Calculator. Equipe: 4 estudantes. Prazo: semestre letivo.
+* Custo: ≈ US$ 21,23/mês, estimado na AWS Pricing Calculator. Equipe: 4 estudantes. Prazo: semestre letivo.
 * Provas do ENEM de 2016 a 2025 (a meta inicial era 2019 em diante; a base foi ampliada).
 
 # 8. Riscos
@@ -197,7 +197,7 @@ DB --> VOL
 | Entrega funcional | API respondendo na EC2 durante a avaliação |
 | Valor ao aluno | Dashboard exibe nota TRI e habilidades a melhorar |
 | Qualidade | Testes automatizados passando; transação com *rollback* demonstrada |
-| Custo | Faturamento mensal próximo da estimativa da AWS Pricing Calculator (≈ US$ 36,42) |
+| Custo | Faturamento mensal próximo da estimativa da AWS Pricing Calculator (≈ US$ 21,23) |
 
 # 10. Considerações Finais
 
