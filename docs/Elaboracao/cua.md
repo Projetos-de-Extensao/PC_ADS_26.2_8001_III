@@ -123,7 +123,7 @@ U7 ..> U3 : <<include>>
 | --- | --- |
 | Desempenho | Provisionamento e instalação em até 30 min |
 | Segurança | Disco criptografado; chave SSH privada fora do repositório (RNF-SEG-02/05) |
-| Custo | ≈ US$ 37/mês no conjunto (RNF-CUS-01) |
+| Custo | ≈ US$ 36,42/mês no conjunto (RNF-CUS-01) |
 
 **Riscos**
 
@@ -278,7 +278,6 @@ U7 ..> U3 : <<include>>
 2. Cria alarme CloudWatch em `StatusCheckFailed` da EC2 e em CPU alta.
 3. Cria verificação periódica do endpoint `/health/` (script cron com `curl` que registra falhas, ou Route 53 Health Check).
 4. Disponibiliza logs via `docker compose logs web db`.
-5. Cria AWS Budgets com alertas em 80% e 100%.
 
 **Fluxos Alternativos**
 
@@ -292,7 +291,6 @@ U7 ..> U3 : <<include>>
 | **Requisito** | **Métrica** |
 | --- | --- |
 | Operação | Alerta em até 15 minutos (RNF-OPS-02) |
-| Custo | Alerta de orçamento em 80%/100% (RNF-CUS-02) |
 
 **Riscos**
 
@@ -513,7 +511,7 @@ ENV ..> DB
 | UC-ARQ-002 | RNF-SEG-04, RNF-SEG-06, RNF-SEG-07 | Riscos (LGPD, segredos) | Security Group, IAM, MFA |
 | UC-ARQ-003 | RNF-DAD-02, RNF-PER-04, RNF-SEG-07 | RF-02, RF-08 | Docker, PostgreSQL 16, volume `pgdata` |
 | UC-ARQ-004 | RNF-CON-01, RNF-PER-01/02, RNF-SEG-08, RNF-DAD-01 | RF-03, RF-04, RF-05, RF-07 | Django, DRF, Gunicorn, Compose |
-| UC-ARQ-005 | RNF-OPS-01/02/03, RNF-CUS-02 | Critérios de sucesso | CloudWatch, SNS, Budgets |
+| UC-ARQ-005 | RNF-OPS-01/02/03 | Critérios de sucesso | CloudWatch, SNS |
 | UC-ARQ-006 | RNF-MAN-01/02/03 | Restrições, Critérios de sucesso | Git, GitHub, Docker Compose |
 | UC-ARQ-007 | RNF-CON-03/04, RNF-OPS-04/05 | Riscos (ponto único de falha) | `pg_dump`, cron, EBS Snapshot, S3 (opcional) |
 
@@ -526,7 +524,7 @@ Os sete casos de uso cobrem o ciclo da infraestrutura do Apollo, do provisioname
 | **Função** | **Nome** | **Data** | **Assinatura** |
 | --- | --- | --- | --- |
 | Arquiteto de Soluções | Arthur Maurity, Bernardo Casanovas, Bernardo Miller, Lucas Jesus | 10/11/2026 | Aprovado em revisão da equipe |
-| Professor Responsável | Jonh Carvalho | 17/11/2026 | Pendente (avaliação da AP2) |
+| Professor Responsável |  |  |  |
 
 # 11. Histórico de Versões
 

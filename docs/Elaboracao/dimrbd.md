@@ -241,7 +241,7 @@ O volume de 30 GB (gp3) comporta o banco com margem superior a 95%.
 | Aderência ao roteiro e à AP2 | Alta (Docker Compose, volume, healthcheck) | Baixa para o requisito de contêiner |
 | Risco de perda de dados | Alto se o volume/EC2 for perdido sem dump | Baixo |
 
-**Decisão:** opção A. O orçamento e o objetivo da AP2 (ciclo completo em Docker) favorecem a EC2 com volume; o RPO/RTO é atendido por `pg_dump` diário e restauração testada. O RDS é a **evolução recomendada** assim que o Apollo tiver usuários reais.
+**Decisão:** opção A. O custo e o objetivo da AP2 (ciclo completo em Docker) favorecem a EC2 com volume; o RPO/RTO é atendido por `pg_dump` diário e restauração testada. O RDS é a **evolução recomendada** assim que o Apollo tiver usuários reais.
 
 ## 7.1. Parâmetros do PostgreSQL
 
@@ -270,7 +270,7 @@ A opção A atende aos requisitos de desempenho, capacidade e recuperação a cu
 | **Função** | **Nome** | **Data** | **Assinatura** |
 | --- | --- | --- | --- |
 | Arquiteto de Soluções | Arthur Maurity, Bernardo Casanovas, Bernardo Miller, Lucas Jesus | 10/11/2026 | Aprovado em revisão da equipe |
-| Professor Responsável | Jonh Carvalho | 17/11/2026 | Pendente (avaliação da AP2) |
+| Professor Responsável |  |  |  |
 
 # 11. Histórico de Versões
 

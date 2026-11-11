@@ -146,7 +146,7 @@ U3 .> U4 : <<extend>>
 | Disponibilidade | 99% mensal | RNF-CON-01 |
 | Recuperação | RPO < 24 h; RTO < 4 h | RNF-CON-03/04 |
 | Segurança | Segredos fora do Git; banco não exposto; LGPD | RNF-SEG |
-| Custo | Até US$ 100/mês (estimativa ≈ US$ 37) | RNF-CUS-01 |
+| Custo | ≈ US$ 36,42/mês (AWS Pricing Calculator) | RNF-CUS-01 |
 
 # 6. Arquitetura da Solução (Visão Geral)
 
@@ -176,7 +176,7 @@ DB --> VOL
 # 7. Restrições
 
 * Pilha: Python/Django, DRF, PostgreSQL, Docker, AWS EC2.
-* Orçamento: até US$ 100/mês. Equipe: 4 estudantes. Prazo: semestre letivo.
+* Custo: ≈ US$ 36,42/mês, estimado na AWS Pricing Calculator. Equipe: 4 estudantes. Prazo: semestre letivo.
 * Provas do ENEM de 2016 a 2025 (a meta inicial era 2019 em diante; a base foi ampliada).
 
 # 8. Riscos
@@ -186,7 +186,7 @@ DB --> VOL
 | Parâmetros TRI oficiais indisponíveis | Alta | Médio | Estimar parâmetros e rotular a nota como estimativa |
 | EC2 como ponto único de falha | Média | Alto | Restart automático, backup diário, procedimento de recuperação documentado |
 | Vazamento de segredos no Git | Baixa | Alto | `.env` no `.gitignore`, `.env.example`, varredura do histórico |
-| Estouro de orçamento | Baixa | Médio | AWS Budgets e desligamento fora de teste |
+| Custo acima do estimado | Baixa | Médio | Revisar a estimativa na AWS Pricing Calculator e desligar a EC2 fora de teste |
 | Desalinhamento da equipe/prazo | Média | Alto | Plano semanal, commits individuais, revisão cruzada |
 | Dados pessoais de alunos (LGPD) | Média | Alto | Coleta mínima, finalidade definida, exclusão de conta |
 
@@ -197,7 +197,7 @@ DB --> VOL
 | Entrega funcional | API respondendo na EC2 durante a avaliação |
 | Valor ao aluno | Dashboard exibe nota TRI e habilidades a melhorar |
 | Qualidade | Testes automatizados passando; transação com *rollback* demonstrada |
-| Custo | Faturamento mensal abaixo de US$ 100 |
+| Custo | Faturamento mensal próximo da estimativa da AWS Pricing Calculator (≈ US$ 36,42) |
 
 # 10. Considerações Finais
 
@@ -208,12 +208,12 @@ O Documento de Visão alinha escopo, arquitetura e metas do Apollo para a AP2. M
 | **Função** | **Nome** | **Data** | **Assinatura** |
 | --- | --- | --- | --- |
 | Gerente do Projeto | Arthur Maurity, Bernardo Casanovas, Bernardo Miller, Lucas Jesus | 10/11/2026 | Aprovado em revisão da equipe |
-| Professor Responsável | Jonh Carvalho | 17/11/2026 | Pendente (avaliação da AP2) |
+| Professor Responsável |  |  |  |
 
 # 12. Histórico de Versões
 
 | **Versão** | **Data** | **Autor** | **Descrição das Alterações** |
 | --- | --- | --- | --- |
 | 1.0 | 21/09/2026 | Equipe do Projeto Apollo | Versão inicial. |
-| 2.0 | 08/11/2026 | Equipe do Projeto Apollo | Escopo 2019–2025; arquitetura Django + PostgreSQL em Docker na EC2; orçamento e RNF unificados com o RS v2.0. |
+| 2.0 | 08/11/2026 | Equipe do Projeto Apollo | Escopo 2019–2025; arquitetura Django + PostgreSQL em Docker na EC2; custo e RNF unificados com o RS v2.0. |
 | 2.1 | 10/11/2026 | Equipe do Projeto Apollo | Escopo alinhado à base implantada na EC2: ENEM 2016–2025 (10 edições, 7.400 itens). |

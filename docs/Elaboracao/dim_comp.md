@@ -48,7 +48,7 @@ Uma instância EC2 em uma AZ, executando Docker Compose. Fora do escopo: Auto Sc
 | Latência | p95 < 1,5 s no envio | RNF-PER-01 |
 | Consultas de dashboard no pico | ≈ 2 por submissão (≈ 1,7 req/s) | Premissa |
 | Disponibilidade | 99% | RNF-CON-01 |
-| Orçamento | US$ 100/mês | RNF-CUS-01 |
+| Custo estimado | ≈ US$ 36,42/mês (AWS Pricing Calculator) | RNF-CUS-01 |
 
 # 3. Modelo de Análise de Classes
 
@@ -156,13 +156,14 @@ Três *workers* atendem ≈ 2,5 req/s com folga (cada um processa ≈ 6 req/s a 
 
 # 6. Custo
 
-| **Item** | **Cálculo (us-east-1)** | **US$/mês** |
+Estimativa feita na [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=8e4fe0a08f011b6f4a2ad10ee8757d1241cf9b53) (Leste dos EUA, sob demanda, Linux, 730 h/mês).
+
+| **Item** | **Cálculo (Leste dos EUA)** | **US$/mês** |
 | --- | --- | --- |
-| EC2 t3.medium | 0,0416 × 730 h | ≈ 30,40 |
+| EC2 t3.medium | 0,0416 × 730 h | ≈ 30,37 |
 | EBS gp3 30 GB | 30 × 0,08 | 2,40 |
 | IPv4 público | 0,005 × 730 | 3,65 |
-| Snapshots | ≈ 10 GB × 0,05 | 0,50 |
-| **Total** |  | **≈ 37** |
+| **Total** |  | **≈ 36,42** |
 
 Parando a instância fora de períodos de teste (RNF-CUS-03), o custo de computação cai proporcionalmente (ex.: 12 h/dia → ≈ US$ 15 em EC2).
 
@@ -177,22 +178,14 @@ Parando a instância fora de períodos de teste (RNF-CUS-03), o custo de computa
 
 # 8. Considerações Finais
 
-A instância única é suficiente para o pico previsto e cabe no orçamento com folga. As estimativas de CPU e memória são premissas e devem ser confirmadas por medição após o deploy.
-
-**Medições a registrar no README (substituir antes da entrega):**
-
-| **Métrica** | **Previsto** | **Medido** |
-| --- | --- | --- |
-| Memória total em uso (`docker stats`) | ≈ 2.000 MiB | _preencher após o deploy_ |
-| CPU média no teste de 50 submissões/min | ≈ 18% de 1 vCPU | _preencher_ |
-| p95 do envio | < 1,5 s | _preencher_ |
+A instância única é suficiente para o pico previsto e tem custo baixo (≈ US$ 36,42/mês na AWS Pricing Calculator). As estimativas de CPU e memória são premissas e devem ser confirmadas por medição após o deploy.
 
 # 9. Aprovações
 
 | **Função** | **Nome** | **Data** | **Assinatura** |
 | --- | --- | --- | --- |
 | Arquiteto de Soluções | Arthur Maurity, Bernardo Casanovas, Bernardo Miller, Lucas Jesus | 10/11/2026 | Aprovado em revisão da equipe |
-| Professor Responsável | Jonh Carvalho | 17/11/2026 | Pendente (avaliação da AP2) |
+| Professor Responsável |  |  |  |
 
 # 10. Histórico de Versões
 

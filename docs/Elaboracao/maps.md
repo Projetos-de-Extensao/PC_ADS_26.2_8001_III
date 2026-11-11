@@ -17,7 +17,7 @@
 
 ## 1.1. Propósito
 
-Organiza os controles de segurança do Apollo em pacotes coesos e rastreáveis aos requisitos RNF-SEG. A arquitetura-alvo é **Django + PostgreSQL em Docker Compose numa EC2**; os controles são escolhidos para o orçamento acadêmico (até US$ 100/mês) e para o risco real do projeto: vazamento de segredos, banco exposto e dados pessoais de alunos (LGPD).
+Organiza os controles de segurança do Apollo em pacotes coesos e rastreáveis aos requisitos RNF-SEG. A arquitetura-alvo é **Django + PostgreSQL em Docker Compose numa EC2**; os controles são escolhidos para o contexto acadêmico e para o risco real do projeto: vazamento de segredos, banco exposto e dados pessoais de alunos (LGPD).
 
 ## 1.2. Escopo
 
@@ -98,13 +98,13 @@ IA ..> DP : <<autoriza>> acesso aos dados
 | **Elemento** | **Descrição** | **Serviço** |
 | --- | --- | --- |
 | Usuários IAM | Um por integrante, sem uso do usuário raiz | IAM |
-| Grupo `apollo-dev` | Permissões de EC2, CloudWatch e Budgets | IAM |
+| Grupo `apollo-dev` | Permissões de EC2 e CloudWatch | IAM |
 | MFA | Obrigatório para console | IAM |
 | Chave SSH | Par de chaves da EC2; `.pem` fora do Git | EC2 |
 
 | **Papel** | **Tipo** | **Permissões** | **Justificativa** |
 | --- | --- | --- | --- |
-| Admin-Infra | Humano | EC2, EBS, SG, CloudWatch, SNS, Budgets | Operar a infraestrutura |
+| Admin-Infra | Humano | EC2, EBS, SG, CloudWatch, SNS | Operar a infraestrutura |
 | Dev-Backend | Humano | Leitura de EC2/CloudWatch; SSH na instância | Deploy e diagnóstico |
 | Usuário Postgres `apollo_app` | Banco | CRUD no esquema da aplicação, sem `SUPERUSER` | Menor privilégio no banco |
 
@@ -202,7 +202,6 @@ IA ..> DP : <<autoriza>> acesso aos dados
 | CloudWatch Alarms + SNS | Falha de status da EC2; CPU alta; e-mail à equipe |
 | Logs Docker | `docker compose logs web db` |
 | Verificação de `/health/` | Alerta de indisponibilidade da API |
-| AWS Budgets | Alertas de custo em 80% e 100% |
 
 | **Risco** | **Mitigação** |
 | --- | --- |
@@ -241,7 +240,7 @@ IA ..> DP : <<autoriza>> acesso aos dados
 | Segredos em `.env` em vez de Secrets Manager | Sem custo; simples | Arquivo em disco da EC2; mitigado por permissão `600` e disco criptografado |
 | Banco em contêiner em vez de RDS | Custo menor; ciclo completo em Docker | Sem backup/patch gerenciados; mitigado por `pg_dump` |
 | HTTP na entrega base | Menos configuração | Tráfego sem criptografia; evolução prioritária com Nginx + TLS |
-| SG simples, sem WAF | Orçamento | Sem proteção L7 gerenciada |
+| SG simples, sem WAF | Custo | Sem proteção L7 gerenciada |
 
 # 7. Evolução Futura
 
@@ -255,7 +254,7 @@ IA ..> DP : <<autoriza>> acesso aos dados
 | **Função** | **Nome** | **Data** | **Assinatura** |
 | --- | --- | --- | --- |
 | Arquiteto de Soluções | Arthur Maurity, Bernardo Casanovas, Bernardo Miller, Lucas Jesus | 10/11/2026 | Aprovado em revisão da equipe |
-| Professor Responsável | Jonh Carvalho | 17/11/2026 | Pendente (avaliação da AP2) |
+| Professor Responsável |  |  |  |
 
 # 9. Histórico de Versões
 

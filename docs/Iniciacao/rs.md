@@ -58,7 +58,7 @@ Aplica-se à plataforma Apollo completa: aplicação Django (`web`), banco Postg
 | Deploy | `git pull` + `docker compose up -d --build` | CodePipeline / Blue-Green |
 | Backup | `pg_dump` agendado + snapshot EBS | Backup automático do RDS |
 
-**Justificativa:** com 4 estudantes, orçamento de US$ 100/mês e foco em demonstrar o ciclo completo (código → contêiner → nuvem), uma única EC2 com Docker Compose entrega os requisitos do projeto com menor custo e menor superfície de configuração. O preço é um ponto único de falha, aceito pelo SLA de 99% (Seção 5).
+**Justificativa:** com 4 estudantes, custo estimado de ≈ US$ 36,42/mês e foco em demonstrar o ciclo completo (código → contêiner → nuvem), uma única EC2 com Docker Compose entrega os requisitos do projeto com menor custo e menor superfície de configuração. O preço é um ponto único de falha, aceito pelo SLA de 99% (Seção 5).
 
 # 3. Requisitos de Desempenho e Capacidade
 
@@ -136,21 +136,20 @@ Aplica-se à plataforma Apollo completa: aplicação Django (`web`), banco Postg
 
 | **ID** | **Requisito** | **Critério de Aceitação** |
 | --- | --- | --- |
-| RNF-CUS-01 | Custo mensal dentro do orçamento. | Faturamento abaixo de US$ 100/mês (estimativa de referência na tabela abaixo). |
-| RNF-CUS-02 | Custo acompanhado. | AWS Budgets com alertas em 80% e 100%. |
+| RNF-CUS-01 | Custo mensal estimado e documentado. | Estimativa feita na AWS Pricing Calculator (tabela abaixo); faturamento real conferido no console de Billing. |
+| RNF-CUS-02 | Estimativa de custo registrada. | Estimativa da AWS Pricing Calculator revisada antes da entrega. |
 | RNF-CUS-03 | Recursos ociosos desligados. | EC2 parada fora de períodos de teste/apresentação, quando não houver avaliação programada. |
 
-**Estimativa de custo mensal (preço de tabela, us-east-1, 730 h) [Likely]:**
+**Estimativa de custo mensal ([AWS Pricing Calculator](https://calculator.aws/#/estimate?id=8e4fe0a08f011b6f4a2ad10ee8757d1241cf9b53); Leste dos EUA, sob demanda, Linux, 730 h) [Certain]:**
 
 | **Recurso** | **Especificação** | **Custo (US$/mês)** |
 | --- | --- | --- |
-| EC2 | t3.medium (2 vCPU, 4 GiB) | ≈ 30,40 |
+| EC2 | t3.medium (2 vCPU, 4 GiB) | ≈ 30,37 |
 | EBS | gp3, 30 GB | ≈ 2,40 |
 | IPv4 público | 1 endereço | ≈ 3,65 |
-| Snapshots EBS | ≈ 10 GB incrementais | ≈ 0,50 |
-| **Total** |  | **≈ 37** |
+| **Total** |  | **≈ 36,42** |
 
-O total representa cerca de 37% do orçamento. Valores sujeitos à tabela vigente da AWS no momento da entrega.
+Valores conforme a AWS Pricing Calculator, sujeitos à tabela vigente da AWS no momento da entrega.
 
 # 11. Restrições
 
@@ -159,7 +158,7 @@ O total representa cerca de 37% do orçamento. Valores sujeitos à tabela vigent
 | RES-01 | Backend em Python/Django com Django REST Framework e PostgreSQL. |
 | RES-02 | Execução em contêineres Docker orquestrados por Docker Compose. |
 | RES-03 | Provas do ENEM de 2016 a 2025 (10 edições), 4 áreas × 45 questões em até 4 cadernos por cor (7.400 itens carregados na implantação). |
-| RES-04 | Orçamento máximo de US$ 100/mês. |
+| RES-04 | Custo mensal estimado na AWS Pricing Calculator (≈ US$ 36,42). |
 | RES-05 | Equipe de 4 estudantes; prazo do semestre letivo. |
 
 # 12. Alternativas Avaliadas e Evolução
@@ -169,8 +168,8 @@ O total representa cerca de 37% do orçamento. Valores sujeitos à tabela vigent
 | Amazon RDS PostgreSQL | Alternativa avaliada | db.t3.micro ≈ US$ 15/mês; ver Modelo de Análise de Classes (RDS) e Dimensionamento de BD. |
 | Lambda + API Gateway | Alternativa avaliada | Eleva complexidade de rede e custo de VPC endpoints; adiado. |
 | HTTPS com Nginx e certificado | Evolução prioritária | Atende RNF-SEG-01 integralmente. |
-| Multi-AZ / Auto Scaling | Evolução | Fora do orçamento e do escopo acadêmico. |
-| WAF, GuardDuty, Security Hub | Evolução | Custo incompatível com o orçamento. |
+| Multi-AZ / Auto Scaling | Evolução | Fora do escopo acadêmico e com custo adicional (ALB e 2ª EC2). |
+| WAF, GuardDuty, Security Hub | Evolução | Custo adicional sem necessidade no escopo acadêmico. |
 
 # 13. Considerações Finais
 
@@ -181,7 +180,7 @@ Os requisitos acima são a referência de verificação do Apollo na AP2. Cada i
 | **Função** | **Nome** | **Data** | **Assinatura** |
 | --- | --- | --- | --- |
 | Arquiteto de Soluções | Arthur Maurity, Bernardo Casanovas, Bernardo Miller, Lucas Jesus | 10/11/2026 | Aprovado em revisão da equipe |
-| Professor Responsável | Jonh Carvalho | 17/11/2026 | Pendente (avaliação da AP2) |
+| Professor Responsável |  |  |  |
 
 # 15. Histórico de Versões
 

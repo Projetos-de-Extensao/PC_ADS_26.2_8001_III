@@ -54,8 +54,7 @@ Publicação de novas versões da aplicação Django (`web`) e aplicação de mi
 | Zero downtime | Não exigido (indisponibilidade de segundos é tolerada pelo SLA) | Decisão do projeto |
 | Usuários | ≈ 200 alunos | Dimensionamento |
 | TPS no pico | ≈ 0,83 submissão/s (≈ 2,5 req/s totais) | RNF-PER-02 |
-| Orçamento total | US$ 100/mês | RNF-CUS-01 |
-| Orçamento adicional para deploy | até US$ 5/mês (a infraestrutura base já custa ≈ US$ 37) | Decisão do projeto |
+| Custo adicional aceito para deploy | até US$ 5/mês (a infraestrutura base custa ≈ US$ 36,42 na AWS Pricing Calculator) | Decisão do projeto |
 
 ## 2.2. Comparação das Estratégias
 
@@ -69,7 +68,7 @@ Publicação de novas versões da aplicação Django (`web`) e aplicação de mi
 | Detecção de erros | Manual (`/health/` + logs) | Teste na pilha nova antes da troca | Métricas por fatia de tráfego |
 | Adequação ao SLA de 99% | ✅ (7 h/mês de tolerância) | ✅ | ✅ |
 | Adequação ao RTO | ✅ | ✅ | ✅ |
-| Adequação ao orçamento | ✅ | ⚠️ (consome 30% do orçamento) | ❌ (consome 47%) |
+| Adequação ao custo | ✅ | ⚠️ (≈ +US$ 30/mês) | ❌ (≈ +US$ 47/mês) |
 | **Escolha** | ✅ | ❌ | ❌ |
 
 > **Banco de dados:** em qualquer estratégia o `db` é único. Migrações incompatíveis com a versão anterior inviabilizam a coexistência de duas versões (Blue-Green/Canary) sem *expand/contract*, o que aumenta a complexidade.
@@ -104,12 +103,12 @@ CW ..> WEB : alarme de saúde
 
 ## 2.4. Plataformas de Hospedagem Avaliadas
 
-Além da estratégia de publicação (seção 2.2), o grupo comparou onde executar a aplicação e o banco. Os valores são estimativas de custo mensal em us-east-1 e devem ser conferidos na calculadora da AWS.
+Além da estratégia de publicação (seção 2.2), o grupo comparou onde executar a aplicação e o banco. Os valores são estimativas de custo mensal (Leste dos EUA); a do Apollo foi feita na [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=8e4fe0a08f011b6f4a2ad10ee8757d1241cf9b53) e as demais são aproximações.
 
 | **Alternativa** | **Como funciona** | **Custo estimado** | **Prós** | **Contras** | **Decisão** |
 | --- | --- | --- | --- | --- | --- |
 | Elastic Beanstalk + SQLite (AP1) | A plataforma gerencia a EC2; o banco é um arquivo no disco da instância | ≈ US$ 15–30 | Deploy simples pela plataforma | Banco no disco efêmero (perde dados se a instância for substituída); sem JSONB/GIN; sem controle do ambiente | Substituída |
-| **EC2 + Docker Compose + PostgreSQL em contêiner** | `web` e `db` em uma EC2, dados no volume `pgdata` | **≈ US$ 37** | Controle total; PostgreSQL com JSONB e GIN; portátil; custo baixo; reproduz o Roteiro 14 | Administração manual; ponto único de falha; backup por `pg_dump` | **Escolhida** |
+| **EC2 + Docker Compose + PostgreSQL em contêiner** | `web` e `db` em uma EC2, dados no volume `pgdata` | **≈ US$ 36,42** | Controle total; PostgreSQL com JSONB e GIN; portátil; custo baixo; reproduz o Roteiro 14 | Administração manual; ponto único de falha; backup por `pg_dump` | **Escolhida** |
 | EC2 + Amazon RDS (PostgreSQL) | `web` na EC2 e banco gerenciado | ≈ US$ 50–55 | Backups, patches e Multi-AZ gerenciados | Custo maior; rede VPC/SG mais complexa; excede a necessidade de ≈ 200 alunos | Evolução (ver `dimrbd`) |
 | ECS/Fargate + RDS | Contêineres sem gerenciar a VM | ≈ US$ 60 ou mais | Sem servidor para administrar | Mais configuração (cluster, roles, ALB); custo maior | Descartada |
 
@@ -127,7 +126,7 @@ O desenvolvedor acessa a EC2 por SSH, gera um `pg_dump` de segurança, atualiza 
 
 | **Requisito** | **Valor** | **Atende?** | **Justificativa** |
 | --- | --- | --- | --- |
-| SLA | 99% (≈ 7 h/mês) | ✅ | Dezenas de deploys de ≈ 1 min consomem minutos do orçamento de indisponibilidade |
+| SLA | 99% (≈ 7 h/mês) | ✅ | Dezenas de deploys de ≈ 1 min consomem minutos da indisponibilidade tolerada |
 | RTO | < 4 h | ✅ | Rollback em ≈ 10 min; recuperação completa em ≈ 1 h |
 | Rollback | ≤ 30 min | ✅ | `git checkout <tag>` + rebuild ≈ 10 min |
 | Deploy | ≤ 15 min | ✅ | ≈ 8 min no total |
@@ -277,7 +276,7 @@ stop
 | Volume de tráfego | ≈ 2,5 req/s | Insuficiente para métricas estatisticamente úteis em 10% |
 | Complexidade | Baixa | Alta |
 
-**Conclusão:** com ≈ 200 usuários, a fatia canary geraria poucas requisições, sem sinal confiável, e o custo estoura o orçamento de deploy. **Descartada.**
+**Conclusão:** com ≈ 200 usuários, a fatia canary geraria poucas requisições, sem sinal confiável, e o custo adicional não se justifica. **Descartada.**
 
 # 4. Diagrama de Atividades Consolidado
 
@@ -355,20 +354,12 @@ endif
 * Adotar RDS e Blue-Green se o Apollo ganhar usuários reais e SLA mais exigente.
 * Executar um ensaio de rollback antes da apresentação.
 
-**Medições a registrar (substituir antes da entrega):**
-
-| **Métrica** | **Previsto** | **Medido** |
-| --- | --- | --- |
-| Tempo total de deploy | ≈ 10,5 min | _preencher após o deploy_ |
-| Indisponibilidade durante o deploy | ≈ 30–60 s | _preencher_ |
-| Tempo de rollback | ≈ 10 min | _preencher após o ensaio_ |
-
 # 8. Aprovações
 
 | **Função** | **Nome** | **Data** | **Assinatura** |
 | --- | --- | --- | --- |
 | Arquiteto de Soluções | Arthur Maurity, Bernardo Casanovas, Bernardo Miller, Lucas Jesus | 10/11/2026 | Aprovado em revisão da equipe |
-| Professor Responsável | Jonh Carvalho | 17/11/2026 | Pendente (avaliação da AP2) |
+| Professor Responsável |  |  |  |
 
 # 9. Histórico de Versões
 

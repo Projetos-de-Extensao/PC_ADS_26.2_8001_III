@@ -6,9 +6,9 @@
 
 | | Link |
 | --- | --- |
-| **API publicada** | http://IP_DA_EC2:8000/api/ |
-| **Front-end** | http://IP_DA_EC2:8000/ |
-| **Saúde (app + banco)** | http://IP_DA_EC2:8000/health/ |
+| **API publicada** | http://3.149.243.252:8000/api/ |
+| **Front-end** | http://3.149.243.252:8000/ |
+| **Saúde (app + banco)** | http://3.149.243.252:8000/health/ |
 | **Documentação (MkDocs)** | https://projetos-de-extensao.github.io/PC_ADS_26.2_8001_III/ |
 
 ## Sobre
@@ -38,7 +38,7 @@ flowchart LR
 | `db` | `postgres:16` com `healthcheck` (`pg_isready`) e volume `pgdata` |
 | `.env` | Segredos (`SECRET_KEY`, `POSTGRES_*`, superusuário) só na EC2, fora do Git; `.env.example` versionado sem senhas |
 
-Custo estimado: ≈ US$ 37/mês (EC2 t3.medium + EBS), dentro do orçamento de US$ 100/mês. Detalhes em [Dimensionamento de Computação](https://projetos-de-extensao.github.io/PC_ADS_26.2_8001_III/Elaboracao/dim_comp/) e [Atividades de Deploy](https://projetos-de-extensao.github.io/PC_ADS_26.2_8001_III/Transicao/ativ_deploy/).
+Custo estimado: ≈ US$ 36,42/mês (EC2 t3.medium + EBS gp3 30 GB + IPv4 público), calculado na [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=8e4fe0a08f011b6f4a2ad10ee8757d1241cf9b53) (Leste dos EUA, sob demanda, Linux, 730 h/mês). Detalhes em [Dimensionamento de Computação](https://projetos-de-extensao.github.io/PC_ADS_26.2_8001_III/Elaboracao/dim_comp/) e [Atividades de Deploy](https://projetos-de-extensao.github.io/PC_ADS_26.2_8001_III/Transicao/ativ_deploy/).
 
 ### Modelo de dados
 
@@ -93,7 +93,7 @@ Abra http://localhost:8000/ (front-end), http://localhost:8000/api/ (API) e http
    ```bash
    git clone https://github.com/Projetos-de-Extensao/PC_ADS_26.2_8001_III.git apollo
    cd apollo/appFinal
-   ./scripts/gerar_env.sh IP_DA_EC2
+   ./scripts/gerar_env.sh 3.149.243.252
    docker compose up -d --build
    curl http://localhost:8000/health/
    ```
@@ -119,7 +119,7 @@ Comandos usados (na EC2, dentro de `appFinal/`):
 ```bash
 docker ps
 docker compose logs --tail 50 web db
-curl http://IP_DA_EC2:8000/api/
+curl http://3.149.243.252:8000/api/
 docker compose exec db sh -c 'psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "SELECT count(*) FROM enem_questao;"'
 # persistência
 docker compose exec db sh -c 'psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "SELECT count(*) FROM enem_submissao;"'
