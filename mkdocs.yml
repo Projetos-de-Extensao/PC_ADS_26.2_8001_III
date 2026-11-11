@@ -1,40 +1,43 @@
 ---
-repo_url: https://github.com/jonh-carvalho/PC_ADS_26.2_8001
+repo_url: https://github.com/Projetos-de-Extensao/PC_ADS_26.2_8001_III
 site_author: Jonh Carvalho
 site_name: PC_ADS_26.2_8001
 copyright: Copyright ©️ 2026, Jonh Carvalho
 
 nav: 
   - Home: index.md
-  - Iniciação: 
+  - Iniciação:
       - Index: Iniciacao/index.md
-      - Documento de Visão: Iniciacao/documento_de_visao.md
-      #- Pesquisa: Iniciacao/pesquisa.md
-      #- 5W2H: Iniciacao/5w2h.md
-      #- Lista de Riscos Iniciais: Iniciacao/lista_de_riscos_iniciais.md
-      #- Caso de Negócio (Business Case): Iniciacao/caso_de_negocio.md
+      - Documento de Visão: Iniciacao/dv.md
+      - Requisitos Suplementares: Iniciacao/rs.md
 
   - Elaboração:
       - Index: Elaboracao/index.md
-      - casos de uso: Elaboracao/casos_de_uso.md
-      - requisitos suplementares: Elaboracao/requisitos_suplementares.md
-      - modelo de análise de segurança: Elaboracao/modelo_analise_seguranca.md
-      - diagrama de classes: Elaboracao/diagrama_de_classes.md
-      - diagrama de sequência: Elaboracao/diagrama_de_sequencia.md
-      - modelo de análise de classes (RDS): Elaboracao/modelo_analise_classes_rds.md
-      - modelo de análise de classes (EC2): Elaboracao/modelo_analise_classes_ec2.md
-      - modelo de design (consolidação da arquitetura): Elaboracao/modelo_design_consolidacao_arquitetura.md
-      - levantamento de requisitos: Elaboracao/levreq.md
-      - protótipo de alta fidelidade: Elaboracao/prototipo_alta_fidelidade.md
+      - Casos de Uso Arquiteturais: Elaboracao/cua.md
+      - Modelo de Análise de Segurança: Elaboracao/maps.md
+      - Dimensionamento de Computação: Elaboracao/dim_comp.md
+      - Dimensionamento de Banco de Dados: Elaboracao/dimrbd.md
+      - Diagramas de Sequência e Comunicação: Elaboracao/seq_com.md
 
   - Construção:
       - Index: Construcao/index.md
       - Aplicação (appFinal): Construcao/aplicacao.md
 
-  #- Transição:
-      #- Index: Transicao/index.md
+  - Transição:
+      - Atividades de Deploy: Transicao/ativ_deploy.md
 
-  #- Bibliografia: Disciplina/Bibliografia.md
+  - Histórico (v1 - AP1):
+      - Documento de Visão v1: Iniciacao/documento_de_visao.md
+      - Casos de uso v1: Elaboracao/casos_de_uso.md
+      - Requisitos suplementares v1: Elaboracao/requisitos_suplementares.md
+      - Análise de segurança v1: Elaboracao/modelo_analise_seguranca.md
+      - Diagrama de classes: Elaboracao/diagrama_de_classes.md
+      - Diagrama de sequência: Elaboracao/diagrama_de_sequencia.md
+      - Análise de classes (RDS): Elaboracao/modelo_analise_classes_rds.md
+      - Análise de classes (EC2): Elaboracao/modelo_analise_classes_ec2.md
+      - Consolidação da arquitetura: Elaboracao/modelo_design_consolidacao_arquitetura.md
+      - Levantamento de requisitos: Elaboracao/levreq.md
+      - Protótipo de alta fidelidade: Elaboracao/prototipo_alta_fidelidade.md
 
 extra_css:
   - css/extra.css

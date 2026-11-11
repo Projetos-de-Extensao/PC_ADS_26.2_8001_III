@@ -653,3 +653,14 @@ class ChaosRegressaoTests(TestCase):
         for pagina in ("home", "dashboard"):
             html = APIClient().get(f"/{pagina}/").content.decode()
             self.assertIn("overflow-wrap:anywhere", html, pagina)
+
+
+class RaizApiPublicaTests(TestCase):
+    def test_raiz_da_api_lista_rotas_sem_login(self):
+        r = self.client.get("/api/", follow=True)
+        self.assertEqual(r.status_code, 200)
+        self.assertIn("questoes", r.json())
+
+    def test_dados_continuam_exigindo_login(self):
+        self.assertEqual(self.client.get("/api/questoes/").status_code, 403)
+        self.assertEqual(self.client.get("/api/alunos/").status_code, 403)
