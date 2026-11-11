@@ -1,156 +1,113 @@
----
-id: prototipobaixa
-title: Protótipo Baixa Fidelidade
----
-## Introdução
+**Protótipo de Alta Fidelidade**
 
-<p align = "justify">
-A construção do protótipo de alta fidelidade auxilia a equipe de desenvolvimento a encontrar um nível de detalhes abrangentes, extrair funcionalidades, testar usabilidade, e também fornece uma base para o gerenciamento do projeto pois com o protótipo é possível realizar estimativas de quanto tempo será necessário desempenhar em cada funcionalidade.
-</p>
+**Projeto Apollo**
 
-## Metodologia
+|  |  |
+| --- | --- |
+| **Projeto** | Apollo — Plataforma de Análise de Desempenho no ENEM |
+| **Documento** | Protótipo de Alta Fidelidade (telas da aplicação) |
+| **Versão** | 2.0 |
+| **Data** | 10/11/2026 |
+| **Status** | Em Revisão |
+| **Responsável** | Equipe do Projeto Apollo |
+| **Disciplina** | Projeto de Cloud |
+| **Fase RUP/UP** | Elaboração |
 
-<p align = "justify">
-Iniciamos o projeto através dos levantamentos iniciais da equipe, após discussões a ferramenta Figma foi selecionada para produzir o protótipo de alta fidelidade com auxílio do Material Design Color Tool.
-</p>
+# 1. Introdução
 
-## Protótipo de alta fidelidade
+## 1.1. Propósito
 
-### Versão 1.0
+Registrar as telas do Apollo com o nível de detalhe da aplicação real, para validar o fluxo do aluno (cadastro, envio de respostas, resultado e dashboard) e rastrear cada tela até os requisitos funcionais do [Documento de Visão](../Iniciacao/dv.md).
 
-### Tela Login
+## 1.2. Origem das imagens
 
-[![Prototipo 1](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
+As imagens deste documento são **capturas da aplicação implementada** (Django + DRF, versão do repositório `appFinal`), executada com a base real do INEP carregada (ENEM 2016–2025, 7.400 itens). Os dados do aluno exibidos são de uma **conta de demonstração** ("Aluno Demonstração"), com respostas geradas pelo botão *Preencher aleatório (demo)*; por isso as notas são baixas e servem apenas para ilustrar a interface. A nota TRI é uma **estimativa**, não a nota oficial do INEP.
 
-### Tela Cadastro 1
+# 2. Fluxo do aluno
 
-[![Prototipo 2](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
+```plantuml
+@startuml
+skinparam shadowing false
+start
+:Landing;
+:Criar conta / Entrar;
+:Home (resumo);
+:Enviar respostas;
+:Resultado da prova;
+:Dashboard;
+if (Mais provas?) then (sim)
+  :Enviar respostas;
+else (não)
+  stop
+endif
+@enduml
+```
 
-### Tela Cadastro 2
+# 3. Telas
 
-[![Prototipo 3](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
+## 3.1. Landing
 
-### Tela Esqueceu Senha
+Apresenta a proposta do produto ("Descubra onde você erra. Estude o que importa."), os três passos de uso e as dúvidas frequentes. Atende ao posicionamento descrito no Documento de Visão.
 
-[![Prototipo 4](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
+![Landing](../assets/Telas/01-landing.png)
 
-### Tela do Feed
+## 3.2. Criar conta e entrar (RF-01)
 
-[![Prototipo 5](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
+Um único formulário alterna entre *Entrar* e *Criar conta*. A senha exige no mínimo 8 caracteres.
 
-### Tela Feed com configurações
+![Criar conta](../assets/Telas/02-criar-conta.png)
 
-[![Prototipo 6](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
+## 3.3. Home
 
-### Tela Perfil
+Resume as provas já enviadas e aponta o que estudar primeiro.
 
-[![Prototipo 7](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
+![Home](../assets/Telas/06-home.png)
 
-### Tela Cadastrar torneio 1
+## 3.4. Envio de respostas (RF-03)
 
-[![Prototipo 8](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
+O aluno escolhe ano, área e cor do caderno (a ordem das questões muda entre cores) e marca as 45 alternativas na grade ou cola o gabarito. A cor é validada por dia de prova: Linguagens e Humanas compartilham o caderno, assim como Natureza e Matemática.
 
-### Tela Cadastrar torneio 2
+![Envio de respostas](../assets/Telas/03-enviar-prova.png)
 
-[![Prototipo 9](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
+## 3.5. Resultado (RF-04, RF-05, RF-06)
 
-### Tela Cadastrar torneio 3
+Mostra a nota TRI estimada, acertos, erros e brancos, e agrupa os erros por eixo temático, competência e habilidade. A correção e a gravação de submissão, respostas e resultado ocorrem em uma única transação.
 
-[![Prototipo 10](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
+![Resultado](../assets/Telas/04-resultado.png)
 
-### Tela Cadastrar torneio 4
+## 3.6. Dashboard (RF-06, RF-07)
 
-[![Prototipo 11](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
+Reúne o histórico por edição, a evolução da nota por área e as **áreas a melhorar**, ordenadas por taxa de erro e classificadas em prioridade alta, média ou baixa.
 
-### Tela com meus torneios
+![Dashboard — resumo e provas por edição](../assets/Telas/05a-dashboard-resumo.png)
 
-[![Prototipo 12](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
+![Dashboard — áreas a melhorar](../assets/Telas/05b-dashboard-areas-a-melhorar.png)
 
-### Tela de inscrição em torneio
+# 4. Rastreabilidade tela → requisito → teste
 
-[![Prototipo 13](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
+| **Tela** | **Requisitos** | **Endpoint / rota** | **Teste automatizado** |
+| --- | --- | --- | --- |
+| Landing | Posicionamento | `/` | `test_paginas_respondem` |
+| Criar conta e entrar | RF-01 | `/api/cadastro/`, `/api/login/` | `test_cadastro_login_e_health` |
+| Envio de respostas | RF-03, RF-04 | `POST /api/submissoes/` | testes de transação e de cor por dia |
+| Resultado | RF-04, RF-05, RF-06 | `/api/submissoes/`, `/api/resultados/` | `test_prova_incompleta_faz_rollback_total` |
+| Dashboard | RF-06, RF-07 | `/api/dashboard/` | `test_paginas_usam_rotas_reais` |
+| Painel administrativo | RF-02, RF-09 | `/admin/` | verificado na EC2 (lista de tabelas e 7.400 questões) |
 
-<p align = "justify">
-Na primeira versão do protótipo utilizamos a ferramenta <a href="https://material.io/resources/color/#!/?view.left=0&view.right=0">Material Design Color Tool</a>  para auxiliar na criação da paleta de cores do aplicativo, definimos as cores base do aplicativo mas as cores definidas para as telas 12 e 13 ainda não foram decididas.
-</p>
+# 5. Considerações Finais
 
-### Versão 2.0
+As telas cobrem o fluxo completo do aluno e correspondem à aplicação implantada na EC2. Melhorias previstas: modo escuro (já disponível pelo botão do topo), exportação do relatório e recomendações de estudo por assunto.
 
-### Versão 1.0
-
-### Tela Login
-
-[![Prototipo 1](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
-
-### Tela Cadastro 1
-
-[![Prototipo 2](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
-
-### Tela Cadastro 2
-
-[![Prototipo 3](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
-
-### Tela Esqueceu Senha
-
-[![Prototipo 4](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
-
-### Tela do Feed
-
-[![Prototipo 5](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
-
-### Tela Feed com configurações
-
-[![Prototipo 6](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
-
-### Tela Perfil
-
-[![Prototipo 7](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
-
-### Tela Cadastrar torneio 1
-
-[![Prototipo 8](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
-
-### Tela Cadastrar torneio 2
-
-[![Prototipo 9](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
-
-### Tela Cadastrar torneio 3
-
-[![Prototipo 10](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
-
-### Tela Cadastrar torneio 4
-
-[![Prototipo 11](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
-
-### Tela com meus torneios
-
-[![Prototipo 12](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
-
-### Tela de inscrição em torneio
-
-[![Prototipo 13](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
-
-link para o `<a href="https://www.figma.com/">`Protótipo`</a>`
-
-## Conclusão
-
-<p align = "justify">
-A partir da elaboração do protótipo foi possível ter uma noção inicial da interface do usuário, definindo fluxo, paleta de cores, botões, app bars e diversas outras funcionalidades
-</p>
-
-## Referências
-
-> Material Design Color Tool. Disponível em:  https://material.io/resources/color/#!/?view.left=0&view.right=0
-
-> PMI. Um guia do conhecimento em gerenciamento de projetos. Guia PMBOK® 5a. ed. EUA: Project Management Institute, 2013.
-
-> Ferramenta Figma. Disponível em https://www.figma.com
-
-## Autor(es)
-
-| Data     | Versão | Descrição                            | Autor(es)                                                                            |
-| -------- | ------- | -------------------------------------- | ------------------------------------------------------------------------------------ |
-| 07/09/20 | 1.0     | Criação do documento                 | Lucas Alexandre e Matheus Estanislau                                                 |
-| 07/09/20 | 1.1     | Adicionado as imagens do protótipo    | Lucas Alexandre e Matheus Estanislau                                                 |
-| 07/09/20 | 1.2     | Adicionado conclusão e referências   | Lucas Alexandre e Matheus Estanislau                                                 |
-| 26/10/20 | 2.0     | Adicionada a versão 2.0 do protótipo | João Pedro, Lucas Alexandre, Matheus Estanislau, Moacir Mascarenha e Renan Cristyan |
+# 6. Aprovações
+
+| **Função** | **Nome** | **Data** | **Assinatura** |
+| --- | --- | --- | --- |
+| Designer / Desenvolvedor Frontend |  |  |  |
+| Professor Responsável |  |  |  |
+
+# 7. Histórico de Versões
+
+| **Versão** | **Data** | **Autor** | **Descrição das Alterações** |
+| --- | --- | --- | --- |
+| 1.0 | 21/09/2026 | Equipe do Projeto Apollo | Versão inicial (modelo da disciplina). |
+| 2.0 | 10/11/2026 | Equipe do Projeto Apollo | Substituição pelo protótipo real do Apollo, com capturas da aplicação implementada e rastreabilidade. |

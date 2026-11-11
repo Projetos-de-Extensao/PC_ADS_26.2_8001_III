@@ -18,6 +18,7 @@ nav:
       - Dimensionamento de Computação: Elaboracao/dim_comp.md
       - Dimensionamento de Banco de Dados: Elaboracao/dimrbd.md
       - Diagramas de Sequência e Comunicação: Elaboracao/seq_com.md
+      - Protótipo de Alta Fidelidade (telas): Elaboracao/prototipo_alta_fidelidade.md
 
   - Construção:
       - Index: Construcao/index.md
@@ -38,7 +39,6 @@ nav:
       - Análise de classes (EC2): Elaboracao/modelo_analise_classes_ec2.md
       - Consolidação da arquitetura: Elaboracao/modelo_design_consolidacao_arquitetura.md
       - Levantamento de requisitos: Elaboracao/levreq.md
-      - Protótipo de alta fidelidade: Elaboracao/prototipo_alta_fidelidade.md
 
 extra_css:
   - css/extra.css
