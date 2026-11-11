@@ -113,6 +113,7 @@ Abra http://localhost:8000/ (front-end), http://localhost:8000/api/ (API) e http
 | Persistência: dado existe antes e depois de `down`/`up` | ![persistência](docs/assets/evidencias/persistencia.png) |
 | Security Group (22 e 8000; sem 5432) | ![security group](docs/assets/evidencias/security_group.png) |
 | `manage.py test` passando | ![testes](docs/assets/evidencias/testes.png) |
+| Tempo de 1 envio (POST /api/submissoes/): 356 ms | ![timing](docs/assets/evidencias/post_submissao_timing.png) |
 
 Comandos usados (na EC2, dentro de `appFinal/`):
 

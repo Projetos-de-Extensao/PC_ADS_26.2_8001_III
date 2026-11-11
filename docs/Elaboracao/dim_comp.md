@@ -180,6 +180,14 @@ Parando a instância fora de períodos de teste (RNF-CUS-03), o custo de computa
 
 A instância única é suficiente para o pico previsto e tem custo baixo (≈ US$ 36,42/mês na AWS Pricing Calculator). As estimativas de CPU e memória são premissas e devem ser confirmadas por medição após o deploy.
 
+**Medição registrada após o deploy:**
+
+| **Métrica** | **Previsto** | **Medido** |
+| --- | --- | --- |
+| Tempo de 1 envio (DevTools, POST /api/submissoes/, EC2 em produção) | < 1,5 s | 356 ms (espera do servidor 198 ms) |
+
+![Timing do POST /api/submissoes/](../assets/evidencias/post_submissao_timing.png)
+
 # 9. Aprovações
 
 | **Função** | **Nome** | **Data** | **Assinatura** |
