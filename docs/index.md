@@ -30,9 +30,6 @@ hide:
             <a href="assets/apresentacao.pdf" class="button primary-btn">
                 <span class="octicon-arrow-right-24:"></span> Ver PDF
             </a>
-            <a href="assets/apresentacao.pptx" class="button primary-btn">
-                <span class="octicon-arrow-right-24:"></span> Ver PPTX
-            </a>
         </div>
     </div>
 
@@ -43,12 +40,17 @@ hide:
         </div>
         <div class="card-content">
             <p class="contributors">Código completo da aplicação Django + PostgreSQL</p>
-            <a href="Construcao/aplicacao/" class="button primary-btn">
-                <span class="octicon-arrow-right-24:"></span> Ver documentação
-            </a>
-            <a href="assets/appFinal.zip" class="button primary-btn">
-                <span class="octicon-arrow-right-24:"></span> Baixar ZIP
-            </a>
+            <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;">
+                <a href="http://3.149.243.252:8000/" class="button primary-btn" target="_blank" rel="noopener">
+                    <span class="octicon-arrow-right-24:"></span> Acessar aplicação
+                </a>
+                <a href="Construcao/aplicacao/" class="button primary-btn">
+                    <span class="octicon-arrow-right-24:"></span> Ver documentação
+                </a>
+                <a href="assets/appFinal.zip" class="button primary-btn">
+                    <span class="octicon-arrow-right-24:"></span> Baixar ZIP
+                </a>
+            </div>
         </div>
     </div>
 
