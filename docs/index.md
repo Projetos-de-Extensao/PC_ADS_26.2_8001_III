@@ -27,9 +27,14 @@ hide:
         </div>
         <div class="card-content">
             <p class="contributors">Slides da apresentação</p>
-            <a href="assets/apresentacao.pdf" class="button primary-btn">
-                <span class="octicon-arrow-right-24:"></span> Ver PDF
-            </a>
+            <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;">
+                <a href="assets/apresentacao.pdf" class="button primary-btn">
+                    <span class="octicon-arrow-right-24:"></span> Ver PDF
+                </a>
+                <a href="assets/apresentacao.pptx" class="button primary-btn">
+                    <span class="octicon-arrow-right-24:"></span> Ver PPTX
+                </a>
+            </div>
         </div>
     </div>
 
